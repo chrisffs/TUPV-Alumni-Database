@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    background-color: #C3203B;
+}
+
+.body {
+    position: relative;
+    
+}
+#hero-form {
+    max-width: 482px;
+    /* width: 30%; */
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px 8px rgba(0, 0, 0, 0.25);
+    padding: 21px 37px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.h-txt {
+    font-size: 19px;
+    font-weight: 600;
+}
+.m-txt {
+    font-size: 16px;
+}
+.fh-text {
+    color: #565656;
+    font-weight: 600;
+    font-size: 16px;
+}
+.m-txt-container {
+    background-color: #CBCBCB;
+    padding: 7px 22px;
+    border-radius: 5px;
+}
+.label {
+    color: #565656;
+    font-size: 16px;
+    font-weight: 600;
+}
+.form-main {
+    display: grid;
+    grid-template-areas:
+    "l1 r1"
+    "f2 f2"
+    "f3 f3"
+    "l4 r4"
+    "f5 f5"
+    "l6 r6"
+    "l7 r7"
+}
+.fname {
+    grid-area: l1;
+}
+.lname {
+    grid-area: r1;
+}
+.email {
+    grid-area: f2;
+}
+.pnumber {
+    grid-area: f3;
+}
+
+#tup-logo {
+    width: 70px;
+}
+
