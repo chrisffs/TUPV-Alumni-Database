@@ -4,12 +4,23 @@ require 'conn.php';
 
 if(isset($_POST['submit']))
 {
+    $tupv_id = mysqli_real_escape_string($con, $_POST['tupv-id']);
     $fname = mysqli_real_escape_string($con, $_POST['fname']);
     $lname = mysqli_real_escape_string($con, $_POST['lname']);
+    $mi = mysqli_real_escape_string($con, $_POST['MI']);
+    $bdate = mysqli_real_escape_string($con, $_POST['birthdate']);
+    $cv = $_POST['cv'];
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $pnum = mysqli_real_escape_string($con, $_POST['pnumber']);
+    $add = mysqli_real_escape_string($con, $_POST['add']);
+    $ygrad = mysqli_real_escape_string($con, $_POST['year-graduated']);
+    $pgrad = mysqli_real_escape_string($con, $_POST['program-graduated']);
+    $cprof = mysqli_real_escape_string($con, $_POST['c-prof']);
+    $cname = mysqli_real_escape_string($con, $_POST['c-name']);
+    
 
-    $query = "INSERT INTO alumni_tbl (lastname,firstname,pnumber,email) VALUES ('$lname','$fname', '$pnum', '$email')";
+
+    $query = "INSERT INTO alumni_tbl (tupv_id,lastname,firstname,mi,birthdate,civil_status,address,pnumber,email) VALUES ('$tupv_id','$lname','$fname','$mi','$bdate','$cv','$add','$pnum', '$email')";
 
     $query_run = mysqli_query($con, $query);
     if($query_run) { 

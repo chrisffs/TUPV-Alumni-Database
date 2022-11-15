@@ -1,31 +1,6 @@
 <?php 
 session_start(); 
-    // include "conn.php";
-
-    // if (isset($_POST['submit'])) {
-    //     $fname = $_POST['fname'];
-    //     $lname = $_POST['lname'];
-    //     $email = $_POST['email'];
-    //     $pnum = $_POST['pnumber'];
-
-    //     $sql = "INSERT INTO alumni_tbl (lastname,firstname,email, pnumber) 
-    //     VALUES('$fname','$lname','$email','$pnum')";
-
-    //     if ($conn->query($sql) === TRUE) {
-    //         echo "New record was successfully saved.";
-    //         header('location: index.php');
-    //     } else {
-    //         echo "Unable to save student record due to following error" . $conn->connect_error;
-    //         header('location: index.php');
-    //     }
-
-    //     $sql->close();
-    // }
 ?>
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,21 +8,30 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-
+    
     <title>Document</title> 
-    <link rel="stylesheet" href="style.css" type="text/css">
 
+    <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 </head>
 <body>
 
-    <section class="bg-light container" id="hero-form">
+    <section class="bg-light container m-5" id="hero-form">
         <div class="image-container-md my-2">
             <img src="img/tup-logo.png" class="mx-auto d-block" alt="Logo of TUP" id="tup-logo">
         </div>
@@ -60,9 +44,10 @@ session_start();
         <div class="form mt-3">
             <?php include('message.php'); ?>
             <form action="code.php" method="POST" class="form-main">
-
-                <div class="tupv fw-qs"> 
-                    <label class="label" for="tupv-id">TUPV-ID</label>
+                
+            
+                <div class="tupv"> 
+                    <label class="label fw-qs" for="tupv-id">TUPV-ID</label>
                     <input class="form-control" id="tupv-id" name="tupv-id" type="text" aria-label="default input example">
                 </div>
                 <div class="names">
@@ -79,14 +64,30 @@ session_start();
                         <input class="form-control" id="MI" name="MI" type="text" aria-label="default input example">
                     </div>
                 </div>
-
-                <div class="bdate me-1"> 
-                    <label class="label fw-qs" for="birthdate">Birthdate</label>
-                    <input class="form-control" id="birthdate" name="bdate" type="text" aria-label="default input example">
+                
+                <div class="form-group bdate mb-0 me-1">
+                <label for="date" class="label fw-qs">Birthdate</label>
+                    <div class="">
+                        <div class="input-group date" id="datepicker">
+                            <input type="text" class="form-control" name="birthdate">
+                            <span class="input-group-append">
+                                <span class="input-group-text bg-white">
+                                    <i class="fa fa-calendar"></i>
+                                </span>
+                            </span>
+                        </div>
+                    </div>
                 </div>
+
                 <div class="cv">
                     <label class="label fw-qs" for="cv">Civil Status</label>
-                    <input class="form-control" id="cv" name="cv" type="text" aria-label="default input example">
+                    <select class="form-select" aria-label="Default select example" id="cv" name="cv">
+                        <option selected hidden>Select Civil Status</option>
+                        <option value="Single">Single</option>
+                        <option value="Married">Married</option>
+                        <option value="Widowed">Widowed</option>
+                    </select>
+                    <!-- <input class="form-control" id="cv" name="cv" type="text" aria-label="default input example"> -->
                 </div>
 
                 <div class="email mt-2">
@@ -99,13 +100,57 @@ session_start();
                 </div>
                 <div class="address mt-2">
                     <label class="label fw-qs" for="address">Address</label>
-                    <input class="form-control" id="address" name="add" type="tel" aria-label="default input example" placeholder="Barangay                               town">
+                    <input class="form-control" id="address" name="add" type="tel" aria-label="default input example" placeholder=>
+                </div>
+
+                <div class="form-group y-grad mb-0 me-1">
+                <label for="y-grad" class="label fw-qs">Year-Graduated</label>
+                    <div class="">
+                        <div class="input-group date" id="yearpicker">
+                            <input type="text" class="form-control" name="year-graduated">
+                            <span class="input-group-append">
+                                <span class="input-group-text bg-white">
+                                    <i class="fa fa-calendar"></i>
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-grad">
+                <label for="p-grad" class="label fw-qs">Program Graduated</label>
+                    <select class="form-select" aria-label="Default select example" name="program-graduated">
+                        <option selected hidden>Select Program</option>
+                        <option value="1">BS in Electronics Engineering</option>
+                        <option value="2">BS in Mech. Engineering</option>
+                        <option value="3">BS in Computer Engineering</option>
+                        <option value="4">BS in Chemistry</option>
+                    </select>
+                </div>
+                <div class="c-prof me-1"> 
+                    <label class="label fw-qs" for="c-prof">Current Profession</label>
+                    <input class="form-control" id="c-prof" name="c-prof" type="text" aria-label="default input example">
+                </div>
+                <div class="c-name">
+                    <label class="label fw-qs" for="c-name">Company Name</label>
+                    <input class="form-control" id="c-name" name="c-name" type="text" aria-label="default input example">
                 </div>
                 
                 <button type="submit" class="btn btn-success mt-3" name="submit" >Submit</button>
             </form>
         </div>
     </section>
+
     <script src="js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('#datepicker').datepicker();
+        });
+        $("#yearpicker").datepicker({
+            format: "yyyy",
+            viewMode: "years", 
+            minViewMode: "years"
+        });
+    </script>
 </body>
 </html>

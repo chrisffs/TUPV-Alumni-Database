@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 html {
@@ -28,7 +29,7 @@ html {
     /* width: 30%; */
     border-radius: 10px;
     box-shadow: 3px 3px 10px 8px rgba(0, 0, 0, 0.25);
-    padding: 21px 37px;
+    padding: 21px 31px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -53,9 +54,13 @@ html {
     border-radius: 5px;
 }
 .label {
+    margin-left: 0.2rem;
     color: #565656;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
+}
+label {
+    margin-bottom: 0;
 }
 .form-main {
     display: grid;
@@ -89,9 +94,23 @@ html {
 .pnumber {
     grid-area: l4;
 }
-
 .address {
     grid-area: f5;
+}
+.y-grad {
+    grid-area: l6;
+}
+.p-grad {
+    grid-area: r6;
+}
+.c-prof {
+    grid-area: l7;
+}
+.c-name {
+    grid-area: r7;
+}
+form div {
+    margin-bottom: 0.5rem;
 }
 #tup-logo {
     width: 70px;
