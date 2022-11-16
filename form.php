@@ -17,7 +17,7 @@ session_start();
     
     <title>TUPV Alumni Registration Form</title> 
 
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
@@ -27,8 +27,8 @@ session_start();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 </head>
-<body>
-    <section class="bg-light container m-5" id="hero-form">
+<body class="d-flex" style="background-color: #C3203B;">
+    <section class="bg-light my-5 mx-auto" id="hero-form">
         <div class="image-container-md my-2">
             <img src="img/tup-logo.png" class="mx-auto d-block" alt="Logo of TUP" id="tup-logo">
         </div>
