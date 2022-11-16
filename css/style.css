@@ -2,7 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
 }
 
 html {
@@ -13,7 +14,6 @@ html {
     position: relative;
     
 }
-
 .fw-qs {
     font-family: 'Quicksand', sans-serif;
 }
@@ -21,11 +21,11 @@ html {
 .fw-pp {
     font-family: 'Poppins', sans-serif;
 }
-.fw-rb {
-    font-family: 'Roboto', sans-serif;
+.fw-in {
+    font-family: 'Inter', sans-serif;
 }
 #hero-form {
-    max-width: 482px;
+    max-width: 512px;
     /* width: 30%; */
     border-radius: 10px;
     box-shadow: 3px 3px 10px 8px rgba(0, 0, 0, 0.25);
@@ -73,7 +73,9 @@ label {
     "f5 f5"
     "l6 r6"
     "l7 r7"
+    "l8 l8"
 }
+
 .tupv {
     grid-area: f0;
 }
@@ -109,10 +111,21 @@ label {
 .c-name {
     grid-area: r7;
 }
+.button-div {
+    grid-area: l8;
+}
 form div {
     margin-bottom: 0.5rem;
 }
 #tup-logo {
     width: 70px;
+}
+
+@media (max-width: 512px) {
+    #hero-form {
+        top: 50%;
+        left: 40%;
+        transform: translate(-52%, -50%);
+    }
 }
 

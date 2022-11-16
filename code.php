@@ -18,14 +18,15 @@ if(isset($_POST['submit']))
     $cprof = mysqli_real_escape_string($con, $_POST['c-prof']);
     $cname = mysqli_real_escape_string($con, $_POST['c-name']);
     
+    
 
 
-    $query = "INSERT INTO alumni_tbl (tupv_id,lastname,firstname,mi,birthdate,civil_status,address,pnumber,email) VALUES ('$tupv_id','$lname','$fname','$mi','$bdate','$cv','$add','$pnum', '$email')";
+    $query = "INSERT INTO alumni_tbl (tupv_id,lastname,firstname,mi,birthdate,civil_status,address,pnumber,email,year_graduated,program_graduated,current_profession,company_name) VALUES ('$tupv_id','$lname','$fname','$mi','$bdate','$cv','$add','$pnum','$email','$ygrad','$pgrad','$cprof','$cname')";
 
     $query_run = mysqli_query($con, $query);
     if($query_run) { 
         $_SESSION['message'] = "Record Created Successfully";
-        header("Location: form.php"); 
+        header("Location: success.php"); 
         exit(0);
     }
     else {
@@ -33,5 +34,7 @@ if(isset($_POST['submit']))
         header("Location: form.php"); 
         exit(0); 
     }
+} else {
+
 }
 ?>
