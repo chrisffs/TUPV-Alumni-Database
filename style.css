@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
 
 html {
@@ -12,6 +11,17 @@ html {
 .body {
     position: relative;
     
+}
+
+.fw-qs {
+    font-family: 'Quicksand', sans-serif;
+}
+
+.fw-pp {
+    font-family: 'Poppins', sans-serif;
+}
+.fw-rb {
+    font-family: 'Roboto', sans-serif;
 }
 #hero-form {
     max-width: 482px;
@@ -50,27 +60,39 @@ html {
 .form-main {
     display: grid;
     grid-template-areas:
-    "l1 r1"
-    "f2 f2"
+    "f0 f0"
+    "l1 l1"
+    "f2 r2"
     "f3 f3"
-    "l4 r4"
+    "l4 l4"
     "f5 f5"
     "l6 r6"
     "l7 r7"
 }
-.fname {
+.tupv {
+    grid-area: f0;
+}
+.names {
     grid-area: l1;
+    display: grid;
+    grid-template-columns: 1fr 1fr .25fr;
 }
-.lname {
-    grid-area: r1;
-}
-.email {
+.bdate {
     grid-area: f2;
 }
-.pnumber {
+.cv {
+    grid-area: r2;
+}
+.email {
     grid-area: f3;
 }
+.pnumber {
+    grid-area: l4;
+}
 
+.address {
+    grid-area: f5;
+}
 #tup-logo {
     width: 70px;
 }
