@@ -31,8 +31,8 @@ session_start();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 </head>
-<body>
-    <section class="bg-light container m-5" id="hero-form">
+<body style="background-color: #C3203B;">
+    <section class="bg-light container my-5 mx-auto" id="hero-form">
         <div class="image-container-md my-2">
             <img src="img/tup-logo.png" class="mx-auto d-block" alt="Logo of TUP" id="tup-logo">
         </div>

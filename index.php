@@ -1,31 +1,3 @@
-<?php 
-    include "conn.php";
-
-    if (isset($_POST['submit'])) {
-        $fname = $_POST['fname'];
-        $lname = $_POST['lname'];
-        $email = $_POST['email'];
-        $pnum = $_POST['pnumber'];
-
-        $sql = "INSERT INTO alumni_tbl (lastname,firstname,email, pnumber) 
-        VALUES('$fname', '$lname', '$email', '$pnum',)";
-
-        if ($conn->query($sql) === TRUE) {
-            echo "New record was successfully saved.";
-            header('location: index.php');
-        } else {
-            echo "Unable to save student record due to following error" . $conn->connect_error;
-            header('location: index.php');
-        }
-
-        $sql->close();
-    }
-?>
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,40 +14,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
-index to
-    <section class="bg-light container" id="hero-form">
-        <div class="image-container-md">
-            <img src="img/tup-logo.png" class="mx-auto d-block" alt="Logo of TUP" id="tup-logo">
-        </div>
-        <div class="header text-center">
-            <p class="h-txt">Alumni Registration Form</p>
-            <div class="m-txt-container">
-                <p class="m-txt m-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-            </div>
-        </div>
-        <div class="form mt-3">
-            <form action="index.php" method="POST" class="form-main">
-                <div class="fname me-1">
-                    <label class="label" for="first-name">First Name</label>
-                    <input class="form-control" id="first-name" name="fname" type="text" aria-label="default input example">
-                </div>
-                <div class="lname">
-                    <label class="label" for="last-name">Last Name</label>
-                    <input class="form-control" id="last-name" name="lname" type="text" aria-label="default input example">
-                </div>
-                <div class="email mt-2">
-                    <label class="label" for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" name="email">
-                </div>
-                <div class="pnumber mt-2">
-                    <label class="label" for="phone-number">Phone Number</label>
-                    <input class="form-control" id="phone-number" name="pnumber" type="tel" aria-label="default input example">
-                </div>
-                
-                <button type="submit" class="btn btn-success mt-3" name="submit" >Submit</button>
-            </form>
-        </div>
-    </section>
+    
     <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
