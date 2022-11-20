@@ -35,7 +35,9 @@ body {
     left: 50%;
     transform: translate(-50%, -50%); */
 }
-
+.bg-primary1 {
+    background-color: #C3203B;
+}
 .h-txt {
     font-size: 19px;
     font-weight: 600;
@@ -121,9 +123,73 @@ form div {
     width: 70px;
 }
 
+/* index.php */
+#home nav {
+    background-color: white;
+}
+#logo {
+    max-width: 40px;
+}
+.logo-text {
+    font-size: 12px;
+    font-weight: 500;
+}
+#nav-link-ul li a {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000000;
+}
+#nav-link-ul li {
+    position: relative;
+}
+#nav-link-ul li::after {
+    position: absolute;
+    content: "";
+    height: 4px;
+    width: 0;
+    background-color: #C3203B;
+    left: 0;
+    bottom: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    transition: 0.3s;
+}
+#nav-link-ul li:hover:after {
+    width: 100%;
+}
+
+.blck-txt {
+    font-size: 24px;
+    color: black;
+    font-weight: 500;
+}
+.span1 {
+    font-weight: 700;
+}
+.hl-txt {
+    font-weight: 800;
+    font-size: 32px;
+    color: #C3203B;
+}
+.desc {
+    font-weight: 300;
+    color: black;
+}
+#title-l {
+    width: 50%;
+    text-align: center;
+}
+
 @media (max-width: 512px) {
     #hero-form {
         width: 93%;
     }
 }
+
+@media (max-width: 992px) {
+    #title-l {
+        width: 90%;
+    }
+}
+
 
