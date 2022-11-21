@@ -10,25 +10,29 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="css/fonts.css">
     
     
     <title>TUPV Alumni Registration Form</title> 
-
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    
+    <link rel="stylesheet" type="text/css" href="css/all.min.css">
+    <link rel="stylesheet" href="style.css" type="text/css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="css/bootstrap4.5.3.min.css">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">-->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script> -->
 </head>
 <body class="d-flex" style="background-color: #C3203B;">
-    <section class="bg-light my-5 mx-auto" id="hero-form">
+    <section class="bg-light my-5 mx-auto px-4 py-2" id="hero-form">
         <div class="image-container-md my-2">
             <img src="img/tup-logo.png" class="mx-auto d-block" alt="Logo of TUP" id="tup-logo">
         </div>
@@ -66,8 +70,8 @@ session_start();
                         <div class="input-group date" id="datepicker">
                             <input type="text" class="form-control" name="birthdate">
                             <span class="input-group-append">
-                                <span class="input-group-text bg-white">
-                                    <i class="fa fa-calendar"></i>
+                                <span class="input-group-text bg-white" style="cursor: pointer;">
+                                    <i class="fa-solid fa-calendar"></i>
                                 </span>
                             </span>
                         </div>
@@ -81,7 +85,6 @@ session_start();
                         <option value="Married">Married</option>
                         <option value="Widowed">Widowed</option>
                     </select>
-                    <!-- <input class="form-control" id="cv" name="cv" type="text" aria-label="default input example"> -->
                 </div>
                 <div class="email mt-2">
                     <label class="label fw-qs" for="email" class="form-label">Email Address</label>
@@ -101,8 +104,8 @@ session_start();
                         <div class="input-group date" id="yearpicker">
                             <input type="text" class="form-control" name="year-graduated" required>
                             <span class="input-group-append">
-                                <span class="input-group-text bg-white">
-                                    <i class="fa fa-calendar"></i>
+                                <span class="input-group-text bg-white" style="cursor: pointer;">
+                                    <i class="fa-solid fa-calendar"></i>
                                 </span>
                             </span>
                         </div>
@@ -142,8 +145,13 @@ session_start();
             </form>
         </div>
     </section>
+    <script src="js/jquery.min.js"></script>
+    <!-- <script src="js/jquery-3.6.1.js"></script> -->
     <script src="js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
+    <script src="js/bootstrap-datepicker.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    
+    
     <script type="text/javascript">
         $(function() {
             $('#datepicker').datepicker();

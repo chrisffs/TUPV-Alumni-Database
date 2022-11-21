@@ -24,12 +24,17 @@ body {
 .fw-in {
     font-family: 'Inter', sans-serif;
 }
+.fs-32 {
+    font-size: 32px;
+}
+.fw-bold {
+    font-weight: 900;
+}
 #hero-form {
     max-width: 512px;
     /* width: 30%; */
     border-radius: 10px;
     box-shadow: 3px 3px 10px 8px rgba(0, 0, 0, 0.25);
-    padding: 21px 31px;
     /* position: absolute;
     top: 50%;
     left: 50%;
@@ -179,6 +184,56 @@ form div {
     width: 50%;
     text-align: center;
 }
+.events-header {
+    background-color: white;
+    font-size: 16px;
+    border-radius:24px;
+    text-align: center;
+    border: solid 3px #C3203B;
+    position: absolute;
+    /* padding: .5rem 1.5rem; */
+    top: -24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 207px;
+}
+.events-header p {
+    font-weight: 600;
+}
+#events {
+    position: relative;
+    border-radius: 20px 20px 0 0;
+}
+.event-card {
+    width: 100%;
+    border-radius: 10px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.date {
+    font-size: 32px;
+    font-weight: 300;
+}
+.month,.eventt,.time,.venue {
+    font-size: 12px;
+    
+}
+.eventt {
+    color: #C3203B;
+    font-weight: 700;
+}
+#register-container {
+    border-radius: 20px;
+    bottom: -70px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    box-shadow: 4px 4px 10px 6px rgba(0, 0, 0, 0.25);
+}
+#footer {
+    background-color: #252121;
+}
 
 @media (max-width: 512px) {
     #hero-form {
@@ -189,6 +244,20 @@ form div {
 @media (max-width: 992px) {
     #title-l {
         width: 90%;
+    }
+    #register-container {
+        bottom: -90px;
+        width: 85%;
+        padding: 0;
+    }
+    #events {
+        width: 95%;
+    }
+    #btn-register {
+        width: 100%;
+    }
+    .flex-fill {
+        width: 100%;
     }
 }
 

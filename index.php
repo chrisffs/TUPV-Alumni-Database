@@ -11,8 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
@@ -62,8 +63,8 @@
             </div>
         </nav>
         <!-- NAVBAR END -->
-
         <!-- HERO -->
+
         <section class="bg-light py-5">
             <div class="container">
                 <div class="d-flex flex-lg-row flex-column-reverse justify-content-around align-items-center">
@@ -74,13 +75,84 @@
                     </div>
                     <img class="img-fluid img-r" src="img/Group 1.png" alt="" srcset="">
                 </div>
-                
             </div>
         </section>
         <!-- HERO END-->
-        <section class="py-5">
-            <div class="container bg-primary1" id="">
-awdawdad
+        <br>
+        <br>
+        <br>
+        <section class="pt-5">
+            <div class="container bg-primary1" id="events">
+                <div class="events-header px-3 py-2">
+                    <p class="mb-0 fw-pp">Upcoming Events</p>
+                </div>
+                <br>
+                <div class="event-cards mt-5 px-5 row">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="event-card bg-light px-4 py-3 my-4">
+                            <p class="date mb-0 fw-in">28</p>
+                            <p class="month mb-5 fw-pp">November</p>
+                            <p class="eventt mb-0 fw-pp">Batch 1993-1994 Reunion</p>
+                            <p class="time mb-2 fw-pp">1PM - 5:30PM</p>
+                            <p class="venue mb-0 fw-pp">TUPV Gymnasium</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="event-card bg-light px-4 py-3 my-4">
+                            <p class="date mb-0 fw-in">28</p>
+                            <p class="month mb-5 fw-pp">November</p>
+                            <p class="eventt mb-0 fw-pp">Batch 1993-1994 Reunion</p>
+                            <p class="time mb-2 fw-pp">1PM - 5:30PM</p>
+                            <p class="venue mb-0 fw-pp">TUPV Gymnasium</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                    <div class="event-card bg-light px-4 py-3 my-4">
+                        <p class="date mb-0 fw-in">28</p>
+                        <p class="month mb-5 fw-pp">November</p>
+                        <p class="eventt mb-0 fw-pp">Batch 1993-1994 Reunion</p>
+                        <p class="time mb-2 fw-pp">1PM - 5:30PM</p>
+                        <p class="venue mb-0 fw-pp">TUPV Gymnasium</p>
+                    </div>
+                    </div>
+                    
+
+                    
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                
+                <div class="bg-light px-lg-5 py-lg-4 px-4 py-3 d-flex flex-lg-row flex-column align-items-center text-center" id="register-container">
+                    <div class="text-lg-start">
+                        <p class="mb-0 fs-32 fw-bold fw-pp">Are you an Alumni?</p>
+                        <p class="pe-lg-4 fw-pp">Can you spare your time to Click the register button and fill out the form. Be one of us!</p>
+                    </div>
+                    <div class="flex-fill">
+                        <button class="btn btn-danger px-5 w-100" onclick="location.href='form.php'" id="btn-register">
+                            Register
+                        </button>
+                    </div>
+                    
+
+                </div>
+            </div>
+            <div class="text-light" id="footer">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <div class="container">
+                    <p class="py-5 mb-0">2022 Technological University of the Philippines - Visayas</p>
+                </div>
             </div>
         </section>
     </section>
