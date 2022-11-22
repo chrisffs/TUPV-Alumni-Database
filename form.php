@@ -32,7 +32,7 @@ session_start();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script> -->
 </head>
 <body class="d-flex" style="background-color: #C3203B;">
-    <section class="bg-light my-5 mx-auto px-4 py-2" id="hero-form">
+    <section class="bg-light my-5 mx-auto px-3 py-2" id="hero-form">
         <div class="image-container-md my-2">
             <img src="img/tup-logo.png" class="mx-auto d-block" alt="Logo of TUP" id="tup-logo">
         </div>
@@ -139,7 +139,7 @@ session_start();
                     <input class="form-control" id="c-name" name="c-name" type="text" aria-label="default input example">
                 </div>
                 <div class="button-div ">
-                    <button type="submit" class="btn btn-success mt-3 w-100" name="submit" >Submit Form</button>
+                    <button type="submit" class="btn btn-success mt-3 w-100 rounded-3" name="submit" >Submit Form</button>
                 </div>
                 
             </form>

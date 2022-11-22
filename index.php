@@ -6,23 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="css/fonts.css">
 
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/all.min.css">
     <link rel="stylesheet" href="style.css" type="text/css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="css/bootstrap4.5.3.min.css">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script> -->
 </head>
 <body style="background-color: #FAFAFA;">
+<!-- <div class="container">
+
+                    <div class="row height d-flex justify-content-center align-items-center">
+
+                      <div class="col-md-8">
+
+                        <div class="search">
+                          <i class="fa fa-search"></i>
+                          <input type="text" class="form-control" placeholder="Have a question? Ask Now">
+                          <button class="btn btn-primary">Search</button>
+                        </div>
+                        
+                      </div>
+                      
+                    </div>
+                </div> -->
     <section id="home">
         <!-- NAVBAR -->
         <nav class="navbar navbar-expand-md navbar-light pt-md-3">
@@ -45,12 +64,12 @@
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="nav-menu">
-                    <ul class="navbar-nav ms-auto d-flex align-items-center" id="nav-link-ul">
+                    <ul class="navbar-nav ms-auto d-flex align-items-center text-light" id="nav-link-ul">
                         <li class="nav-item mx-1 ">
-                            <a href="" class="nav-link fw-pp">Home</a>
+                            <a href="index.php" class="nav-link fw-pp active-link">Home</a>
                         </li>
                         <li class="nav-item mx-1">
-                            <a href="" class="nav-link fw-pp">Alumni</a>
+                            <a href="alumni_page.php" class="nav-link fw-pp">Alumni</a>
                         </li>
                         <li class="nav-item mx-1">
                             <a href="" class="nav-link fw-pp">Gallery</a>
@@ -69,14 +88,30 @@
             <div class="container">
                 <div class="d-flex flex-lg-row flex-column-reverse justify-content-around align-items-center">
                     <div class="text-lg-start" id="title-l">
-                        <p class="blck-txt fw-pp">Welcome to <span class="span1">TUPV</span></p>
-                        <p class="hl-txt fw-pp">Alumni Website</p>
+                        <p class="blck-txt fw-pp">Welcome to <span class=" hl-txt fw-pp">TUP Visayas Alumni</span></p>
+                        <!-- <p class="hl-txt fw-pp">Alumni</p> -->
                         <p class="desc fw-pp">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
                     </div>
                     <img class="img-fluid img-r" src="img/Group 1.png" alt="" srcset="">
                 </div>
             </div>
         </section>
+        <div class="container">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img/image.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/image-1.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/image-2.png" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <!-- HERO END-->
         <br>
         <br>
@@ -135,7 +170,7 @@
                         <p class="pe-lg-4 fw-pp">Can you spare your time to Click the register button and fill out the form. Be one of us!</p>
                     </div>
                     <div class="flex-fill">
-                        <button class="btn btn-danger px-5 w-100" onclick="location.href='form.php'" id="btn-register">
+                        <button class="btn btn-danger px-5 w-100 rounded-3" onclick="location.href='form.php'" id="btn-register">
                             Register
                         </button>
                     </div>
@@ -158,6 +193,11 @@
     </section>
 
 
+    <script src="js/jquery.min.js"></script>
+    <!-- <script src="js/jquery-3.6.1.js"></script> -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-datepicker.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    
 </body>
 </html>

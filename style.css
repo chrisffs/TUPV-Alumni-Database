@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 300;
 }
 
@@ -130,7 +130,7 @@ form div {
 
 /* index.php */
 #home nav {
-    background-color: white;
+    /* background-color: white; */
 }
 #logo {
     max-width: 40px;
@@ -142,7 +142,7 @@ form div {
 #nav-link-ul li a {
     font-size: 16px;
     font-weight: 500;
-    color: #000000;
+    
 }
 #nav-link-ul li {
     position: relative;
@@ -163,14 +163,24 @@ form div {
     width: 100%;
 }
 
+.active-link::after {
+    position: absolute;
+    content: "";
+    height: 4px;
+    width: 100%;
+    background-color: #C3203B;
+    left: 0;
+    bottom: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
 .blck-txt {
     font-size: 24px;
     color: black;
     font-weight: 500;
 }
-.span1 {
-    font-weight: 700;
-}
+
 .hl-txt {
     font-weight: 800;
     font-size: 32px;
@@ -197,8 +207,21 @@ form div {
     transform: translateX(-50%);
     width: 207px;
 }
-.events-header p {
+.events-header p,.events-header1 p {
     font-weight: 600;
+}
+.events-header1 {
+    background-color: white;
+    font-size: 16px;
+    border-radius:24px;
+    text-align: center;
+    border: solid 3px #C3203B;
+    position: absolute;
+    /* padding: .5rem 1.5rem; */
+    top: -24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 121px;
 }
 #events {
     position: relative;
@@ -234,6 +257,88 @@ form div {
 #footer {
     background-color: #252121;
 }
+#buttons {
+    background-color: red;
+}
+#btn-register {
+    border-radius: 10px;
+}
+.ap-title {
+    max-width: 415px;
+}
+#filter-input {
+    background-color: #E7E2E2;
+    color: #837777;
+    font-weight: 300;
+}
+
+#filter-input option {
+    color: #252121;
+    font-weight: 500;
+}
+#search-button {
+    font-family: 'Poppins', sans-serif; 
+    font-weight: 300;
+}
+.alumni-table thead {
+    border-bottom: 3px solid #C3203B;
+}
+.alumni-table thead tr th {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: #837777;
+}
+.alumni-table td{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: #000000;
+}
+
+/* alumni */
+/* .search{
+       position: relative;
+       box-shadow: 0 0 40px rgba(51, 51, 51, .1);
+         
+       }
+
+       .search input{
+
+        height: 60px;
+        text-indent: 25px;
+        border: 2px solid #d6d4d4;
+
+
+       }
+
+
+       .search input:focus{
+
+        box-shadow: none;
+        border: 2px solid blue;
+
+
+       }
+
+       .search .fa-search{
+
+        position: absolute;
+        top: 20px;
+        left: 16px;
+
+       }
+
+       .search button{
+
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        height: 50px;
+        width: 110px;
+        background: blue;
+
+       } */
 
 @media (max-width: 512px) {
     #hero-form {
