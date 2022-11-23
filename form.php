@@ -83,8 +83,8 @@ session_start();
                             <option selected hidden disabled>Select Civil Status</option>
                             <option value="Single">Single</option>
                             <option value="Married">Married</option>
-                            <option value="Widowed">Widow/er</option>
-                            <option value="Widowed">Seperated</option>
+                            <option value="Widow/er">Widow/er</option>
+                            <option value="Seperated">Seperated</option>
                         </select>
                     </div>
                     <div class="sex">
@@ -92,7 +92,7 @@ session_start();
                         <select class="form-select" aria-label="Default select example" id="sex" name="sex">
                             <option selected hidden disabled>Select Sex</option>
                             <option value="Male">Male</option>
-                            <option value="Married">Female</option>
+                            <option value="Female">Female</option>
                         </select>
                     </div>
                 </div>

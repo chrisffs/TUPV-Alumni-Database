@@ -76,12 +76,12 @@ include "conn.php"
                 <div>
                     <form class="d-flex flex-md-row flex-column justify-content-center" action="alumni_page.php" method="post">
                         <div class="mx-2">
-                            <input class="form-control fw-pp rounded-4 border-0" type="text" placeholder="Name..." aria-label="default input example" name="search-name" id="filter-input">
+                            <input class="form-control fw-pp rounded-4 border-0" type="text" placeholder="Name..." aria-label="default input example" name="search_name" id="filter-input">
                         </div>
                         <div class="mx-2">
                             <div class="form-group">
                                 <div class="input-group date" id="yearpicker">
-                                    <input type="text" class="form-control border-0" name="search-y-grad" placeholder="Select Year Graduated" id="filter-input" style="border-radius:1rem 0 0 1rem ;">
+                                    <input type="text" class="form-control border-0" name="search_y_grad" placeholder="Select Year Graduated" id="filter-input" style="border-radius:1rem 0 0 1rem ;">
                                     <span class="input-group-append ">
                                         <span class="input-group-text border-0" style="cursor: pointer; border-radius: 0 1rem 1rem 0;" id="filter-input">
                                                 <i class="fa-solid fa-calendar"></i>
@@ -92,7 +92,7 @@ include "conn.php"
                         </div>
 
                         <div class="mx-2">
-                            <select class="form-select fw-pp rounded-4 border-0" aria-label="Default select example" id="filter-input" name="search-course">
+                            <select class="form-select fw-pp rounded-4 border-0" aria-label="Default select example" id="filter-input" name="program-graduated">
                                 <option selected disabled hidden>Select Course Graduated</option>
                                 <option value="BS in Electronics Engineering">BS in Electronics Engineering</option>
                                 <option value="BS in Mechanical Engineering">BS in Mechanical Engineering</option>
@@ -110,7 +110,7 @@ include "conn.php"
                             </select>
                         </div>
                         <div class="mx-2">
-                            <button type="submit" class="btn btn-danger w-100 rounded-4" name="submit" id="search-button">Search</button>
+                            <button type="submit" class="btn btn-danger w-100 rounded-4" name="submit1" id="search-button">Search</button>
                         </div>
                     </form>
                 </div>
@@ -121,7 +121,7 @@ include "conn.php"
                 </div>
                 <br>
                 <div class="bg-light rounded-3">
-                    <table class="table table-borderless table-hover mt-5 alumni-table">
+                    <table class="table table-borderless table-hover mt-5 alumni-table text-center">
                         <thead>
                             <tr>
                                 <th scope="col">Name</th>
@@ -131,60 +131,63 @@ include "conn.php"
                         </thead>
                         <tbody>
                         <?php 
-                            // $sql = "SELECT CONCAT(`firstname`, ' ' , `mi` , ' ' , `lastname`) as name, `year_graduated`, `program_graduated` FROM `alumni_tbl`;";
-                            // $result = $con->query($sql);
-                        if (isset($_POST['submit'])) {
-                            $course_in = $_POST['search-course']; 
-                            $name_in = $_POST['search-name'];  
-                            $y_grad_in = $_POST['search-y-grad']; 
-                            
-
-                            if ($name_in != "" || $y_grad_in != "" || $course_in != "" ) {
+                        error_reporting(0);
+                            if (!isset($_POST['submit1'])) {
+                                $query = "SELECT CONCAT(`firstname`, ' ' , `mi` , ' ' , `lastname`) as name, `year_graduated`, `program_graduated` FROM `alumni_tbl` ORDER BY year_graduated DESC";
                                 
-                                $query = "SELECT CONCAT(`firstname`, ' ' , `mi` , ' ' , `lastname`) as name, `year_graduated`, `program_graduated` FROM `alumni_tbl` WHERE
-                                firstname = '$name_in' && mi = '$name_in' && lastname = '$name_in' OR year_graduated = '$y_grad_in' OR program_graduated = '$course_in'";
-
-                                $data = mysqli_query($con, $query) or die('error');
-
-                                if(mysqli_num_rows($data) > 0) {
-                                    while($row = mysqli_fetch_assoc($data)) {
-                                        // $search_name = $row['name']
-                                        // $search_y_grad = $row['year_graduated']
-                                        // $search_course = $row['program_graduated']
-                                        ?>
-
-                                        <td><?php echo $row['name']; ?></td>
-                                        <td><?php echo $row['year_graduated']; ?></td>
-                                        <td><?php echo $row['program_graduated']; ?></td>
-
-                                        <?php
-                                    }    
+                            $data = mysqli_query($con, $query) or die('error');
+                            if(mysqli_num_rows($data) > 0) {
+                                while($row = mysqli_fetch_assoc($data)) {
+                                ?>
+                                <tr>
+                                    <td><?php echo $row['name']; ?></td>
+                                    <td><?php echo $row['year_graduated']; ?></td>
+                                    <td><?php echo $row['program_graduated']; ?></td>
+                                </tr>
+                            <?php 
                                 }
+                            } else {
+                            ?>      
+                                <tr>
+                                    <td colspan="4">No record to show...</td>
+                                </tr>
+                            <?php
                             }
-                        }
-                             
+                    } else {
+                            $search_key = $_POST['search_name'];
+                            $search_y_grad = $_POST['search_y_grad'];
+                            $search_course = $_POST['program-graduated'];
+                            
+                                if($search_key != "" || $search_y_grad != "" || $search_course != "") {
 
+                                $query = "SELECT CONCAT(`firstname`, ' ' , `mi` , ' ' , `lastname`) as name, `lastname`, `firstname`, `mi`, `year_graduated`, `program_graduated` FROM `alumni_tbl` WHERE (lastname = '$search_key' OR firstname = '$search_key' OR mi = '$search_key' OR CONCAT(`firstname`, ' ' , `mi` , ' ' , `lastname`) = '$search_key') OR year_graduated = '$search_y_grad' OR program_graduated = '$search_course'";
+                                
+                            $data = mysqli_query($con, $query) or die('error');
+                            if(mysqli_num_rows($data) > 0) {
+                                while($row = mysqli_fetch_assoc($data)) {
+                                ?>
+                                <tr>
+                                    <td><?php echo $row['name']; ?></td>
+                                    <td><?php echo $row['year_graduated']; ?></td>
+                                    <td><?php echo $row['program_graduated']; ?></td>
+                                </tr>
+                            <?php 
+                                }
+                            } else {
+                            ?>      
+                                <tr>
+                                    <td colspan="4">No record to show...</td>
+                                </tr>
+                            <?php
+                            }
+                            
+                        }
+                    }
                             ?>
                             
-                        
-                                     
-                            <!-- <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td>@twitter</td>
-                            </tr> -->
+
+
+                             
                         </tbody>
                     </table>
                 </div>
@@ -208,3 +211,23 @@ include "conn.php"
     </script>
 </body>
 </html>
+<?php 
+// $query = "SELECT CONCAT(`firstname`, ' ' , `mi` , ' ' , `lastname`) as name, `lastname`, `firstname`, `mi`, `year_graduated`, `program_graduated` FROM `alumni_tbl` WHERE lastname LIKE '%$search_key%' OR firstname LIKE '%$search_key%' OR mi LIKE '%$search_key%' OR CONCAT(`firstname`, ' ' , `mi` , ' ' , `lastname`) LIKE '%$search_key%' || ";
+?>
+<!-- <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td colspan="2">Larry the Bird</td>
+                                <td>@twitter</td>
+                            </tr> -->
