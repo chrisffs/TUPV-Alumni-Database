@@ -158,9 +158,9 @@ include "conn.php"
                             $search_y_grad = $_POST['search_y_grad'];
                             $search_course = $_POST['program-graduated'];
                             
-                                if($search_key != "" || $search_y_grad != "" || $search_course != "") {
+                                if($search_key != "" && $search_y_grad != "" && $search_course != "") {
 
-                                $query = "SELECT CONCAT(`firstname`, ' ' , `mi` , ' ' , `lastname`) as name, `lastname`, `firstname`, `mi`, `year_graduated`, `program_graduated` FROM `alumni_tbl` WHERE (lastname = '$search_key' OR firstname = '$search_key' OR mi = '$search_key' OR CONCAT(`firstname`, ' ' , `mi` , ' ' , `lastname`) = '$search_key') OR year_graduated = '$search_y_grad' OR program_graduated = '$search_course'";
+                                $query = "SELECT CONCAT(`firstname`, ' ' , `mi` , ' ' , `lastname`) as name, `lastname`, `firstname`, `mi`, `year_graduated`, `program_graduated` FROM `alumni_tbl` WHERE (lastname = '$search_key' OR firstname = '$search_key' OR mi = '$search_key' OR CONCAT(`firstname`, ' ' , `mi` , ' ' , `lastname`) = '$search_key') AND year_graduated = '$search_y_grad' AND program_graduated = '$search_course'";
                                 
                             $data = mysqli_query($con, $query) or die('error');
                             if(mysqli_num_rows($data) > 0) {
@@ -173,21 +173,101 @@ include "conn.php"
                                 </tr>
                             <?php 
                                 }
-                            } else {
-                            ?>      
-                                <tr>
-                                    <td colspan="4">No record to show...</td>
-                                </tr>
-                            <?php
                             }
+                        } else if($search_key != "" && $search_y_grad != ""){
+                            $query = "SELECT CONCAT(`firstname`, ' ' , `mi` , ' ' , `lastname`) as name, `lastname`, `firstname`, `mi` ,  `year_graduated`, `program_graduated` FROM `alumni_tbl` WHERE (lastname = '$search_key' OR firstname = '$search_key' OR mi = '$search_key' OR CONCAT(`firstname`, ' ' , `mi` , ' ' , `lastname`) = '$search_key') AND year_graduated LIKE '$search_y_grad'";
+
+                            $data = mysqli_query($con, $query) or die('error');
+                                    if(mysqli_num_rows($data) > 0) {
+                                        while($row = mysqli_fetch_assoc($data)) {
+                                        ?>
+                                        <tr>
+                                            <td><?php echo $row['name']; ?></td>
+                                            <td><?php echo $row['year_graduated']; ?></td>
+                                            <td><?php echo $row['program_graduated']; ?></td>
+                                        </tr>
+                                        <?php 
+                                    }
+                                }
                             
+                        } else if($search_y_grad != "" && $search_course != "") {
+                            $query = "SELECT CONCAT(`firstname`, ' ' , `mi` , ' ' , `lastname`) as name, `lastname`, `firstname`, `mi` ,  `year_graduated`, `program_graduated` FROM `alumni_tbl` WHERE year_graduated LIKE '$search_y_grad' AND program_graduated LIKE '$search_course'";
+
+                            $data = mysqli_query($con, $query) or die('error');
+                                    if(mysqli_num_rows($data) > 0) {
+                                        while($row = mysqli_fetch_assoc($data)) {
+                                        ?>
+                                        <tr>
+                                            <td><?php echo $row['name']; ?></td>
+                                            <td><?php echo $row['year_graduated']; ?></td>
+                                            <td><?php echo $row['program_graduated']; ?></td>
+                                        </tr>
+                                        <?php 
+                                    }
+                                }
+                        } else if ($search_key != "" && $search_course != ""){
+                            $query = "SELECT CONCAT(`firstname`, ' ' , `mi` , ' ' , `lastname`) as name, `lastname`, `firstname`, `mi` ,  `year_graduated`, `program_graduated` FROM `alumni_tbl` WHERE (lastname = '$search_key' OR firstname = '$search_key' OR mi = '$search_key' OR CONCAT(`firstname`, ' ' , `mi` , ' ' , `lastname`) = '$search_key') AND program_graduated LIKE '$search_course'";
+                                    $data = mysqli_query($con, $query) or die('error');
+                                        if(mysqli_num_rows($data) > 0) {
+                                            while($row = mysqli_fetch_assoc($data)) {
+                                            ?>
+                                            <tr>
+                                                <td><?php echo $row['name']; ?></td>
+                                                <td><?php echo $row['year_graduated']; ?></td>
+                                                <td><?php echo $row['program_graduated']; ?></td>
+                                            </tr>
+                                            <?php 
+                                        }
+                                    }
+                        } else if ($search_key != "") {
+                            $query = "SELECT CONCAT(`firstname`, ' ' , `mi` , ' ' , `lastname`) as name, `lastname`, `firstname`, `mi` ,  `year_graduated`, `program_graduated` FROM `alumni_tbl` WHERE (lastname = '$search_key' OR firstname = '$search_key' OR mi = '$search_key' OR CONCAT(`firstname`, ' ' , `mi` , ' ' , `lastname`) = '$search_key')";
+
+                                    $data = mysqli_query($con, $query) or die('error');
+                                    if(mysqli_num_rows($data) > 0) {
+                                        while($row = mysqli_fetch_assoc($data)) {
+                                        ?>
+                                        <tr>
+                                            <td><?php echo $row['name']; ?></td>
+                                            <td><?php echo $row['year_graduated']; ?></td>
+                                            <td><?php echo $row['program_graduated']; ?></td>
+                                        </tr>
+                                        <?php 
+                                    }
+                                }
+                        } else if ($search_y_grad != ""){
+                            $query = "SELECT CONCAT(`firstname`, ' ' , `mi` , ' ' , `lastname`) as name, `lastname`, `firstname`, `mi` , `year_graduated`, `program_graduated` FROM `alumni_tbl` WHERE year_graduated LIKE '$search_y_grad'";
+
+                            $data = mysqli_query($con, $query) or die('error');
+                                    if(mysqli_num_rows($data) > 0) {
+                                        while($row = mysqli_fetch_assoc($data)) {
+                                        ?>
+                                        <tr>
+                                            <td><?php echo $row['name']; ?></td>
+                                            <td><?php echo $row['year_graduated']; ?></td>
+                                            <td><?php echo $row['program_graduated']; ?></td>
+                                        </tr>
+                                        <?php 
+                                    }
+                                }
+                        } else if ($search_course != ""){
+                            $query = "SELECT CONCAT(`firstname`, ' ' , `mi` , ' ' , `lastname`) as name, `lastname`, `firstname`, `mi` ,  `year_graduated`, `program_graduated` FROM `alumni_tbl` WHERE program_graduated LIKE '$search_course'";
+                            $data = mysqli_query($con, $query) or die('error');
+                                if(mysqli_num_rows($data) > 0) {
+                                    while($row = mysqli_fetch_assoc($data)) {
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $row['name']; ?></td>
+                                        <td><?php echo $row['year_graduated']; ?></td>
+                                        <td><?php echo $row['program_graduated']; ?></td>
+                                    </tr>
+                                    <?php 
+                                }
+                            }
+
                         }
                     }
+                    
                             ?>
-                            
-
-
-                             
                         </tbody>
                     </table>
                 </div>
