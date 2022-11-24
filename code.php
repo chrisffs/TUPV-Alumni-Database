@@ -9,7 +9,8 @@ if(isset($_POST['submit']))
     $lname = mysqli_real_escape_string($con, $_POST['lname']);
     $mi = mysqli_real_escape_string($con, $_POST['MI']);
     $bdate = mysqli_real_escape_string($con, $_POST['birthdate']);
-    $cv = $_POST['cv'];
+    $cv = mysqli_real_escape_string($con, $_POST['cv']);
+    $sex = mysqli_real_escape_string($con, $_POST['sex']);
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $pnum = mysqli_real_escape_string($con, $_POST['pnumber']);
     $add = mysqli_real_escape_string($con, $_POST['add']);
@@ -21,7 +22,7 @@ if(isset($_POST['submit']))
     
 
 
-    $query = "INSERT INTO alumni_tbl (tupv_id,lastname,firstname,mi,birthdate,civil_status,address,pnumber,email,year_graduated,program_graduated,current_profession,company_name) VALUES ('$tupv_id','$lname','$fname','$mi','$bdate','$cv','$add','$pnum','$email','$ygrad','$pgrad','$cprof','$cname')";
+    $query = "INSERT INTO alumni_tbl (tupv_id,lastname,firstname,mi,birthdate,civil_status,sex,address,pnumber,email_address,year_graduated,program_graduated,current_profession,company_name) VALUES ('$tupv_id','$lname','$fname','$mi','$bdate','$cv','$sex','$add','$pnum','$email','$ygrad','$pgrad','$cprof','$cname')";
 
     $query_run = mysqli_query($con, $query);
     if($query_run) { 
@@ -38,3 +39,4 @@ if(isset($_POST['submit']))
 
 }
 ?>
+

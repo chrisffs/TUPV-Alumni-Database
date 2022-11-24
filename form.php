@@ -63,39 +63,50 @@ session_start();
                         <input class="form-control" id="MI" name="MI" type="text" aria-label="default input example">
                     </div>
                 </div>
-                
-                <div class="form-group bdate mb-0 me-1">
-                <label for="date" class="label fw-qs">Birthdate</label>
-                    <div class="">
-                        <div class="input-group date" id="datepicker">
-                            <input type="text" class="form-control" name="birthdate">
-                            <span class="input-group-append">
-                                <span class="input-group-text bg-white" style="cursor: pointer;">
-                                    <i class="fa-solid fa-calendar"></i>
+                <div class="status">
+                    <div class="form-group bdate mb-0 me-1">
+                        <label for="date" class="label fw-qs">Birthdate</label>
+                        <div class="">
+                            <div class="input-group date" id="datepicker">
+                                <input type="text" class="form-control" name="birthdate">
+                                <span class="input-group-append">
+                                    <span class="input-group-text bg-white" style="cursor: pointer;">
+                                        <i class="fa-solid fa-calendar"></i>
+                                    </span>
                                 </span>
-                            </span>
+                            </div>
                         </div>
                     </div>
+                    <div class="cv me-1">
+                        <label class="label fw-qs" for="cv">Civil Status</label>
+                        <select class="form-select" aria-label="Default select example" id="cv" name="cv">
+                            <option selected hidden disabled>Select Civil Status</option>
+                            <option value="Single">Single</option>
+                            <option value="Married">Married</option>
+                            <option value="Widowed">Widow/er</option>
+                            <option value="Widowed">Seperated</option>
+                        </select>
+                    </div>
+                    <div class="sex">
+                        <label class="label fw-qs" for="sex">Sex</label>
+                        <select class="form-select" aria-label="Default select example" id="sex" name="sex">
+                            <option selected hidden disabled>Select Sex</option>
+                            <option value="Male">Male</option>
+                            <option value="Married">Female</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="cv">
-                    <label class="label fw-qs" for="cv">Civil Status</label>
-                    <select class="form-select" aria-label="Default select example" id="cv" name="cv">
-                        <option selected hidden disabled>Select Civil Status</option>
-                        <option value="Single">Single</option>
-                        <option value="Married">Married</option>
-                        <option value="Widowed">Widowed</option>
-                    </select>
-                </div>
+                
                 <div class="email mt-2">
                     <label class="label fw-qs" for="email" class="form-label">Email Address</label>
                     <input type="email" class="form-control" id="email" name="email" required>
                 </div>
                 <div class="pnumber mt-2">
-                    <label class="label fw-qs" for="phone-number">Phone Number</label>
+                    <label class="label fw-qs" for="phone-number">Contact Number</label>
                     <input class="form-control" id="phone-number" name="pnumber" type="tel" aria-label="default input example" required>
                 </div>
                 <div class="address mt-2">
-                    <label class="label fw-qs" for="address">Address</label>
+                    <label class="label fw-qs" for="address">Permanent Address</label>
                     <input class="form-control" id="address" name="add" type="tel" aria-label="default input example" placeholder=>
                 </div>
                 <div class="form-group y-grad mb-0 me-1">
@@ -131,7 +142,7 @@ session_start();
                     </select>
                 </div>
                 <div class="c-prof me-1"> 
-                    <label class="label fw-qs" for="c-prof">Current Profession</label>
+                    <label class="label fw-qs" for="c-prof">Job Description</label>
                     <input class="form-control" id="c-prof" name="c-prof" type="text" aria-label="default input example">
                 </div>
                 <div class="c-name">

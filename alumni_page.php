@@ -76,12 +76,12 @@ include "conn.php"
                 <div>
                     <form class="d-flex flex-md-row flex-column justify-content-center" action="alumni_page.php" method="post">
                         <div class="mx-2">
-                            <input class="form-control fw-pp rounded-4 border-0" type="text" placeholder="Name..." aria-label="default input example" id="filter-input">
+                            <input class="form-control fw-pp rounded-4 border-0" type="text" placeholder="Name..." aria-label="default input example" name="search-name" id="filter-input">
                         </div>
                         <div class="mx-2">
                             <div class="form-group">
                                 <div class="input-group date" id="yearpicker">
-                                    <input type="text" class="form-control border-0" name="year-graduated" placeholder="Select Year Graduated" id="filter-input" style="border-radius:1rem 0 0 1rem ;">
+                                    <input type="text" class="form-control border-0" name="search-y-grad" placeholder="Select Year Graduated" id="filter-input" style="border-radius:1rem 0 0 1rem ;">
                                     <span class="input-group-append ">
                                         <span class="input-group-text border-0" style="cursor: pointer; border-radius: 0 1rem 1rem 0;" id="filter-input">
                                                 <i class="fa-solid fa-calendar"></i>
@@ -92,7 +92,7 @@ include "conn.php"
                         </div>
 
                         <div class="mx-2">
-                            <select class="form-select fw-pp rounded-4 border-0" aria-label="Default select example" id="filter-input">
+                            <select class="form-select fw-pp rounded-4 border-0" aria-label="Default select example" id="filter-input" name="search-course">
                                 <option selected disabled hidden>Select Course Graduated</option>
                                 <option value="BS in Electronics Engineering">BS in Electronics Engineering</option>
                                 <option value="BS in Mechanical Engineering">BS in Mechanical Engineering</option>
@@ -124,7 +124,6 @@ include "conn.php"
                     <table class="table table-borderless table-hover mt-5 alumni-table">
                         <thead>
                             <tr>
-                                <th scope="col">TUPV-ID</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Year-Graduated</th>
                                 <th scope="col">Course</th>
@@ -132,29 +131,40 @@ include "conn.php"
                         </thead>
                         <tbody>
                         <?php 
-                            $sql = "SELECT `tupv_id`, CONCAT(`firstname`, ' ' , `mi` , ' ' , `lastname`) as name, `year_graduated`, `program_graduated` FROM `alumni_tbl`;";
-                            $result = $con->query($sql);
+                            // $sql = "SELECT CONCAT(`firstname`, ' ' , `mi` , ' ' , `lastname`) as name, `year_graduated`, `program_graduated` FROM `alumni_tbl`;";
+                            // $result = $con->query($sql);
+                        if (isset($_POST['submit'])) {
+                            $course_in = $_POST['search-course']; 
+                            $name_in = $_POST['search-name'];  
+                            $y_grad_in = $_POST['search-y-grad']; 
+                            
 
-                            if ($result->num_rows > 0) {
-                                while ($row = $result->fetch_array()) {
-                                ?>
-                                <tr>
-                                    <td><?php echo $row['tupv_id']; ?></td>
-                                    <td><?php echo $row['name']; ?></td>
-                                    <td><?php echo $row['year_graduated']; ?></td>
-                                    <td><?php echo $row['program_graduated']; ?></td>
-                                </tr>
-                        <?php 
+                            if ($name_in != "" || $y_grad_in != "" || $course_in != "" ) {
+                                
+                                $query = "SELECT CONCAT(`firstname`, ' ' , `mi` , ' ' , `lastname`) as name, `year_graduated`, `program_graduated` FROM `alumni_tbl` WHERE
+                                firstname = '$name_in' && mi = '$name_in' && lastname = '$name_in' OR year_graduated = '$y_grad_in' OR program_graduated = '$course_in'";
+
+                                $data = mysqli_query($con, $query) or die('error');
+
+                                if(mysqli_num_rows($data) > 0) {
+                                    while($row = mysqli_fetch_assoc($data)) {
+                                        // $search_name = $row['name']
+                                        // $search_y_grad = $row['year_graduated']
+                                        // $search_course = $row['program_graduated']
+                                        ?>
+
+                                        <td><?php echo $row['name']; ?></td>
+                                        <td><?php echo $row['year_graduated']; ?></td>
+                                        <td><?php echo $row['program_graduated']; ?></td>
+
+                                        <?php
+                                    }    
                                 }
-                            } else {
-                        ?>      
-                                <tr>
-                                    <td colspan="4">No record to show...</td>
-                                </tr>
-                        <?php
                             }
-                            $con->close();
-                        ?>
+                        }
+                             
+
+                            ?>
                             
                         
                                      

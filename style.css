@@ -74,7 +74,7 @@ label {
     grid-template-areas:
     "f0 f0"
     "l1 l1"
-    "f2 r2"
+    "f2 f2"
     "f3 f3"
     "l4 l4"
     "f5 f5"
@@ -91,12 +91,17 @@ label {
     display: grid;
     grid-template-columns: 1fr 1fr .25fr;
 }
-.bdate {
+.status {
+    grid-area: f2;
+    display: grid;
+    grid-template-columns: 1fr 1.25fr .75fr;
+}
+/* .bdate {
     grid-area: f2;
 }
 .cv {
     grid-area: r2;
-}
+} */
 .email {
     grid-area: f3;
 }
@@ -367,3 +372,22 @@ form div {
 }
 
 
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_array()) {
+    ?>
+    <tr>
+        <td><?php echo $row['name']; ?></td>
+        <td><?php echo $row['year_graduated']; ?></td>
+        <td><?php echo $row['program_graduated']; ?></td>
+    </tr>
+<?php 
+    }
+} else {
+?>      
+    <tr>
+        <td colspan="4">No record to show...</td>
+    </tr>
+<?php
+}
+$con->close();
+?>
