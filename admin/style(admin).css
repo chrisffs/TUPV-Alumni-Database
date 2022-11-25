@@ -5,7 +5,42 @@
     font-family: 'Poppins', sans-serif;
 }
 
-
+.bg-tup {
+    background-color: #C3203B;
+}
+.bg-light-cs {
+    background-color: #FAECEC;
+}
+.box-shadow1 {
+    box-shadow: 4px 4px 16px 4px rgba(0, 0, 0, 0.25);
+}
+.br10 {
+    border-radius: 10px;
+}
+.m-tbl-th {
+    font-size: 12px;
+}
+.action-td {
+    min-width: 7.3rem;
+}
+.action-td .row .col a i {
+    font-size: 1.5rem;
+    color: #C3203B;
+    transition: 0.2s;
+}
+.action-td .row .col a i:hover {
+    font-size: 1.8rem;
+}
+.table td,.table th {
+    /* padding: 0 !important; */
+    vertical-align: middle !important;
+}
+.low-col {
+    min-width: 8rem;
+}
+.sup-col {
+    min-width: 21rem;
+}
 .wrapper {
     display: flex;
     width: 100%;
@@ -13,7 +48,7 @@
 }
 
 #sidebar.active {
-    margin-left: -250px;
+    margin-left: -287px;
 }
 
 a[data-toggle="collapse"] {
@@ -43,30 +78,30 @@ p {
     color: #999;
 }
 
-a, a:hover, a:focus {
-    color: inherit;
+a:hover, a:focus {
+    color: #000000;
     text-decoration: none;
     transition: all 0.3s;
 }
 
 #sidebar {
     /* don't forget to add all the previously mentioned styles here too */
-    min-width: 250px;
-    max-width: 250px;
+    min-width: 287px;
+    max-width: 287px;
     min-height: 100vh;
-    background: #7386D5;
+    background: #C3203B;
     color: #fff;
     transition: all 0.3s;
 }
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #6d7fcc;
+    background: #C3203B;
 }
 
 #sidebar ul.components {
     padding: 20px 0;
-    border-bottom: 1px solid #47748b;
+    /* border-bottom: 1px solid #47748b; */
 }
 
 #sidebar ul p {
@@ -79,19 +114,26 @@ a, a:hover, a:focus {
     font-size: 1.1em;
     display: block;
 }
-#sidebar ul li a:hover {
+/* #sidebar ul li a:hover {
     color: #7386D5;
     background: #fff;
-}
+} */
 
-#sidebar ul li.active > a, a[aria-expanded="true"] {
+/* #sidebar ul li.active > a, a[aria-expanded="true"] {
     color: #fff;
-    background: #6d7fcc;
-}
+    background: #C3203B;
+} */
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #6d7fcc;
+    background: #C3203B;
+}
+.active {
+    background-color: #FAEBEB;
+    border-radius: 10px;
+}
+.active a, .active i {
+    color: #C3203B;
 }
 
 @media (max-width: 768px) {

@@ -9,6 +9,7 @@
     <title>Document</title>
     <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script> -->
     <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../css/all.min.css">
     <link rel="stylesheet" href="style(admin).css" type="text/css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
@@ -16,66 +17,62 @@
     <link rel="stylesheet" href="../css/bootstrap4.5.3.min.css">
 </head>
 <body>
+<section> 
+    <div class="navbar bg-light">
+        <a href="#home" class="navbar-brand d-flex align-items-center " id="logo">
+            <img src="../img/Group 1.png" alt="" style="max-width: 24px;"> 
+            <p class="text-dark fs-6 fw-regular mb-0 ms-2">
+            Alumni Management System
+            </p>
+        </a>
+    </div>
+</section>
 <div class="wrapper">
     <!-- Sidebar -->
     <nav id="sidebar">
-        <div class="sidebar-header">
-            <h3>Hello Po</h3>
+        <div class="sidebar-header pt-5 pb-2">
+            <h3 class="fw-bold text-center">Dashboard</h3>
         </div>
-        <ul class="list-unstyled components">
-            <p>Dummy Heading</p>
-            <li class="active">
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">Home</a>
-                <ul class="collapse list-unstyled" id="homeSubmenu">
-                    <li>
-                        <a class="nav-link" href="#">Home 1</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="#">Home 2</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="#">Home 3</a>
-                    </li>
-                </ul>
+        <ul class="list-unstyled components text-start">
+            <li class="my-5 mx-3 py-1 active">
+                <div class="ps-5">
+                    <a class="nav-link fs-6" href="index.php"><i class="fa-solid fa-table-columns pe-4"></i>Dashboard</a>
+                </div>
             </li>
-            <li>
-                <a class="nav-link" href="#">About</a>
+            <li class="my-5 mx-3 py-1">
+                <div class="ps-5">
+                    <a class="nav-link fs-6" href="alumni-list.php"><i class="fa-solid fa-list-ul pe-4"></i>Alumni List</a>
+                </div>
             </li>
-            <li>
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">Pages</a>
-                <ul class="collapse list-unstyled" id="pageSubmenu">
-                    <li>
-                        <a class="nav-link" href="#">Page 1</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="#">Page 2</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="#">Page 3</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a class="nav-link" href="#">PortFolio</a>
-            </li>
-            <li>
-                <a class="nav-link" href="#">Contact</a>
+            <li class="my-5 mx-3 py-1">
+                <div class="ps-5">
+                    <a class="nav-link fs-6" href="events.php"><i class="fa-solid fa-calendar-day pe-4"></i>Events</a>
+                </div>
             </li>
         </ul>
     </nav>
     <!-- Page Content -->
-    <div id="content">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <button type="button" id="sidebarCollapse" class="btn btn-info">
+    <div class="flex-fill" id="content">
+        <nav class="px-1 navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid px-1">
+                <button type="button" id="sidebarCollapse" class="btn btn-danger">
                     <i class="fas fa-align-left"></i>
-                    <span>Toggle Sidebar</span>
                 </button>
             </div> 
         </nav>
-        <div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam sapiente fugiat temporibus excepturi officiis aut, totam voluptates quae porro ad architecto, a doloribus dolorum adipisci et perferendis unde neque beatae. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur recusandae nihil quae ipsa aliquid animi fugit nobis odio reiciendis ducimus harum distinctio, adipisci quibusdam, quod, quo eum repudiandae laboriosam quia.
+        <div class="mx-4">
+            <div class="bg-tup text-light my-3 w-100 br10 box-shadow1">
+                <div class="alum-count p-4">
+                    <p class="fs-1 fw-bold text-center mb-0 text-light">
+                    203
+                    </p>
+                    <p class="text-light text-center fs-6">
+                    Number of Alumni registration
+                    </p>
+                </div>
+            </div>
         </div>
+        
     </div>
 </div>
 
