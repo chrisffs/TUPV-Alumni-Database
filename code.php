@@ -18,11 +18,12 @@ if(isset($_POST['submit']))
     $pgrad = mysqli_real_escape_string($con, $_POST['program-graduated']);
     $cprof = mysqli_real_escape_string($con, $_POST['c-prof']);
     $cname = mysqli_real_escape_string($con, $_POST['c-name']);
+    $p_emp_status = mysqli_real_escape_string($con, $_POST['p-emp-status']);
     
     
 
 
-    $query = "INSERT INTO alumni_tbl (tupv_id,lastname,firstname,mi,birthdate,civil_status,sex,address,pnumber,email_address,year_graduated,program_graduated,current_profession,company_name) VALUES ('$tupv_id','$lname','$fname','$mi','$bdate','$cv','$sex','$add','$pnum','$email','$ygrad','$pgrad','$cprof','$cname')";
+    $query = "INSERT INTO alumni_tbl (tupv_id,lastname,firstname,mi,birthdate,civil_status,sex,address,pnumber,email_address,year_graduated,program_graduated,current_profession,company_name,present_employment_status) VALUES ('$tupv_id','$lname','$fname','$mi','$bdate','$cv','$sex','$add','$pnum','$email','$ygrad','$pgrad','$cprof','$cname','$p_emp_status')";
 
     $query_run = mysqli_query($con, $query);
     if($query_run) { 

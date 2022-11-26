@@ -81,6 +81,7 @@ label {
     "l6 r6"
     "l7 r7"
     "l8 l8"
+    "l9 l9"
 }
 
 .tupv {
@@ -118,13 +119,16 @@ label {
     grid-area: r6;
 }
 .c-prof {
-    grid-area: l7;
+    grid-area: l8;
 }
 .c-name {
     grid-area: r7;
 }
+.p-em {
+    grid-area: l7;
+}
 .button-div {
-    grid-area: l8;
+    grid-area: l9;
 }
 form div {
     margin-bottom: 0.5rem;

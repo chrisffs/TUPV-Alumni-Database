@@ -39,7 +39,7 @@ session_start();
         <div class="header text-center">
             <p class="h-txt fw-pp">Alumni Registration Form</p>
             <div class="m-txt-container">
-                <p class="m-txt m-0 fw-pp">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                <p class="m-txt m-0 fw-pp">Registration is open to individuals who graduated in TUP Visayas with a degree or a certification program and/or former students who have completed more than 30 or more credit hours.</p>
             </div>
         </div>
         <div class="form mt-3">
@@ -141,13 +141,24 @@ session_start();
                         <option value="BET Major in Electronics Engineering Technology">BET Major in Electronics Engineering Technology</option>
                     </select>
                 </div>
-                <div class="c-prof me-1"> 
-                    <label class="label fw-qs" for="c-prof">Job Description</label>
-                    <input class="form-control" id="c-prof" name="c-prof" type="text" aria-label="default input example">
+                <div class="p-em me-1">
+                <label for="p-emp-status" class="label fw-qs">Present Employment Status</label>
+                    <select class="form-select" aria-label="Default select example" name="p-emp-status">
+                    <option selected hidden disabled>Select Employment Status</option>
+                    <option value="Permanent">Permanent</option>
+                    <option value="Temporary">Temporary</option>
+                    <option value="Contractual">Contractual</option>
+                    <option value="Casual">Casual</option>
+                    <option value="Self-Employed">Self-Employed</option>
+                    </select>
                 </div>
                 <div class="c-name">
                     <label class="label fw-qs" for="c-name">Company Name</label>
                     <input class="form-control" id="c-name" name="c-name" type="text" aria-label="default input example">
+                </div>
+                <div class="c-prof"> 
+                    <label class="label fw-qs" for="c-prof">Job Description</label>
+                    <input class="form-control" id="c-prof" name="c-prof" type="text" aria-label="default input example">
                 </div>
                 <div class="button-div ">
                     <button type="submit" class="btn btn-success mt-3 w-100 rounded-3" name="submit" >Submit Form</button>
