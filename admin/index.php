@@ -1,3 +1,8 @@
+<?php 
+session_start(); 
+include "../conn.php"
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="../css/fonts.css">
-    <title>Document</title>
+    <title>Alumni Database Management</title>
     <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script> -->
     <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script> -->
     <link rel="stylesheet" href="../css/font-awesome.min.css">
@@ -16,16 +21,9 @@
     <link rel="stylesheet" href="../css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" href="../css/bootstrap4.5.3.min.css">
 </head>
-<body>
+<body class="bg-light-cs">
 <section> 
-    <div class="navbar bg-light">
-        <a href="#home" class="navbar-brand d-flex align-items-center " id="logo">
-            <img src="../img/Group 1.png" alt="" style="max-width: 24px;"> 
-            <p class="text-dark fs-6 fw-regular mb-0 ms-2">
-            Alumni Management System
-            </p>
-        </a>
-    </div>
+
 </section>
 <div class="wrapper">
     <!-- Sidebar -->
@@ -53,21 +51,39 @@
     </nav>
     <!-- Page Content -->
     <div class="flex-fill" id="content">
-        <nav class="px-1 navbar navbar-expand-lg navbar-light">
-            <div class="container-fluid px-1">
-                <button type="button" id="sidebarCollapse" class="btn btn-danger">
+        <div class="navbar bg-white">
+            <a href="#home" class="navbar-brand d-flex align-items-center " id="logo">
+                <img src="../img/Group 1.png" alt="" style="max-width: 24px;"> 
+                <p class="text-dark fs-6 mb-0 ms-2">
+                Alumni Management System
+                </p>
+            </a>
+        </div>
+        <nav class="px-0 navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid px-0">
+                <button type="button" id="sidebarCollapse" class="btn btn-danger bg-tup border-none" style="border-radius: 0 10px 10px 0;">
                     <i class="fas fa-align-left"></i>
                 </button>
             </div> 
         </nav>
-        <div class="mx-4">
+        <div class="mx-3 pt-2">
             <div class="bg-tup text-light my-3 w-100 br10 box-shadow1">
                 <div class="alum-count p-4">
+                    <?php 
+                    $sql = "SELECT * FROM alumni_tbl";
+ 
+                    $mysqliStatus = $con->query($sql);
+                     
+                    $rows_count_value = mysqli_num_rows($mysqliStatus);
+                    ?>
                     <p class="fs-1 fw-bold text-center mb-0 text-light">
-                    203
+                    <?php echo $rows_count_value?>
                     </p>
+                    <?php 
+                    $con->close();	
+                    ?>
                     <p class="text-light text-center fs-6">
-                    Number of Alumni registration
+                    Number of Alumni registered
                     </p>
                 </div>
             </div>
