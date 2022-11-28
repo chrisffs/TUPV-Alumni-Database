@@ -4,7 +4,36 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+#filter-input {
+    background-color: #E7E2E2;
+    color: #837777;
+    font-weight: 300;
+}
+.m-color {
+    color: #C3203B;
+}
+.event-card {
+    width: 100%;
+    border-radius: 10px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.date {
+    font-size: 32px;
+    font-weight: 300;
+}
+.month,.eventt,.time,.venue {
+    font-size: 12px;
+    
+}
+.eventt {
+    color: #C3203B;
+    font-weight: 700;
+}
 
+#filter-input option {
+    color: #252121;
+    font-weight: 500;
+}
 .bg-tup {
     background-color: #C3203B !important;
 }

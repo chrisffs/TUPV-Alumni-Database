@@ -42,14 +42,19 @@ session_start();
                 <p class="m-txt m-0 fw-pp">Registration is open to individuals who graduated in TUP Visayas with a degree or a certification program and/or former students who have completed more than 30 or more credit hours.</p>
             </div>
         </div>
-        <?php
+        <div class="form mt-3">
+            <?php
             if(isset($_SESSION['tupv_dup'])){
                 $warn = $_SESSION['tupv_dup'];
-                echo "<p> $warn </p>";
+                ?>
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <?= $warn?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <?php
                 unset($_SESSION['tupv_dup']);
             }
-        ?>
-        <div class="form mt-3">
+            ?>
             <?php include('message.php'); ?>
             <form action="code.php" method="POST" class="form-main">
                 <div class="tupv"> 

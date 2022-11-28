@@ -106,7 +106,7 @@
                         <img src="img/15th Hmecoming, March 2019_page-0003.jpg" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="img/15th Hmecoming, March 2019_page-0006.jpg" class="d-block w-100" alt="...">
+                        <img src="img/15th Hmecoming, March 2019_page-0002-final.jpg" class="d-block w-100" alt="...">
                     </div>
                 </div>
             </div>
@@ -198,6 +198,5 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap-datepicker.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
-    
 </body>
 </html>

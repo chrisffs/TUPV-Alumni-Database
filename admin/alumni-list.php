@@ -101,7 +101,7 @@ include "../conn.php"
                         </thead>
                         <tbody class="bg-white">
                             <?php 
-                            $query = "SELECT * FROM alumni_tbl";
+                            $query = "SELECT * FROM alumni_tbl ORDER BY tupv_id DESC";
                             $data = mysqli_query($con, $query) or die('error');
 
                             if(mysqli_num_rows($data) > 0) {
@@ -149,6 +149,7 @@ include "../conn.php"
                         </tbody>
                     </table>
                     <!-- MODALS -->
+                    <?php error_reporting(0) ?>
                     <?php include('add.php')?>
                     <?php include('edit.php')?>
                     <?php include('delete.php')?>
