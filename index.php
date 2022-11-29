@@ -26,22 +26,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script> -->
 </head>
 <body style="background-color: #FAFAFA;">
-<!-- <div class="container">
-
-                    <div class="row height d-flex justify-content-center align-items-center">
-
-                      <div class="col-md-8">
-
-                        <div class="search">
-                          <i class="fa fa-search"></i>
-                          <input type="text" class="form-control" placeholder="Have a question? Ask Now">
-                          <button class="btn btn-primary">Search</button>
-                        </div>
-                        
-                      </div>
-                      
-                    </div>
-                </div> -->
     <section id="home">
         <!-- NAVBAR -->
         <nav class="navbar navbar-expand-md navbar-light pt-md-3 bg-white">
