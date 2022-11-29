@@ -278,6 +278,19 @@ form div {
     color: #252121;
     font-weight: 500;
 }
+.combodate .hour {
+    background-color: #E7E2E2 !important;
+    color: #837777 !important;
+    font-weight: 300 !important;
+}
+
+.filter-input {
+    color: #252121 !important;
+    font-weight: 500 !important;
+}
+select {
+    background-color: red !important;
+}
 #search-button {
     font-family: 'Poppins', sans-serif; 
     font-weight: 300;
