@@ -18,6 +18,15 @@ if(isset($_POST['submit']))
     $cprof = mysqli_real_escape_string($con, $_POST['c-prof']);
     $cname = mysqli_real_escape_string($con, $_POST['c-name']);
     $p_emp_status = mysqli_real_escape_string($con, $_POST['p-emp-status']);
+
+
+    $sql = "SELECT * FROM alumni_tbl WHERE tupv_id = '$tupv_id'";
+    $data = mysqli_query($con, $sql) or die('error');
+
+    if(mysqli_num_rows($data) > 0) {
+        // $_SESSION['tupv_dup'] = "TUPV-ID has already been used!";
+        echo "<script>alert('TUPV-ID has been already been used.')</script>";
+    } else {
     
     
 
@@ -38,6 +47,7 @@ if(isset($_POST['submit']))
     }
 
 }
+}
 ?>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -50,7 +60,14 @@ if(isset($_POST['submit']))
             </div>
             <div class="modal-body">
                 <div class="form mt-3">
-                    <form action="add.php" method="POST" class="form-main">
+                    <form action="alumni-list.php" method="POST" class="form-main">
+                    <?php
+            // if(isset($_SESSION['tupv_dup'])){
+            //     $warn = $_SESSION['tupv_dup'];
+            //     echo "<script>alert($warn)</script>";
+            //     unset($_SESSION['tupv_dup']);
+            // }
+        ?>
                         <div class="tupv"> 
                             <label class="label fw-qs" for="tupv-id">TUPV-ID</label>
                             <input class="form-control" id="tupv-id" name="tupv-id" type="text" aria-label="default input example" required>

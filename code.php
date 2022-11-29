@@ -20,24 +20,27 @@ if(isset($_POST['submit']))
     $cname = mysqli_real_escape_string($con, $_POST['c-name']);
     $p_emp_status = mysqli_real_escape_string($con, $_POST['p-emp-status']);
     
-    
+    $sql = "SELECT * FROM alumni_tbl WHERE tupv_id = '$tupv_id'";
+    $data = mysqli_query($con, $sql) or die('error');
+    // echo $data;
+    if(mysqli_num_rows($data) > 0) {
+        $_SESSION['tupv_dup'] = "TUPV-ID has already been used!";
+        header("Location: form.php");
+    } else {
+        $query = "INSERT INTO alumni_tbl (tupv_id,lastname,firstname,mi,birthdate,civil_status,sex,address,pnumber,email_address,year_graduated,program_graduated,current_profession,company_name,present_employment_status) VALUES ('$tupv_id','$lname','$fname','$mi','$bdate','$cv','$sex','$add','$pnum','$email','$ygrad','$pgrad','$cprof','$cname','$p_emp_status')";
 
-
-    $query = "INSERT INTO alumni_tbl (tupv_id,lastname,firstname,mi,birthdate,civil_status,sex,address,pnumber,email_address,year_graduated,program_graduated,current_profession,company_name,present_employment_status) VALUES ('$tupv_id','$lname','$fname','$mi','$bdate','$cv','$sex','$add','$pnum','$email','$ygrad','$pgrad','$cprof','$cname','$p_emp_status')";
-
-    $query_run = mysqli_query($con, $query);
-    if($query_run) { 
-        $_SESSION['message'] = "Record Created Successfully";
-        header("Location: success.php"); 
-        exit(0);
+        $query_run = mysqli_query($con, $query);
+        if($query_run) { 
+            $_SESSION['message'] = "Record Created Successfully";
+            header("Location: form.php"); 
+            exit(0);
+        }       
+        else {
+            $_SESSION['message'] = "Record Not Created";
+            header("Location: form.php"); 
+            exit(0); 
+        }
     }
-    else {
-        $_SESSION['message'] = "Record Not Created";
-        header("Location: form.php"); 
-        exit(0); 
-    }
-} else {
-
-}
+} 
 ?>
 

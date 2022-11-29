@@ -23,6 +23,7 @@ if (isset($_POST['update'])) {
     $cname = mysqli_real_escape_string($con, $_POST['c-name']);
     $p_emp_status = mysqli_real_escape_string($con, $_POST['p-emp-status']);
 
+
     $sql = "UPDATE alumni_tbl SET lastname = '$lname', firstname = '$fname', mi = '$mi', birthdate = '$bdate', civil_status = '$cv', sex = '$sex', address = '$add', pnumber = '$pnum', email_address = '$email', year_graduated = '$ygrad', program_graduated = '$pgrad', current_profession = '$cprof', company_name = '$cname', present_employment_status = '$p_emp_status' WHERE tupv_id = '$tupv_id'";
 
     $query_run = mysqli_query($con, $sql);
@@ -30,7 +31,7 @@ if (isset($_POST['update'])) {
         echo '<script> alert("Data Updated")</script>';
         // $_SESSION['message'] = "Record Created Successfully";
         header("Location: alumni-list.php"); 
-        exit(0);
+        // exit(0);
     } else {
         echo '<script> alert("Data Not Updated")</script>';
         // $_SESSION['message'] = "Record Not Created";
@@ -38,6 +39,7 @@ if (isset($_POST['update'])) {
         // exit(0); 
     }
 }
+
 ?>
 
 
