@@ -18,7 +18,7 @@ include "conn.php";
         if(mysqli_num_rows($data)>0) {
             while($row = mysqli_fetch_assoc($data)) {
                 ?>
-                <img src="admin/uploads/<?php echo $row['image_name'];?>" width="100">
+                <img src="admin/uploads/<?php echo $row['image_name'];?>">
                 <?php
             }//while
            

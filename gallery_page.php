@@ -1,3 +1,8 @@
+<?php 
+session_start(); 
+include "conn.php"
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,43 +68,35 @@
             Gallery
         </p>
         <div class="row">
-            <div class="col-7">
+            <div class="col-lg-7 col-md-10 col-12">
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque atque vel enim officia maiores repellendus blanditiis libero magnam error voluptatem ipsum voluptatibus harum, quasi explicabo a velit amet. Sint, consequuntur?</p>
             </div>
         </div>
 
         <section class="d-lg-flex justify-content-between ">
-            <div class="mx-1 mb-3">
-                <div>
-                    <img class="w-100" src="img/image.png" alt="" srcset="">
-                </div>
-                <div class="py-2">
-                    <p class="pic-desc mb-1">
-                        13th Homecoming, March 2017 - program
-                    </p>
-                    <button type="button" class="btn btn-danger rounded-0 px-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        View More <i class="fa-solid fa-plus"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="mx-1 mb-3">
-                <div>
-                    <img class="w-100" src="img/image.png" alt="" srcset="">
-                </div>
-                <div class="py-2">
-                    <p class="pic-desc mb-1">
-                        13th Homecoming, March 2017 - program
-                    </p>
-                    <button type="button" class="btn btn-danger rounded-0 px-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        View More <i class="fa-solid fa-plus"></i>
-                    </button>
-                </div>
+            <div class="row">
+                <?php 
+                    $sql = "SELECT * FROM gallery_uploads";
+                    $data = mysqli_query($con, $sql) or die('error');
+                    if(mysqli_num_rows($data)>0) {
+                        while($row = mysqli_fetch_assoc($data)) {
+                            ?>
+                            <div class="col-lg-3 col-md-4 col-6 pb-1">
+                                <img class="img-fluid"src="admin/uploads/<?php echo $row['image_name'];?>">
+                            </div>
+                            <?php 
+                        }//while
+                    
+                    }//if
+                ?>
+                
+            
             </div>
         </section>
 
     </div>
 </section>
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content bg-light" style="max-width: 569px;">
             <div class="modal-header bg-tup align-items-center">
@@ -122,7 +119,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <script src="js/bootstrap.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
 </body>

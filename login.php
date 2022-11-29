@@ -43,21 +43,46 @@ if(isset($_POST['login'])) {
     <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" href="css/bootstrap4.5.3.min.css">
     <style>
-        .form-account {
-            width: fit-content;
+        body{
+        
+        }
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 19rem;
+        }
+
+        input {
+            outline: 0 !important;
+            border-width: 0 0 1px;
+            border-color: #837777;
+            display: block;
+            width: 100%;
+        }
+        input:focus {
+            border-color: #C3203B;
         }
     </style>
 </head>
-<body style="position: relative;">
-<div class="container form-account">
-    <form class="" action="login.php" method="post">
-        <input class="form-control my-3" type="text" placeholder="username" aria-label="default input example" name="unique_id">
-        <input type="password" class="form-control my-3" id="inputPassword" name="pass">
-        <button type="submit" class="btn btn-danger" value="Login" name="login">Log in</button>
-    </form>
-</div>
+<body class="bg-light">
+    <div class="center">
+        <div class=" d-flex flex-column align-items-center">
+            <img class="w-50"src="img/Group 1.png" alt="" srcset="">
+            <p class="fw-semibold">TUPV Alumni Management System</p>
+        </div>
+        <p class="fs-3 fw-semibold c-tupv">
+            Log in
+        </p>
         
-
+        <form class="form" action="login.php" method="post">
+            <input class="my-3 bg-light py-2 px-1" type="text" placeholder="username" aria-label="default input example" name="unique_id">
+            <input type="password" class="my-3 bg-light py-2 px-1" placeholder="password" id="inputPassword" name="pass">
+            <button type="submit" class="btn btn-danger w-100 rounded-5 mt-4" value="Login" name="login">Log in</button>
+        </form>
+    </div>
+        
 <script src="js/jquery.min.js"></script>
 <!-- <script src="js/jquery-3.6.1.js"></script> -->
 <script src="js/bootstrap.min.js"></script>

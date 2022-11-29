@@ -79,7 +79,9 @@ label {
     "l8 l8"
     "l9 l9"
 }
-
+.c-tupv {
+    color: #C3203B;
+}
 .tupv {
     grid-area: f0;
 }
