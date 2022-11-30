@@ -48,6 +48,9 @@ include "../conn.php"
                 </div>
             </li>
         </ul>
+        <div class="logout-div">
+            <a type="button" href="logout.php" class="btn btn-outline-light">Log Out</a>  
+        </div>
     </nav>
     <!-- Page Content -->
     <div class="flex-fill" id="content">

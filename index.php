@@ -44,7 +44,7 @@
                 </div> -->
     <section id="home">
         <!-- NAVBAR -->
-        <nav class="navbar navbar-expand-md navbar-light pt-md-3">
+        <nav class="navbar navbar-expand-md navbar-light pt-md-3 bg-white">
             <div class="container">
                 <a href="#home" class="navbar-brand d-flex align-items-center " id="logo">
                         <img src="img/tup-logo.png" alt="TUPV Logo" id="logo">
@@ -72,7 +72,7 @@
                             <a href="alumni_page.php" class="nav-link fw-pp">Alumni</a>
                         </li>
                         <li class="nav-item mx-1">
-                            <a href="" class="nav-link fw-pp">Gallery</a>
+                            <a href="gallery_page.php" class="nav-link fw-pp">Gallery</a>
                         </li>
                         <li class="nav-item mx-1">
                             <a href="" class="nav-link fw-pp">About</a>
@@ -170,7 +170,7 @@
                         <p class="pe-lg-4 fw-pp">Can you spare your time to Click the register button and fill out the form. Be one of us!</p>
                     </div>
                     <div class="flex-fill">
-                        <button class="btn btn-danger px-5 w-100 rounded-3" onclick="location.href='form.php'" id="btn-register">
+                        <button type="button" class="btn btn-danger px-5 w-100 rounded-3" onclick="location.href='form.php'" id="btn-register">
                             Register
                         </button>
                     </div>

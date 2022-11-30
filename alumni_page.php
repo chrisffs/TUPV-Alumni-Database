@@ -46,10 +46,10 @@ include "conn.php"
                             <a href="index.php" class="nav-link fw-pp">Home</a>
                         </li>
                         <li class="nav-item mx-1">
-                            <a href="alumni-page.php" class="nav-link fw-pp active-link">Alumni</a>
+                            <a href="alumni_page.php" class="nav-link fw-pp active-link">Alumni</a>
                         </li>
                         <li class="nav-item mx-1">
-                            <a href="" class="nav-link fw-pp">Gallery</a>
+                            <a href="gallery_page.php" class="nav-link fw-pp">Gallery</a>
                         </li>
                         <li class="nav-item mx-1">
                             <a href="" class="nav-link fw-pp">About</a>

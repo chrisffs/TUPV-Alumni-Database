@@ -182,7 +182,9 @@ form div {
     color: black;
     font-weight: 500;
 }
-
+.gallery-head {
+    border-bottom: 4px solid #C3203B;
+}
 .hl-txt {
     font-weight: 800;
     font-size: 32px;
@@ -191,6 +193,11 @@ form div {
 .desc {
     font-weight: 300;
     color: black;
+}
+.pic-desc {
+    color: #000000;
+    font-weight: 700;
+
 }
 #title-l {
     width: 50%;
@@ -288,9 +295,7 @@ form div {
     color: #252121 !important;
     font-weight: 500 !important;
 }
-select {
-    background-color: red !important;
-}
+
 #search-button {
     font-family: 'Poppins', sans-serif; 
     font-weight: 300;

@@ -35,9 +35,9 @@ if(isset($_POST['submit']))
 
     // echo $query_run = mysqli_query($con, $query);
     if($con->query($query) === TRUE) {
-        echo '<script> alert("Data Updated")</script>';
-        // $_SESSION['message'] = "Record Created Successfully";
-        header("Location: alumni-list.php"); 
+        // echo '<script> alert("Data Updated")</script>';
+        // // $_SESSION['message'] = "Record Created Successfully";
+        header("location: alumni-list.php"); 
         exit(0);
     } else {
         echo '<script> alert("Data Not Updated")</script>';

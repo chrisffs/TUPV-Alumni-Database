@@ -24,7 +24,7 @@ include "../conn.php"
 <body class="bg-light-cs">
 <div class="wrapper">
     <!-- Sidebar -->
-    <nav id="sidebar">
+    <nav id="sidebar" style="position:relative;">
         <div class="sidebar-header pt-5 pb-2">
             <h3 class="fw-bold text-center">Alumni Lists</h3>
         </div>
@@ -45,6 +45,10 @@ include "../conn.php"
                 </div>
             </li>
         </ul>
+        <div class="sticky">
+            <a type="button" href="logout.php" class="btn btn-outline-light">Log Out</a>  
+        </div>
+        
     </nav>
     <!-- Page Content -->
     <div class="flex-fill" id="content">

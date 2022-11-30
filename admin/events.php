@@ -1,8 +1,3 @@
-<?php 
-session_start(); 
-include "../conn.php"
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,20 +6,28 @@ include "../conn.php"
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="../css/fonts.css">
-    <title>Alumni Database Management</title>
-    <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script> -->
-    <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="style(admin).css" type="text/css">
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="js/bootstrap.min.css">
     <link rel="stylesheet" href="../css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../css/all.min.css">
-    <link rel="stylesheet" href="style(admin).css" type="text/css">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
     <link rel="stylesheet" href="../css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" href="../css/bootstrap4.5.3.min.css">
+
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.2/flatly/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.2/flatly/bootstrap.min.css"> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer" defer="defer"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js" integrity="sha512-igl8WEUuas9k5dtnhKqyyld6TzzRjvMqLC79jkgT3z02FvJyHAuUtyemm/P/jYSne1xwFI06ezQxEwweaiV7VA==" crossorigin="anonymous" referrerpolicy="no-referrer" defer="defer"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.4/dayjs.min.js" integrity="sha512-Ot7ArUEhJDU0cwoBNNnWe487kjL5wAOsIYig8llY/l0P2TUFwgsAHVmrZMHsT8NGo+HwkjTJsNErS6QqIkBxDw==" crossorigin="anonymous" referrerpolicy="no-referrer" defer="defer"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js" integrity="sha512-Tn2m0TIpgVyTzzvmxLNuqbSJH3JP8jm+Cy3hvHrW7ndTDcJ1w5mBiksqDBb8GpE2ksktFvDB/ykZ0mDpsZj20w==" crossorigin="anonymous" referrerpolicy="no-referrer" defer="defer"></script> -->
+    
+    <!-- <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css"> -->
+    <title>Document</title>
 </head>
 <body class="bg-light-cs">
-<section> 
-
-</section>
 <div class="wrapper">
     <!-- Sidebar -->
     <nav id="sidebar">
@@ -48,6 +51,9 @@ include "../conn.php"
                 </div>
             </li>
         </ul>
+        <div class="logout-div">
+            <a type="button" href="logout.php" class="btn btn-outline-light">Log Out</a>  
+        </div>
     </nav>
     <!-- Page Content -->
     <div class="flex-fill" id="content">
@@ -78,7 +84,7 @@ include "../conn.php"
                                 <div class="">
                                     <div class="form-group">
                                         <div class="input-group date" id="datepicker">
-                                            <input type="text" class="py-4 form-control border-0" name="search_y_grad" placeholder="Select Year Graduated" id="filter-input" style="border-radius:0.5rem 0 0 0.5rem ;">
+                                            <input type="text" class="py-4 form-control border-0" name="date_of_event" placeholder="Input Date of Event" id="filter-input" style="border-radius:0.5rem 0 0 0.5rem ;">
                                             <span class="input-group-append ">
                                                 <span class="input-group-text border-0" style="cursor: pointer; border-radius: 0 0.5rem 0.5rem 0;" id="filter-input">
                                                     <i class="fa-solid fa-calendar"></i>
@@ -90,24 +96,24 @@ include "../conn.php"
                             </div>
                             <div class="col-9 px-1">
                                 <div class="">
-                                    <input class="py-4 form-control fw-pp rounded-3 border-0" type="text" placeholder="Name..." aria-label="default input example" name="search_name" id="filter-input">
+                                    <input class="py-4 form-control fw-pp rounded-3 border-0" type="text" placeholder="Event Name" aria-label="default input example" name="event_name" id="filter-input">
                                 </div>
                             </div>
                         </div>
                         <div class="row my-3">
                             <div class="col-2 px-1">
-                            <div class="">
-                                    <input class="py-4 form-control fw-pp rounded-3 border-0" type="text" placeholder="Name..." aria-label="default input example" name="search_name" id="filter-input">
+                                <div class="">
+                                    <input type="text" id="start_time" class="py-4 form-control fw-pp rounded-3 border-0" name="start_time" placeholder="Select start time" autocomplete="off" />
                                 </div>
                             </div>
                             <div class="col-2 px-1">
-                            <div class="">
-                                    <input class="py-4 form-control fw-pp rounded-3 border-0" type="text" placeholder="Name..." aria-label="default input example" name="search_name" id="filter-input">
+                                <div class="">
+                                    <input type="text" id="end_time" class="py-4 form-control fw-pp rounded-3 border-0" name="start_time" placeholder="Select end time" autocomplete="off" />
                                 </div>
                             </div>
                             <div class="col-8 px-1">
                             <div class="">
-                                    <input class="py-4 form-control fw-pp rounded-3 border-0" type="text" placeholder="Name..." aria-label="default input example" name="search_name" id="filter-input">
+                                    <input class="py-4 form-control fw-pp rounded-3 border-0" type="text" placeholder="Location" aria-label="default input example" name="search_name" id="filter-input">
                                 </div>
                             </div>
                         </div>
@@ -131,43 +137,40 @@ include "../conn.php"
         
     </div>
 </div>
+<script src="../js/jquery-3.3.1.slim.min.js"></script>
+<script src="js/script(admin).js"></script>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/popper.min.js"></script>
+<script src="../js/fontawesome.js"></script>
+<script src="../js/solid.js"></script>
+<script src="../js/bootstrap-datepicker.min.js"></script>
+<script src="../js/bootstrap.bundle.min.js" defer="defer"></script>
+<script src="js/all.min.js"></script>
+
+<script src="js/combodate.js"></script>
+<script src="js/moment.js"></script>
+<script src="js/dayjs.min.js"></script>
+
+
+<script src="js/timepicker-bs4.js" defer="defer"></script>
 
 
 
+<script type="text/javascript">
+    $(function() {
+        $('#datepicker').datepicker();
+    });
+</script>
 
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+	jQuery('#start_time').timepicker({
 
+	});
+    jQuery('#end_time').timepicker({
 
-
-
-
-
-
-
-
-
-
-
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
-    <!-- Popper.JS -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script> -->
-    <!-- Bootstrap JS -->
-    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script> -->
-    <script src="../js/jquery-3.3.1.slim.min.js"></script>
-    <script src="js/script(admin).js"></script>
-    
-    <script src="../js/popper.min.js"></script>
-    <script src="../js/fontawesome.js"></script>
-    <script src="../js/solid.js"></script>
-
-    <script src="../js/jquery.min.js"></script>
-    <!-- <script src="js/jquery-3.6.1.js"></script> -->
-    <!-- <script src="../js/bootstrap.min.js"></script> -->
-    <script src="../js/bootstrap-datepicker.min.js"></script>
-    <script src="../js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript">
-        $(function() {
-            $('#datepicker').datepicker();
-        });
-    </script>
+});
+});
+</script>
 </body>
 </html>

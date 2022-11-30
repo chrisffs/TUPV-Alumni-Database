@@ -57,7 +57,7 @@ if (isset($_POST['update'])) {
 
                         <div class="tupv"> 
                             <label class="label fw-qs" for="tupv-id">TUPV-ID</label>
-                            <input class="form-control" id="tupv-id-edit" name="tupv-id" type="text" aria-label="default input example" disabled readonly>
+                            <input class="form-control" id="tupv-id-edit" name="tupv-id" type="text" aria-label="default input example" readonly>
                         </div>
                         <div class="names">
                                         <div class="fname me-1"> 

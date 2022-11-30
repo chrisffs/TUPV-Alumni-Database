@@ -9,8 +9,18 @@
     color: #837777;
     font-weight: 300;
 }
+#start_time, #end_time {
+    background-color: #E7E2E2;
+    color: #837777;
+    font-weight: 300;
+}
+
 .m-color {
     color: #C3203B;
+}
+.sticky {
+    position: absolute;
+    bottom: 0;
 }
 .event-card {
     width: 100%;

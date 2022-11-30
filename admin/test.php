@@ -27,7 +27,7 @@
     <!-- <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css"> -->
     <title>Document</title>
 </head>
-<body>
+<body class="bg-light-cs">
 <div class="wrapper">
     <!-- Sidebar -->
     <nav id="sidebar">
