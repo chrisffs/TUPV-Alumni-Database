@@ -139,7 +139,7 @@ include "session.php";
                                                     <a href="" data-bs-toggle="modal" data-bs-target="#exampleModalDelete"><i class="fa-solid fa-trash-can deletebtn"></i></a>
                                                 </div>
                                                 <div class="col-4">
-                                                    <a href="" data-bs-toggle="modal" data-bs-target="#viewModal"><i class="fa-solid fa-angles-right viewbtn"></i></a>
+                                                    <a href="" data-bs-toggle="modal" data-bs-target="#viewModal"><i class="fa-solid fa-ellipsis viewbtn"></i></a>
                                                 </div>
                                             </div>
                                             

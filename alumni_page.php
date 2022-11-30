@@ -126,7 +126,7 @@ include "conn.php"
                 </div>
                 <br>
                 <div class="bg-light rounded-3">
-                    <table class="table table-borderless table-hover mt-5 alumni-table text-center">
+                    <table class="table table-borderless table-hover mt-5 alumni-table2 text-center">
                         <thead>
                             <tr>
                                 <th scope="col">Name</th>

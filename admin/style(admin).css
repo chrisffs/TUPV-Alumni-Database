@@ -4,10 +4,10 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-#filter-input {
-    background-color: #E7E2E2;
-    color: #837777;
-    font-weight: 300;
+.filter-input {
+    background-color: #E7E2E2 !important;
+    color: #837777 !important;
+    font-weight: 300 !important;
 }
 #start_time, #end_time {
     background-color: #E7E2E2;
@@ -40,9 +40,9 @@
     font-weight: 700;
 }
 
-#filter-input option {
-    color: #252121;
-    font-weight: 500;
+.filter-input option {
+    color: #252121 !important;
+    font-weight: 500 !important;
 }
 .bg-tup {
     background-color: #C3203B !important;
@@ -71,7 +71,7 @@
     background-color: white !important;
 }
 .action-td .row .col-4 a i:hover {
-    font-size: 1.8rem;
+    color: black;
 }
 .table td,.table th {
     /* padding: 0 !important; */

@@ -67,13 +67,14 @@ if(isset($_POST['login'])) {
     </style>
 </head>
 <body class="bg-light">
-    <div class="center">
+    <div class="center mb-5">
+        
         <div class=" d-flex flex-column align-items-center">
             <img class="w-50"src="img/Group 1.png" alt="" srcset="">
-            <p class="fw-semibold">TUPV Alumni Management System</p>
+            <p class="fs-6 fw-semibold">TUPV Alumni Management System</p>
         </div>
-        <p class="fs-3 fw-semibold c-tupv">
-            Log in
+        <p class="fs-2 fw-semibold text-center mt-5 c-tupv">    
+            Login
         </p>
         
         <form class="form" action="login.php" method="post">

@@ -66,7 +66,7 @@ include "session.php";
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <table class="table alumni-table text-center rounded-3 tblview" style="font-size: 12px;">
+        <table class="table alumni-tableV text-center rounded-3 tblview" style="font-size: 12px;">
             <thead class="theadView">
                 <tr class="trView">
                     <th class="m-tbl-th fw-light low-col thView" scope="col">TUPV-ID</th>

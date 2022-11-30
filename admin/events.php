@@ -84,54 +84,56 @@ include "session.php";
                     <p class="fw-bold fs-3 ">Event Card Generator</p>
                 </header>
                 <section class="row align-items-center mx-2 bg-white rounded-4">
-                    <div class="col-9 px-5">
-                        <div class="row my-3">
-                            <div class="col-3 px-1">
-                                <div class="">
-                                    <div class="form-group">
-                                        <div class="input-group date" id="datepicker">
-                                            <input type="text" class="py-4 form-control border-0" name="date_of_event" placeholder="Input Date of Event" id="filter-input" style="border-radius:0.5rem 0 0 0.5rem ;">
-                                            <span class="input-group-append ">
-                                                <span class="input-group-text border-0" style="cursor: pointer; border-radius: 0 0.5rem 0.5rem 0;" id="filter-input">
-                                                    <i class="fa-solid fa-calendar"></i>
+                    <form action="" method="post">
+                        <div class="col-9 px-5">
+                            <div class="row my-3">
+                                <div class="col-3 px-1">
+                                    <div class="">
+                                        <div class="form-group">
+                                            <div class="input-group date" id="datepicker">
+                                                <input type="text" class="py-4 form-control border-0 filter-input" name="date_of_event" placeholder="Input Date of Event" id="event-date" style="border-radius:0.5rem 0 0 0.5rem ;">
+                                                <span class="input-group-append ">
+                                                    <span class="input-group-text border-0 filter-input" style="cursor: pointer; border-radius: 0 0.5rem 0.5rem 0;" id="">
+                                                        <i class="fa-solid fa-calendar"></i>
+                                                    </span>
                                                 </span>
-                                            </span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-9 px-1">
+                                    <div class="">
+                                        <input class="py-4 form-control fw-pp rounded-3 border-0 filter-input" type="text" placeholder="Event Name" aria-label="default input example" name="event_name" id="event-name" maxlength="30">
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-9 px-1">
+                            <div class="row my-3">
+                                <div class="col-2 px-1">
+                                    <div class="">
+                                        <input type="text" id="start_time" class="py-4 form-control fw-pp rounded-3 border-0" name="start_time" placeholder="Select start time" autocomplete="off" />
+                                    </div>
+                                </div>
+                                <div class="col-2 px-1">
+                                    <div class="">
+                                        <input type="text" id="end_time" class="py-4 form-control fw-pp rounded-3 border-0" name="start_time" placeholder="Select end time" autocomplete="off" />
+                                    </div>
+                                </div>
+                                <div class="col-8 px-1">
                                 <div class="">
-                                    <input class="py-4 form-control fw-pp rounded-3 border-0" type="text" placeholder="Event Name" aria-label="default input example" name="event_name" id="filter-input">
+                                        <input class="py-4 form-control fw-pp rounded-3 border-0 filter-input" id="event_venue"type="text" placeholder="Location" aria-label="default input example" name="search_name" maxlength="30">
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row my-3">
-                            <div class="col-2 px-1">
-                                <div class="">
-                                    <input type="text" id="start_time" class="py-4 form-control fw-pp rounded-3 border-0" name="start_time" placeholder="Select start time" autocomplete="off" />
-                                </div>
-                            </div>
-                            <div class="col-2 px-1">
-                                <div class="">
-                                    <input type="text" id="end_time" class="py-4 form-control fw-pp rounded-3 border-0" name="start_time" placeholder="Select end time" autocomplete="off" />
-                                </div>
-                            </div>
-                            <div class="col-8 px-1">
-                            <div class="">
-                                    <input class="py-4 form-control fw-pp rounded-3 border-0" type="text" placeholder="Location" aria-label="default input example" name="search_name" id="filter-input">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </form>
                     <div class="col-3 d-flex justify-content-center bg-tup py-4 rounded-4">
                         <div class="col-12">
                             <div class="event-card bg-light px-4 py-3 my-4">
-                                <p class="date mb-0 fw-in">28</p>
-                                <p class="month mb-5 fw-pp">November</p>
-                                <p class="eventt mb-0 fw-pp">Batch 1993-1994 Reunion</p>
-                                <p class="time mb-2 fw-pp">1PM - 5:30PM</p>
-                                <p class="venue mb-0 fw-pp">TUPV Gymnasium</p>
+                                <p id="day"class="date mb-0 fw-in">30</p>
+                                <p class="month mb-5 fw-pp"><span id="month">November</span> <span id="yearr">2002</span></p>
+                                <p id="event_name" class="eventt mb-0 fw-pp">Batch 1993-1994 Reunion</p>
+                                <p class="time mb-2 fw-pp"><span id="timeFrom">1PM</span> - <span id="timeEnd">5:30PM</span></p>
+                                <p id="venue" class="venue mb-0 fw-pp">TUPV Gymnasium</p>
                             </div>
                         </div>
                     </div>
@@ -166,6 +168,7 @@ include "session.php";
     $(function() {
         $('#datepicker').datepicker();
     });
+
 </script>
 
 <script>

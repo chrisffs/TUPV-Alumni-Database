@@ -91,6 +91,9 @@ label {
 .c-tupv {
     color: #C3203B;
 }
+.bg-tup {
+    background-color: #C3203B;
+}
 .tupv {
     grid-area: f0;
 }
@@ -311,16 +314,44 @@ form div {
     font-family: 'Poppins', sans-serif; 
     font-weight: 300;
 }
+.alumni-tableV thead tr th {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: #837777;
+}
+.alumni-tableV td{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: #000000;
+}
+
 .alumni-table thead {
     border-bottom: 3px solid #C3203B;
 }
 .alumni-table thead tr th {
     font-weight: 400;
-    font-size: 12px;
+    font-size: 16px;
     line-height: 18px;
     color: #837777;
 }
 .alumni-table td{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: #000000;
+}
+.alumni-table2 thead {
+    border-bottom: 3px solid #C3203B;
+}
+.alumni-table2 thead tr th {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #837777;
+}
+.alumni-table2 td{
     font-weight: 400;
     font-size: 12px;
     line-height: 18px;

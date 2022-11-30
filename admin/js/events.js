@@ -1,0 +1,1 @@
+$('#event-date').css('background-color', 'red');
