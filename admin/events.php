@@ -1,3 +1,9 @@
+<?php 
+session_start(); 
+include "../conn.php";
+include "session.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

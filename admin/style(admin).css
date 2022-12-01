@@ -19,8 +19,8 @@
     color: #C3203B;
 }
 .sticky {
-    position: absolute;
-    bottom: 0;
+    
+    
 }
 .event-card {
     width: 100%;
@@ -62,7 +62,7 @@
 .action-td {
     min-width: 7.3rem;
 }
-.action-td .row .col a i {
+.action-td .row .col-4 a i {
     font-size: 1.5rem;
     color: #C3203B;
     transition: 0.2s;
@@ -70,7 +70,7 @@
 .bg-white {
     background-color: white !important;
 }
-.action-td .row .col a i:hover {
+.action-td .row .col-4 a i:hover {
     font-size: 1.8rem;
 }
 .table td,.table th {

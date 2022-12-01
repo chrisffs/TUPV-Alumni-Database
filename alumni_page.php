@@ -52,7 +52,7 @@ include "conn.php"
                             <a href="gallery_page.php" class="nav-link fw-pp">Gallery</a>
                         </li>
                         <li class="nav-item mx-1">
-                            <a href="" class="nav-link fw-pp">About</a>
+                            <a href="about.php" class="nav-link fw-pp">About</a>
                         </li>
                     </ul>
                 </div>
@@ -272,6 +272,36 @@ include "conn.php"
                     </table>
                 </div>
                 <br>
+            </div>
+            <div class="text-light" id="footer">
+                <br>
+                <br>
+                
+
+                <footer class="container c-light-500 pb-5">
+                    <div class="row">
+                        <div class="col-lg-4 col-12 text-lg-start txt-center mb-3">
+                            <p class="fw-semibold">OFFICE OF TUPV ALUMNI ASSOCIATION INCORPORATED</p>
+                            <p>
+                            Rm. 2 Conference Hall (TUPVAAI Center) TUP Visayas,
+ Talisay City, Philippines 6115
+                            </p>
+                        </div>
+                        <div class="col-lg-4 col-12 text-lg-start txt-center mb-3">
+                        <p class="fw-semibold">EMAIL</p>
+                        <p class="mb-1">Admin Section: <span class="text-primary"><u>oaai.admin@tup.edu.ph</u></span></p>
+                        <p class="mb-1">Database Section: <span class="text-primary"><u>oaai.database@tup.edu.ph</u></span></p>
+                        <p class="">Communications Section: <span class="text-primary"><u>tupv.alumnioffice@tup.edu.ph</u></span></p>
+                        </div>
+                        <div class="col-lg-4 col-12 text-lg-start txt-center mb-3">
+                        <p class="fw-semibold">
+                        TUPV TRUNKLINE
+                        </p>
+                        <p><em>+63 (034) 495.3480</em> local 8753 (Staff) and 2341 (Director)</p>
+                        </div>
+                    </div>
+
+                </footer>
             </div>
         </section>
         

@@ -1,6 +1,7 @@
 <?php 
 session_start(); 
-include "../conn.php"
+include "../conn.php";
+include "session.php";
 ?>
 
 <!DOCTYPE html>
@@ -48,9 +49,7 @@ include "../conn.php"
                 </div>
             </li>
         </ul>
-        <div class="logout-div">
-            <a type="button" href="logout.php" class="btn btn-outline-light">Log Out</a>  
-        </div>
+
     </nav>
     <!-- Page Content -->
     <div class="flex-fill" id="content">
@@ -68,6 +67,9 @@ include "../conn.php"
                     <i class="fas fa-align-left"></i>
                 </button>
             </div> 
+            <div class="logout-div">
+                <a type="button" href="logout.php" class="btn btn-outline-danger">LogOut</a>  
+            </div>
         </nav>
         <div class="mx-3 pt-2">
             <div class="bg-tup text-light my-3 w-100 br10 box-shadow1">
@@ -90,7 +92,16 @@ include "../conn.php"
                     </p>
                 </div>
             </div>
+            <div>
+            <form action="upload.php" method="post" enctype="multipart/form-data">
+                <div class="input-group">
+                    <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="file">
+                    <button class="btn btn-outline-secondary" id="inputGroupFileAddon04" type="submit" name="submit">Button</button>
+                </div>
+            </form>
+            </div>
         </div>
+
         
     </div>
 </div>

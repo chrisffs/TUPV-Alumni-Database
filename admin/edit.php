@@ -1,13 +1,9 @@
 <?php 
 include "../conn.php";
-
-// $queryId = $_GET['tupv-id'];
-// $query = "SELECT * FROM alumni_tbl WHERE tupv_id = '$queryId'";
-// $result = $con->query($query);
-// $field = $result->fetch_assoc();
+include "session.php";
 
 if (isset($_POST['update'])) {
-    $tupv_id = mysqli_real_escape_string($con, $_POST['tupv-id']);
+    $tupv_id = mysqli_real_escape_string($con, $_POST['tupv_id']);
     $fname = mysqli_real_escape_string($con, $_POST['fname']);
     $lname = mysqli_real_escape_string($con, $_POST['lname']);
     $mi = mysqli_real_escape_string($con, $_POST['MI']);
@@ -56,8 +52,8 @@ if (isset($_POST['update'])) {
                     <form action="edit.php" method="POST" class="form-main">
 
                         <div class="tupv"> 
-                            <label class="label fw-qs" for="tupv-id">TUPV-ID</label>
-                            <input class="form-control" id="tupv-id-edit" name="tupv-id" type="text" aria-label="default input example" readonly>
+                            <label class="label fw-qs" for="tupv_id">TUPV-ID</label>
+                            <input class="form-control" id="tupv-id-edit" name="tupv_id" type="text" aria-label="default input example" readonly>
                         </div>
                         <div class="names">
                                         <div class="fname me-1"> 

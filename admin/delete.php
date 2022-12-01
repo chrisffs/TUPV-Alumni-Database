@@ -1,6 +1,7 @@
 <?php 
-
 include "../conn.php";
+include "session.php";
+
 if(isset($_POST['deletedata'])) {
     $tupv_id = mysqli_real_escape_string($con, $_POST['tupv-id']);
     $query = "DELETE FROM alumni_tbl WHERE tupv_id = '$tupv_id'";

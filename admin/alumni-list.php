@@ -1,6 +1,7 @@
 <?php 
 session_start(); 
-include "../conn.php"
+include "../conn.php";
+include "session.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +47,7 @@ include "../conn.php"
             </li>
         </ul>
         <div class="sticky">
-            <a type="button" href="logout.php" class="btn btn-outline-light">Log Out</a>  
+            <a type="button" href="logout.php" class="btn btn-outline-light px-5 rounded-5">Log Out</a>  
         </div>
         
     </nav>
@@ -83,23 +84,25 @@ include "../conn.php"
                         </p>
                     </div>
                     <table class="table table-hover alumni-table text-center rounded-3" style="font-size: 14px;">
+                        
+                    
                         <thead>
                             <tr>
                                 <th class="m-tbl-th fw-light low-col" scope="col">TUPV-ID</th>
                                 <th class="m-tbl-th fw-light" scope="col">Last Name</th>
                                 <th class="m-tbl-th fw-light" scope="col">First Name</th>
                                 <th class="m-tbl-th fw-light" scope="col">M.I.</th>
-                                <th class="m-tbl-th fw-light" scope="col">Birthdate</th>
-                                <th class="m-tbl-th fw-light" scope="col">Civil-Status</th>
-                                <th class="m-tbl-th fw-light" scope="col">Sex</th>
-                                <th class="m-tbl-th fw-light sup-col" scope="col">Address</th>
-                                <th class="m-tbl-th fw-light" scope="col">Contact Number</th>
-                                <th class="m-tbl-th fw-light" scope="col">Email</th>
+                                <th class="m-tbl-th fw- d-none" scope="col">Birthdate</th>
+                                <th class="m-tbl-th fw-light d-none" scope="col">Civil-Status</th>
+                                <th class="m-tbl-th fw- d-none" scope="col">Sex</th>
+                                <th class="m-tbl-th fw-light d-none sup-col" scope="col">Address</th>
+                                <th class="m-tbl-th fw- d-none" scope="col">Contact Number</th>
+                                <th class="m-tbl-th fw- d-none" scope="col">Email</th>
                                 <th class="m-tbl-th fw-light" scope="col">Year Graduated</th>
                                 <th class="m-tbl-th fw-light sup-col" scope="col">Program Graduated</th>
                                 <th class="m-tbl-th fw-light" scope="col">Current Profession</th>
-                                <th class="m-tbl-th fw-light" scope="col">Company Name</th>
-                                <th class="m-tbl-th fw-light" scope="col">Present Employment Status</th>
+                                <th class="m-tbl-th fw- d-none" scope="col">Company Name</th>
+                                <th class="m-tbl-th fw- d-none" scope="col">Present Employment Status</th>
                                 <th class="m-tbl-th fw-light action-td" scope="col">Actions</th>
                             </tr>
                         </thead>
@@ -116,29 +119,33 @@ include "../conn.php"
                                         <td><?php echo $row['lastname']; ?></td>
                                         <td><?php echo $row['firstname']; ?></td>
                                         <td><?php echo $row['mi']; ?></td>
-                                        <td><?php echo $row['birthdate']; ?></td>
-                                        <td><?php echo $row['civil_status']; ?></td>
-                                        <td><?php echo $row['sex']; ?></td>
-                                        <td class="sup-col"><?php echo $row['address']; ?></td>
-                                        <td><?php echo $row['pnumber']; ?></td>
-                                        <td><?php echo $row['email_address']; ?></td>
+                                        <td class="d-none"><?php echo $row['birthdate']; ?></td>
+                                        <td class="d-none"><?php echo $row['civil_status']; ?></td>
+                                        <td class="d-none"><?php echo $row['sex']; ?></td>
+                                        <td class="sup-col d-none"><?php echo $row['address']; ?></td>
+                                        <td class="d-none"><?php echo $row['pnumber']; ?></td>
+                                        <td class="d-none"><?php echo $row['email_address']; ?></td>
                                         <td><?php echo $row['year_graduated']; ?></td>
                                         <td class="sup-col"><?php echo $row['program_graduated']; ?></td>
                                         <td><?php echo $row['current_profession']; ?></td>
-                                        <td><?php echo $row['company_name']; ?></td>
-                                        <td><?php echo $row['present_employment_status']; ?></td>
+                                        <td class="d-none"><?php echo $row['company_name']; ?></td>
+                                        <td class="d-none"><?php echo $row['present_employment_status']; ?></td>
                                         <td valign=middle class="action-td">
-                                            <div class="row">
-                                                <div class="col">
+                                            <div class="row me-3">
+                                                <div class="col-4">
                                                     <a href="" data-bs-toggle="modal" data-bs-target="#exampleModalEdit"><i class="fa-solid fa-pen-to-square editbtn"></i></a>
                                                 </div>
-                                                <div class="col">
+                                                <div class="col-4">
                                                     <a href="" data-bs-toggle="modal" data-bs-target="#exampleModalDelete"><i class="fa-solid fa-trash-can deletebtn"></i></a>
+                                                </div>
+                                                <div class="col-4">
+                                                    <a href="" data-bs-toggle="modal" data-bs-target="#viewModal"><i class="fa-solid fa-angles-right viewbtn"></i></a>
                                                 </div>
                                             </div>
                                             
                                         </td>
                                     </tr>
+                                    </a>
                                     <?php 
                                     } 
                                 } else {
@@ -157,6 +164,7 @@ include "../conn.php"
                     <?php include('add.php')?>
                     <?php include('edit.php')?>
                     <?php include('delete.php')?>
+                    <?php include('view.php')?>
                     
                 </div>
             </div>
@@ -228,8 +236,8 @@ include "../conn.php"
                 console.log(data);
 
                 $('#tupv-id-edit').val(data[0]);
-                $('#first-name-edit').val(data[1]);
-                $('#last-name-edit').val(data[2]);
+                $('#first-name-edit').val(data[2]);
+                $('#last-name-edit').val(data[1]);
                 $('#MI-edit').val(data[3]);
                 $('#birthdate-edit').val(data[4]);
                 $('#cv-edit').val(data[5]);
@@ -243,6 +251,34 @@ include "../conn.php"
                 $('#c-name-edit').val(data[13]);
                 $('#p-emp-status-edit').val(data[14]);
             })
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('.viewbtn').on('click', function(){
+                $tr = $(this).closest('tr');
+                
+                var data = $tr.children("td").map(function() {
+                    return $(this).text();
+                }).get();
+                console.log(data);
+                $('#tupv-view').text(data[0]);
+                $('#lname-view').text(data[1]);
+                $('#fname-view').text(data[2]);
+                $('#mi-view').text(data[3]);
+                $('#bdate-view').text(data[4]);
+                $('#cs-view').text(data[5]);
+                $('#sex-view').text(data[6]);
+                $('#add-view').text(data[7]);
+                $('#cnum-view').text(data[8]);
+                $('#email-view').text(data[9]);
+                $('#ygrad-view').text(data[10]);
+                $('#pgrad-view').text(data[11]);
+                $('#cprof-view').text(data[12]);
+                $('#cname-view').text(data[13]);
+                $('#pes-view').text(data[14]);
+            });
+
         });
     </script>
     <script>

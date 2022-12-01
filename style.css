@@ -39,6 +39,9 @@ body {
 .bg-primary1 {
     background-color: #C3203B;
 }
+.c-light-500 {
+    color: #b1b1b1;
+}
 .h-txt {
     font-size: 19px;
     font-weight: 600;
@@ -50,6 +53,12 @@ body {
     color: #565656;
     font-weight: 600;
     font-size: 16px;
+}
+footer {
+    font-size: 12px;
+}
+.txt-center {
+    text-align: center;
 }
 .m-txt-container {
     background-color: #CBCBCB;

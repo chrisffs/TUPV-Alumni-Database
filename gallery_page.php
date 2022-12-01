@@ -16,8 +16,16 @@ include "conn.php"
     <link rel="stylesheet" type="text/css" href="css/all.min.css">
     <link rel="stylesheet" href="style.css" type="text/css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" href="css/bootstrap4.5.3.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+    <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <!------ Include the above in your HEAD tag ---------->
+<!-- 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" /> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script> -->
     <title>Document<<title>Document</title>
 </head>
 <body style="background-color: #FAFAFA;">
@@ -53,7 +61,7 @@ include "conn.php"
                             <a href="gallery_page.php" class="nav-link fw-pp active-link">Gallery</a>
                         </li>
                         <li class="nav-item mx-1">
-                            <a href="" class="nav-link fw-pp">About</a>
+                            <a href="about.php" class="nav-link fw-pp">About</a>
                         </li>
                     </ul>
                 </div>
@@ -82,7 +90,9 @@ include "conn.php"
                         while($row = mysqli_fetch_assoc($data)) {
                             ?>
                             <div class="col-lg-3 col-md-4 col-6 pb-1">
-                                <img class="img-fluid"src="admin/uploads/<?php echo $row['image_name'];?>">
+                                <a href="admin/uploads/<?php echo $row['image_name'];?>" class="fancylight popup-btn" data-fancybox-group="light"> 
+                                    <img class="img-fluid"src="admin/uploads/<?php echo $row['image_name'];?>">
+                                </a>
                             </div>
                             <?php 
                         }//while
@@ -93,34 +103,61 @@ include "conn.php"
             
             </div>
         </section>
+        
 
     </div>
 </section>
-<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content bg-light" style="max-width: 569px;">
-            <div class="modal-header bg-tup align-items-center">
-                            <h1 class="modal-title fs-5 text-light" id="exampleModalLabel">Add</h1>
-                            
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="form mt-3">
-                    <div class="img-fluid mb-3">
-                        <img src="img/15th Hmecoming, March 2019_page-0001.jpg" class="w-100" alt="" srcset="">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+<div class="text-light" id="footer">
+                <br>
+                <br>
+                
+
+                <footer class="container c-light-500 pb-5">
+                    <div class="row">
+                        <div class="col-lg-4 col-12 text-lg-start txt-center mb-3">
+                            <p class="fw-semibold">OFFICE OF TUPV ALUMNI ASSOCIATION INCORPORATED</p>
+                            <p>
+                            Rm. 2 Conference Hall (TUPVAAI Center) TUP Visayas,
+ Talisay City, Philippines 6115
+                            </p>
+                        </div>
+                        <div class="col-lg-4 col-12 text-lg-start txt-center mb-3">
+                        <p class="fw-semibold">EMAIL</p>
+                        <p class="mb-1">Admin Section: <span class="text-primary"><u>oaai.admin@tup.edu.ph</u></span></p>
+                        <p class="mb-1">Database Section: <span class="text-primary"><u>oaai.database@tup.edu.ph</u></span></p>
+                        <p class="">Communications Section: <span class="text-primary"><u>tupv.alumnioffice@tup.edu.ph</u></span></p>
+                        </div>
+                        <div class="col-lg-4 col-12 text-lg-start txt-center mb-3">
+                        <p class="fw-semibold">
+                        TUPV TRUNKLINE
+                        </p>
+                        <p><em>+63 (034) 495.3480</em> local 8753 (Staff) and 2341 (Director)</p>
+                        </div>
                     </div>
-                    <div class="img-fluid mb-3">
-                        <img src="img/15th Hmecoming, March 2019_page-0001.jpg" class="w-100" alt="" srcset="">
-                    </div>
-                </div>
+
+                </footer>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div> -->
+<script>
+         $(document).ready(function() {
+         var popup_btn = $('.popup-btn');
+         popup_btn.magnificPopup({
+         type : 'image',
+         gallery : {
+         	enabled : true
+         }
+         });
+         });
+</script>
+<script src="js/jquery.magnific-popup.js"></script>
+<script src="js/isotope.pkgd.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery.min.js"></script>
 </body>
 </html>
