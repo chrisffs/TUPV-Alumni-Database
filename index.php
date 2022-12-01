@@ -107,7 +107,7 @@
                     <p class="mb-0 fw-pp">Upcoming Events</p>
                 </div>
                 <br>
-                <div class="event-cards mt-5 px-5 row">
+                <div class="event-cards mt-5 px-sm-5 row">
                     <div class="col-md-6 col-lg-4">
                         <div class="event-card bg-light px-4 py-3 my-4">
                             <p class="date mb-0 fw-in">28</p>
@@ -127,13 +127,13 @@
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4">
-                    <div class="event-card bg-light px-4 py-3 my-4">
-                        <p class="date mb-0 fw-in">28</p>
-                        <p class="month mb-5 fw-pp">November</p>
-                        <p class="eventt mb-0 fw-pp">Batch 1993-1994 Reunion</p>
-                        <p class="time mb-2 fw-pp">1PM - 5:30PM</p>
-                        <p class="venue mb-0 fw-pp">TUPV Gymnasium</p>
-                    </div>
+                        <div class="event-card bg-light px-4 py-3 my-4">
+                            <p class="date mb-0 fw-in">28</p>
+                            <p class="month mb-5 fw-pp">November</p>
+                            <p class="eventt mb-0 fw-pp">Batch 1993-1994 Reunion</p>
+                            <p class="time mb-2 fw-pp">1PM - 5:30PM</p>
+                            <p class="venue mb-0 fw-pp">TUPV Gymnasium</p>
+                        </div>
                     </div>
                     
 

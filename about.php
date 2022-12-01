@@ -77,7 +77,7 @@ include "conn.php"
         </p>
     </div>
     <div class="content mx-lg-5">
-        <p class="fw-normal mb-5">
+        <p class="fw-normal mb-5 text-center">
         Created and established under the Office of the President, the Office of TUP Visayas Alumni Association Incorporated (TUPVAAI) serves as the link between the alumni and the rest of the academic community. The TUPVAAI aims to promote maximum alumni engagement, involvement, support, and dedication to the university's social mission. It supports the TUP and its Alumni Association (TUPVAA) in locating, fostering, and including alumni in institutional and alumni programs, events, and activities. It also represents the TUP and the TUPVAA at institutional and alumni programs, events, and activities both locally, on-and off-campus, and foreign venues whenever possible.
         </p>
         <div class="mb-5">
@@ -108,60 +108,60 @@ include "conn.php"
         </div>
         <table class="mx-auto officers">
             <tr>
-                <th class="px-4 pb-1">President:</th>
-                <td class="px-4 pb-1">Noel G. Tan</td>
+                <th class="px-4 pb-2">President:</th>
+                <td class="px-4 pb-2 fw-semibold">Noel G. Tan</td>
             </tr>
             <tr>
-                <th class="px-4 pb-1">Vice President (Internal):</th>
-                <td class="px-4 pb-1">Benjamin E. Esmana</td>
+                <th class="px-4 pb-2">Vice President (Internal):</th>
+                <td class="px-4 pb-2 fw-semibold">Benjamin E. Esmana</td>
             </tr>
             <tr>
-                <th class="px-4 pb-1">Vice President (External):</th>
-                <td class="px-4 pb-1">Ramon Jimmy Jose A. Espedido</td>
+                <th class="px-4 pb-2">Vice President (External):</th>
+                <td class="px-4 pb-2 fw-semibold">Ramon Jimmy Jose A. Espedido</td>
             </tr>
             <tr>
-                <th class="px-4 pb-1">Secretary:</th>
-                <td class="px-4 pb-1">Ma. Ruby Q. Sales</td>
+                <th class="px-4 pb-2">Secretary:</th>
+                <td class="px-4 pb-2 fw-semibold">Ma. Ruby Q. Sales</td>
             </tr>
             <tr>
-                <th class="px-4 pb-1">Treasurer:</th>
-                <td class="px-4 pb-1">Susana D. Nobleza</td>
+                <th class="px-4 pb-2">Treasurer:</th>
+                <td class="px-4 pb-2 fw-semibold">Susana D. Nobleza</td>
             </tr>
             <tr>
-                <th class="px-4 pb-1">Auditor:</th>
-                <td class="px-4 pb-1">Carlos L. Armoness</td>
+                <th class="px-4 pb-2">Auditor:</th>
+                <td class="px-4 pb-2 fw-semibold">Carlos L. Armoness</td>
             </tr>
             <tr>
-                <th class="px-4 pb-1">Business Manager:</th>
-                <td class="px-4 pb-1">Maria Victoria B. Reosura</td>
+                <th class="px-4 pb-2">Business Manager:</th>
+                <td class="px-4 pb-2 fw-semibold">Maria Victoria B. Reosura</td>
             </tr>
             <tr>
-                <th class="px-4 pb-1">PIO:</th>
-                <td class="px-4 pb-1">Ian P. Velano, Rey G. Decena</td>
+                <th class="px-4 pb-2">PIO:</th>
+                <td class="px-4 pb-2 fw-semibold">Ian P. Velano, Rey G. Decena</td>
             </tr>
             <tr>
-                <th class="px-4 pb-1">Board Members:</th>
-                <td class="px-4 pb-1">Joemar P. Palomaria</td>
+                <th class="px-4 pb-2">Board Members:</th>
+                <td class="px-4 pb-2 fw-semibold">Joemar P. Palomaria</td>
             </tr>
             <tr>
-                <th class="px-4 pb-1"></th>
-                <td class="px-4 pb-1">Edgardo B. Etac</td>
+                <th class="px-4 pb-2"></th>
+                <td class="px-4 pb-2 fw-semibold">Edgardo B. Etac</td>
             </tr>
             <tr>
-                <th class="px-4 pb-1"></th>
-                <td class="px-4 pb-1">Macroosvil S. Hinolan</td>
+                <th class="px-4 pb-2"></th>
+                <td class="px-4 pb-2 fw-semibold">Macroosvil S. Hinolan</td>
             </tr>
             <tr>
-                <th class="px-4 pb-1"></th>
-                <td class="px-4 pb-1">Russel R. Mapa</td>
+                <th class="px-4 pb-2"></th>
+                <td class="px-4 pb-2 fw-semibold">Russel R. Mapa</td>
             </tr>
             <tr>
-                <th class="px-4 pb-1"></th>
-                <td class="px-4 pb-1">Federic R. Inion</td>
+                <th class="px-4 pb-2"></th>
+                <td class="px-4 pb-2 fw-semibold">Federic R. Inion</td>
             </tr>
             <tr>
-                <th class="px-4 pb-1"></th>
-                <td class="px-4 pb-1">Remus I. Jereza</td>
+                <th class="px-4 pb-2"></th>
+                <td class="px-4 pb-2 fw-semibold">Remus I. Jereza</td>
             </tr>
         </table>
         </div>
@@ -169,7 +169,7 @@ include "conn.php"
         <header class="c-tupv fw-semibold text-center mb-3 fs-4">
             Mission
         </header>
-        <p class="fw-normal mb-5">
+        <p class="fw-normal mb-5 text-center">
         The TUP Visayas Alumni Association Incorporated is an independent caring and God-centered organization that nurtures lifelong relationship with an among previous current and future TUP graduates. As a committed partner of the University, the association promotes mutual understanding, care, corporation, camaraderie, career-sharing values of engineering, technological advancement, educational growth contribution among its members, offers programs of relevance and service to alumni and creates active support for the development of the University, to the community and to our country.
         </p>
         </div>
@@ -177,7 +177,7 @@ include "conn.php"
         <header class="c-tupv fw-semibold text-center mb-3 fs-4">
             Vision
         </header>
-        <p class="fw-normal mb-5">
+        <p class="fw-normal mb-5 text-center">
         To envision our alumni association being a distinguished and highly effective organization within the TUP School Systems in the entire country.                                         
         </p>
         </div>

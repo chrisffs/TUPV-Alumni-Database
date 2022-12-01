@@ -91,7 +91,7 @@ include "conn.php"
                             ?>
                             <div class="col-lg-3 col-md-4 col-6 pb-1">
                                 <a href="admin/uploads/<?php echo $row['image_name'];?>" class="fancylight popup-btn" data-fancybox-group="light"> 
-                                    <img class="img-fluid"src="admin/uploads/<?php echo $row['image_name'];?>">
+                                    <img class="img-fluid rounded-3" src="admin/uploads/<?php echo $row['image_name'];?>">
                                 </a>
                             </div>
                             <?php 

@@ -18,6 +18,11 @@ include "conn.php"
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" href="css/bootstrap4.5.3.min.css">
+    <style>
+        .alumni-table th {
+            font-size: 12px;
+        }
+    </style>
 </head>
 <body style="background-color: #FAFAFA;">
     <section>
