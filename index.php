@@ -1,3 +1,8 @@
+<?php 
+session_start(); 
+include "conn.php";
+?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -108,33 +113,36 @@
                 </div>
                 <br>
                 <div class="event-cards mt-5 px-sm-5 row">
-                    <div class="col-md-6 col-lg-4">
+                <?php 
+                $query = "SELECT * FROM events ORDER BY event_date ASC";
+
+                $data = mysqli_query($con, $query) or die('error');
+                if(mysqli_num_rows($data) > 0) {
+                    while($row = mysqli_fetch_assoc($data)) 
+                    {
+                    
+                ?>
+
+                    <div class="col-md-6 col-lg-4 reveal">
                         <div class="event-card bg-light px-4 py-3 my-4">
-                            <p class="date mb-0 fw-in">28</p>
-                            <p class="month mb-5 fw-pp">November</p>
-                            <p class="eventt mb-0 fw-pp">Batch 1993-1994 Reunion</p>
-                            <p class="time mb-2 fw-pp">1PM - 5:30PM</p>
-                            <p class="venue mb-0 fw-pp">TUPV Gymnasium</p>
+                            <p class="date mb-0 fw-in"><?php echo date("d", strtotime($row['event_date'])); ?></p>
+                            <p class="month mb-5 fw-pp"><span id="month"><?php echo date("F", strtotime($row['event_date'])); ?></span> <span id="yearr"><?php echo date("Y", strtotime($row['event_date'])); ?></span></p>
+                            <p class="eventt mb-0 fw-pp"><?php echo $row['event_name']; ?></p>
+                            <p class="time mb-2 fw-pp"><span><?php echo $row['time_start']; ?></span> - <span><?php echo $row['time_end'];?></span></p>
+                            <p class="venue mb-0 fw-pp"><?php echo $row['event_location']; ?></p>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="event-card bg-light px-4 py-3 my-4">
-                            <p class="date mb-0 fw-in">28</p>
-                            <p class="month mb-5 fw-pp">November</p>
-                            <p class="eventt mb-0 fw-pp">Batch 1993-1994 Reunion</p>
-                            <p class="time mb-2 fw-pp">1PM - 5:30PM</p>
-                            <p class="venue mb-0 fw-pp">TUPV Gymnasium</p>
-                        </div>
+                <?php 
+                    }
+                } else {
+                    ?>
+                    <div class="col-12 text-center">
+                        <p class="fs-1 fw-semibold text-light">No events planned.</p>
                     </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="event-card bg-light px-4 py-3 my-4">
-                            <p class="date mb-0 fw-in">28</p>
-                            <p class="month mb-5 fw-pp">November</p>
-                            <p class="eventt mb-0 fw-pp">Batch 1993-1994 Reunion</p>
-                            <p class="time mb-2 fw-pp">1PM - 5:30PM</p>
-                            <p class="venue mb-0 fw-pp">TUPV Gymnasium</p>
-                        </div>
-                    </div>
+
+                        <?php
+                }
+                ?>
                     
 
                     
@@ -197,8 +205,29 @@
             </div>
         </section>
     </section>
+    <script>
+        window.addEventListener('scroll', reveal)
 
+function reveal(){
 
+    var reveals = document.querySelectorAll('.reveal')
+
+    for (let i = 0; i < reveals.length; i++) {
+        
+        let windowHeight = window.innerHeight;
+        let revealTop = reveals[i].getBoundingClientRect().top;
+        let revealPoint = 150;
+
+        if (revealTop < windowHeight - revealPoint) {
+            reveals[i].classList.add('active')
+        } else {
+            reveals[i].classList.remove('active')
+        }
+    }
+
+}
+    </script>
+    <script src="js/script.js"></script>
     <script src="js/jquery.min.js"></script>
     <!-- <script src="js/jquery-3.6.1.js"></script> -->
     <script src="js/bootstrap.min.js"></script>

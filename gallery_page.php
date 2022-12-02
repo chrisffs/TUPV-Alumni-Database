@@ -11,22 +11,14 @@ include "conn.php"
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/fonts.css">
     <title>Gallery</title>
-
+    <script src="js/jquery.min.js"></script>
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/all.min.css">
     <link rel="stylesheet" href="style.css" type="text/css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap4.5.3.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
-    <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
-    <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
-    <!------ Include the above in your HEAD tag ---------->
-<!-- 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" /> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.js"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script> -->
-    <title>Document<<title>Document</title>
+    <title>Document</title>
 </head>
 <body style="background-color: #FAFAFA;">
 <section>
@@ -89,9 +81,9 @@ include "conn.php"
                     if(mysqli_num_rows($data)>0) {
                         while($row = mysqli_fetch_assoc($data)) {
                             ?>
-                            <div class="col-lg-3 col-md-4 col-6 pb-1">
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-12 pb-3 px-2">
                                 <a href="admin/uploads/<?php echo $row['image_name'];?>" class="fancylight popup-btn" data-fancybox-group="light"> 
-                                    <img class="img-fluid rounded-3" src="admin/uploads/<?php echo $row['image_name'];?>">
+                                    <img class="images" src="admin/uploads/<?php echo $row['image_name'];?>">
                                 </a>
                             </div>
                             <?php 
@@ -158,6 +150,5 @@ include "conn.php"
 <script src="js/isotope.pkgd.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/jquery.min.js"></script>
 </body>
 </html>

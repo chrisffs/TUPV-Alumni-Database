@@ -131,14 +131,14 @@ include "session.php";
                                         <td class="d-none"><?php echo $row['company_name']; ?></td>
                                         <td class="d-none"><?php echo $row['present_employment_status']; ?></td>
                                         <td valign=middle class="action-td">
-                                            <div class="row me-3">
-                                                <div class="col-4">
-                                                    <a href="" data-bs-toggle="modal" data-bs-target="#exampleModalEdit"><i class="fa-solid fa-pen-to-square editbtn"></i></a>
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <button href="" class="btn btn-info rounded-5 border-0" data-bs-toggle="modal" data-bs-target="#exampleModalEdit"><i class="fa-solid fa-pen-to-square editbtn"></i></button>
                                                 </div>
-                                                <div class="col-4">
-                                                    <a href="" data-bs-toggle="modal" data-bs-target="#exampleModalDelete"><i class="fa-solid fa-trash-can deletebtn"></i></a>
+                                                <div class="col-3">
+                                                    <button href="" class="btn btn-danger rounded-5 border-0" data-bs-toggle="modal" data-bs-target="#exampleModalDelete"><i class="fa-solid fa-trash-can deletebtn"></i></button>
                                                 </div>
-                                                <div class="col-4">
+                                                <div class="col-6">
                                                     <a href="" data-bs-toggle="modal" data-bs-target="#viewModal"><i class="fa-solid fa-ellipsis viewbtn"></i></a>
                                                 </div>
                                             </div>

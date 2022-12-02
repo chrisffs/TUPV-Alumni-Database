@@ -9,7 +9,7 @@ if(isset($_POST['submit_event'])) {
     $eventStime = mysqli_real_escape_string($con, $_POST['start_time']);
     $eventEtime = mysqli_real_escape_string($con, $_POST['end_time']);
     $eventVenue = mysqli_real_escape_string($con, $_POST['venue_name']);
-    $sql = "INSERT INTO events (event_date, event_name, time_start, time_end, location) VALUES ('$eventDate', '$eventName', '$eventStime', '$eventEtime', '$eventVenue')";
+    $sql = "INSERT INTO events (event_date, event_name, time_start, time_end, event_location) VALUES ('$eventDate', '$eventName', '$eventStime', '$eventEtime', '$eventVenue')";
 
     if($con->query($sql) === TRUE) {
         echo '<script> alert("Events Added Successfully") </script>';
@@ -106,20 +106,20 @@ if(isset($_POST['submit_event'])) {
                                 <div class="col-3 px-1">
                                     <div class="">
                                         <div class="form-group">
-                                            <div class="input-group date" id="datepicker">
-                                                <input type="date" class="py-4 form-control border-0 filter-input" name="date_of_event" placeholder="Input Date of Event" id="event-date" style="border-radius:0.5rem 0 0 0.5rem ;">
-                                                <span class="input-group-append">
+                                            <div class="input-group date" id="">
+                                                <input type="date" class="py-4 form-control rounded-3 border-0 filter-input" name="date_of_event" placeholder="Input Date of Event" id="event-date">
+                                                <!-- <span class="input-group-append">
                                                     <span class="input-group-text border-0 filter-input" style="cursor: pointer; border-radius: 0 0.5rem 0.5rem 0;" id="">
                                                         <i class="fa-solid fa-calendar"></i>
                                                     </span>
-                                                </span>
+                                                </span> -->
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-9 px-1">
                                     <div class="">
-                                        <input class="py-4 form-control fw-pp rounded-3 border-0 filter-input" type="text" placeholder="Event Name" aria-label="default input example" name="event_name" id="event-name" maxlength="30">
+                                        <input class="py-4 form-control fw-pp rounded-3 border-0 filter-input" type="text" placeholder="Event Name" aria-label="default input example" name="event_name" id="event-name" >
                                     </div>
                                 </div>
                             </div>
