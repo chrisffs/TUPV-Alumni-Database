@@ -60,6 +60,15 @@ include "session.php";
                 Alumni Management System
                 </p>
             </a>
+            <div class="dropdown">
+                <button class="btn dropdown-toggle pe-5 rounded-5" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <?php echo $_SESSION['fullname']?>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a type="button" href="logout.php" class="dropdown-item">Logout</a>  
+                </div>
+            </div>  
+            
         </div>
         <nav class="px-0 navbar navbar-expand-lg navbar-light">
             <div class="container-fluid px-0">
@@ -67,9 +76,6 @@ include "session.php";
                     <i class="fas fa-align-left"></i>
                 </button>
             </div> 
-            <div class="logout-div">
-                <a type="button" href="logout.php" class="btn btn-outline-danger">LogOut</a>  
-            </div>
         </nav>
         <div class="mx-3 pt-2">
             <div class="bg-tup text-light my-3 w-100 br10 box-shadow1">

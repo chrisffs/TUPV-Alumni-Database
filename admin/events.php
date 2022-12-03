@@ -73,9 +73,6 @@ if(isset($_POST['submit_event'])) {
                 </div>
             </li>
         </ul>
-        <div class="logout-div">
-            <a type="button" href="logout.php" class="btn btn-outline-light">Log Out</a>  
-        </div>
     </nav>
     <!-- Page Content -->
     <div class="flex-fill" id="content">
@@ -86,6 +83,15 @@ if(isset($_POST['submit_event'])) {
                 Alumni Management System
                 </p>
             </a>
+            <div class="dropdown">
+                <button class="btn dropdown-toggle pe-5 rounded-5" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <?php echo $_SESSION['fullname']?>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a type="button" href="logout.php" class="dropdown-item">Logout</a>  
+                </div>
+            </div>  
+            
         </div>
         <nav class="px-0 navbar navbar-expand-lg navbar-light">
             <div class="container-fluid px-0">

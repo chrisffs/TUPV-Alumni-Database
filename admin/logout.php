@@ -3,6 +3,7 @@
     session_destroy();
     unset($_SESSION['unique_id']);
     unset($_SESSION['id']);
+    unset($_SESSION['fullname']);
     header('location:../login.php');
     exit();
 ?>

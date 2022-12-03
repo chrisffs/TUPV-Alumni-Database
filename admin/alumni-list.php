@@ -12,8 +12,18 @@ include "session.php";
 
     <link rel="stylesheet" href="../css/fonts.css">
     <title>Alumni Database Management</title>
-    <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script> -->
-    <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script> -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css"/> -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css"/> -->
+    <link rel="stylesheet" type="text/css" href="css/dataTables.bootstrap5.min.css">
+    
+    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --> 
+    <script src="js/jquery-3.6.0.min.js"></script>
+    
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script> -->
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/dataTables.bootstrap5.min.js"></script>
     <link rel="stylesheet" href="../css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../css/all.min.css">
     <link rel="stylesheet" href="style(admin).css" type="text/css">
@@ -46,22 +56,28 @@ include "session.php";
                 </div>
             </li>
         </ul>
-        <div class="sticky">
-            <a type="button" href="logout.php" class="btn btn-outline-light px-5 rounded-5">Log Out</a>  
-        </div>
         
     </nav>
     <!-- Page Content -->
     <div class="flex-fill" id="content">
         <section> 
-            <div class="navbar bg-white">
-                <a href="#home" class="navbar-brand d-flex align-items-center " id="logo">
-                    <img src="../img/Group 1.png" alt="" style="max-width: 24px;"> 
-                    <p class="text-dark fs-6 fw-regular mb-0 ms-2">
-                    Alumni Management System
-                    </p>
-                </a>
-            </div>
+        <div class="navbar bg-white">
+            <a href="#home" class="navbar-brand d-flex align-items-center " id="logo">
+                <img src="../img/Group 1.png" alt="" style="max-width: 24px;"> 
+                <p class="text-dark fs-6 mb-0 ms-2">
+                Alumni Management System
+                </p>
+            </a>
+            <div class="dropdown">
+                <button class="btn dropdown-toggle pe-5 rounded-5" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <?php echo $_SESSION['fullname']?>
+                </button>
+                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                    <a type="button" href="logout.php" class="dropdown-item">Logout</a>  
+                </div>
+            </div>  
+            
+        </div>
         </section>
         <nav class="px-0 navbar navbar-expand-lg navbar-light">
             <div class="container-fluid px-0">
@@ -71,21 +87,24 @@ include "session.php";
             </div> 
         </nav>
         <div class="mx-3">
-            
+            <div class="d-flex justify-content-between align-items-center">
+            <div>
             <button type="button" class="btn btn-danger rounded-3 box-shadow1 btn-lg bg-tup my-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <i class="fa-solid fa-plus"></i> Add
             </button>
+            </div>
+            </div>
+            
 
-            <div class="rounded-3 box-shadow1">
+            <div class="rounded-3">
                 <div class="rounded-3 ">
-                    <div class="bg-tup text-center">
+                    <div class="bg-tup text-center mb-3">
                         <p class="fs-5 fw-semibold text-light mb-0">
                             Alumni list
                         </p>
                     </div>
-                    <table class="table table-hover alumni-table text-center rounded-3" style="font-size: 14px;">
-                        
-                    
+                    <div id="searchresult">
+                        <table class="table table-hover alumni-table text-center rounded-3" style="font-size: 14px;" id="table">
                         <thead>
                             <tr>
                                 <th class="m-tbl-th fw-light low-col" scope="col">TUPV-ID</th>
@@ -158,7 +177,9 @@ include "session.php";
                                 $con->close();
                             ?>
                         </tbody>
-                    </table>
+                        </table>
+                    </div>
+                    
                     <!-- MODALS -->
                     <?php error_reporting(0) ?>
                     <?php include('add.php')?>
@@ -173,39 +194,35 @@ include "session.php";
         
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
-    <!-- Popper.JS -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script> -->
-    <!-- Bootstrap JS -->
-    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script> -->
-    <script src="../js/jquery-3.3.1.slim.min.js"></script>
-    <script src="js/script(admin).js"></script>
+<script type="text/javascript">
+        $(document).ready(function() {
+            $('#table').DataTable();
+        });
+    </script>
+    <!-- <script src="../js/jquery-3.3.1.slim.min.js"></script>
+    <script src="../js/jquery-3.6.1.js"></script> -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.6.1.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap-datepicker.min.js"></script>
+    <script src="../js/solid.js"></script>
+    <script src="../js/fontawesome.js"></script>
+    
+    
+    <!-- <script src="../js/jquery-3.3.1.slim.min.js"></script> -->
+    <!-- <script src="js/script(admin).js"></script>
     
     <script src="../js/popper.min.js"></script>
     <script src="../js/fontawesome.js"></script>
     <script src="../js/solid.js"></script>
 
-    <script src="../js/jquery.min.js"></script>
-    <script src="js/jquery-3.6.1.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/bootstrap-datepicker.min.js"></script>
-    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/jquery.min.js"></script> -->
+    <!-- <script src="js/jquery-3.6.1.js"></script> -->
+    <!-- <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap-datepicker.min.js"></script> -->
+    <!-- <script src="../js/bootstrap.bundle.min.js"></script> -->
+    
     <script type="text/javascript">
         $(function() {
             $('#datepicker').datepicker();

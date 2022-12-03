@@ -68,6 +68,7 @@
 .action-td .row .col-3 button {
     background-color: #b8afaf !;
 }
+
 .action-td .row .col-3 button i {
     font-size: 1rem;
     
@@ -114,6 +115,9 @@ a[data-toggle="collapse"] {
     top: 50%;
     right: 20px;
     transform: translateY(-50%);
+}
+#live_search {
+    width: 20rem;
 }
 /*
     ADDITIONAL DEMO STYLE, NOT IMPORTANT TO MAKE THINGS WORK BUT TO MAKE IT A BIT NICER :)
