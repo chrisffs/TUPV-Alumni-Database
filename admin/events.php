@@ -2,6 +2,22 @@
 session_start(); 
 include "../conn.php";
 include "session.php";
+
+if(isset($_POST['submit_event'])) {
+    $eventDate = mysqli_real_escape_string($con, $_POST['date_of_event']);
+    $eventName = mysqli_real_escape_string($con, $_POST['event_name']);
+    $eventStime = mysqli_real_escape_string($con, $_POST['start_time']);
+    $eventEtime = mysqli_real_escape_string($con, $_POST['end_time']);
+    $eventVenue = mysqli_real_escape_string($con, $_POST['venue_name']);
+    $sql = "INSERT INTO events (event_date, event_name, time_start, time_end, location) VALUES ('$eventDate', '$eventName', '$eventStime', '$eventEtime', '$eventVenue')";
+
+    if($con->query($sql) === TRUE) {
+        echo '<script> alert("Events Added Successfully") </script>';
+        header("location: events.php");
+    } else {
+        echo '<script> alert("Events Failed Successfully") </script>';
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -91,8 +107,8 @@ include "session.php";
                                     <div class="">
                                         <div class="form-group">
                                             <div class="input-group date" id="datepicker">
-                                                <input type="text" class="py-4 form-control border-0 filter-input" name="date_of_event" placeholder="Input Date of Event" id="event-date" style="border-radius:0.5rem 0 0 0.5rem ;">
-                                                <span class="input-group-append ">
+                                                <input type="date" class="py-4 form-control border-0 filter-input" name="date_of_event" placeholder="Input Date of Event" id="event-date" style="border-radius:0.5rem 0 0 0.5rem ;">
+                                                <span class="input-group-append">
                                                     <span class="input-group-text border-0 filter-input" style="cursor: pointer; border-radius: 0 0.5rem 0.5rem 0;" id="">
                                                         <i class="fa-solid fa-calendar"></i>
                                                     </span>
@@ -115,16 +131,22 @@ include "session.php";
                                 </div>
                                 <div class="col-2 px-1">
                                     <div class="">
-                                        <input type="text" id="end_time" class="py-4 form-control fw-pp rounded-3 border-0" name="start_time" placeholder="Select end time" autocomplete="off" />
+                                        <input type="text" id="end_time" class="py-4 form-control fw-pp rounded-3 border-0" name="end_time" placeholder="Select end time" autocomplete="off" />
                                     </div>
                                 </div>
                                 <div class="col-8 px-1">
-                                <div class="">
-                                        <input class="py-4 form-control fw-pp rounded-3 border-0 filter-input" id="event_venue"type="text" placeholder="Location" aria-label="default input example" name="search_name" maxlength="30">
+                                    <div class="">
+                                        <input class="py-4 form-control fw-pp rounded-3 border-0 filter-input" id="event_venue"type="text" placeholder="Location" aria-label="default input example" name="venue_name" maxlength="30">
                                     </div>
                                 </div>
                             </div>
+                            <div class="row my-3">
+                                <div class="col-12 d-flex justify-content-end">
+                                    <button class="btn btn-danger rounded-5 px-5" type="submit" name="submit_event">Submit</button>
+                                </div>
+                            </div>
                         </div>
+                        
                     </form>
                     <div class="col-3 d-flex justify-content-center bg-tup py-4 rounded-4">
                         <div class="col-12">
