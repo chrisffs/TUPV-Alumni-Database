@@ -194,67 +194,7 @@ include "session.php";
         
     </div>
 </div>
-<script type="text/javascript">
-        $(document).ready(function() {
-            $('#table').DataTable();
-        });
-    </script>
-    <!-- <script src="../js/jquery-3.3.1.slim.min.js"></script>
-    <script src="../js/jquery-3.6.1.js"></script> -->
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="../js/bootstrap.bundle.min.js"></script>
-    <script src="js/jquery-3.6.1.js"></script>
-    <script src="../js/popper.min.js"></script>
-    <script src="../js/bootstrap-datepicker.min.js"></script>
-    <script src="../js/solid.js"></script>
-    <script src="../js/fontawesome.js"></script>
-    
-    
-    <!-- <script src="../js/jquery-3.3.1.slim.min.js"></script> -->
-    <!-- <script src="js/script(admin).js"></script>
-    
-    <script src="../js/popper.min.js"></script>
-    <script src="../js/fontawesome.js"></script>
-    <script src="../js/solid.js"></script>
-
-    <script src="../js/jquery.min.js"></script> -->
-    <!-- <script src="js/jquery-3.6.1.js"></script> -->
-    <!-- <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/bootstrap-datepicker.min.js"></script> -->
-    <!-- <script src="../js/bootstrap.bundle.min.js"></script> -->
-    
-    <script type="text/javascript">
-        $(function() {
-            $('#datepicker').datepicker();
-        });
-        $("#yearpicker").datepicker({
-            format: "yyyy",
-            viewMode: "years", 
-            minViewMode: "years"
-        });
-        $(function() {
-            $('#datepicker-edit').datepicker();
-        });
-        $("#yearpicker-edit").datepicker({
-            format: "yyyy",
-            viewMode: "years", 
-            minViewMode: "years"
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('.deletebtn').on('click', function(){
-                $tr = $(this).closest('tr');
-                var data = $tr.children("td").map(function() {
-                    return $(this).text();
-                }).get();
-                console.log($('#tupv-id-delete').val(data[0]));
-                
-
-            })
-        });
-    </script>
-    <script>
+<script>
         $(document).ready(function() {
             $('.editbtn').on('click', function(){
                 $tr = $(this).closest('tr');
@@ -262,8 +202,6 @@ include "session.php";
                 var data = $tr.children("td").map(function() {
                     return $(this).text();
                 }).get();
-
-                console.log(data);
 
                 $('#tupv-id-edit').val(data[0]);
                 $('#first-name-edit').val(data[2]);
@@ -282,7 +220,21 @@ include "session.php";
                 $('#p-emp-status-edit').val(data[14]);
             })
         });
-    </script>
+</script>
+<script>
+        $(document).ready(function() {
+            $('.deletebtn').on('click', function(){
+                $tr = $(this).closest('tr');
+                var data = $tr.children("td").map(function() {
+                    return $(this).text();
+                }).get();
+                $('#tupv-id-delete').val(data[0]);
+                
+
+            })
+        });
+</script>
+
     <script>
         $(document).ready(function() {
             $('.viewbtn').on('click', function(){
@@ -291,7 +243,6 @@ include "session.php";
                 var data = $tr.children("td").map(function() {
                     return $(this).text();
                 }).get();
-                console.log(data);
                 $('#tupv-view').text(data[0]);
                 $('#lname-view').text(data[1]);
                 $('#fname-view').text(data[2]);
@@ -311,6 +262,40 @@ include "session.php";
 
         });
     </script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#table').DataTable();
+    });
+</script>
+    <!-- <script src="../js/jquery-3.3.1.slim.min.js"></script>
+    <script src="../js/jquery-3.6.1.js"></script> -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.6.1.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap-datepicker.min.js"></script>
+    <script src="../js/solid.js"></script>
+    <script src="../js/fontawesome.js"></script>
+
+    <script type="text/javascript">
+        $(function() {
+            $('#datepicker').datepicker();
+        });
+        $("#yearpicker").datepicker({
+            format: "yyyy",
+            viewMode: "years", 
+            minViewMode: "years"
+        });
+        $(function() {
+            $('#datepicker-edit').datepicker();
+        });
+        $("#yearpicker-edit").datepicker({
+            format: "yyyy",
+            viewMode: "years", 
+            minViewMode: "years"
+        });
+    </script>
+
     
 </body>
 </html>

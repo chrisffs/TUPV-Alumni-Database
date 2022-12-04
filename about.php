@@ -23,9 +23,6 @@ include "conn.php"
         .img-logo {
             max-width: 142px;
         }
-        .officers {
-
-        }
     </style>
 </head>
 <body style="background-color: #FAFAFA;">
