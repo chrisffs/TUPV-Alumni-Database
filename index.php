@@ -114,7 +114,7 @@ include "conn.php";
                 <br>
                 <div class="event-cards mt-5 px-sm-5 row">
                 <?php 
-                $query = "SELECT * FROM events ORDER BY event_date ASC";
+                $query = "SELECT * FROM events WHERE event_date > now() ORDER BY event_date ASC";
 
                 $data = mysqli_query($con, $query) or die('error');
                 if(mysqli_num_rows($data) > 0) {

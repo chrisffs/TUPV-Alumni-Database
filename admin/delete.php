@@ -35,7 +35,7 @@ if(isset($_POST['deletedata'])) {
                 <div class="form mt-3">   
                     <form action="delete.php" method="POST" class="form-main">
                         <input class="form-control" id="tupv-id-delete" name="tupv-id" type="hidden" aria-label="default input example">
-                        <p>Are you sure you want to delete this record?</pc>
+                        <p>Are you sure you want to delete this record?</p>
                 </div>
             </div>
             <div class="modal-footer">

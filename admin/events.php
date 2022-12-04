@@ -31,7 +31,7 @@ if(isset($_POST['submit_event'])) {
     <link rel="stylesheet" href="style(admin).css" type="text/css">
 
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="js/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="js/bootstrap.min.css"> -->
     <link rel="stylesheet" href="../css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../css/all.min.css">
 
@@ -170,7 +170,90 @@ if(isset($_POST['submit_event'])) {
             </form>
             
         </div>
-        
+        <div class="bg-white mx-3 mt-3">
+            <table class="table table-hover">
+                <div>
+                    <p class="mb-0 fw-semibold fs-2 p-3">Upcoming events</p>
+                </div>
+                <thead>
+                    <tr>
+                        <th>Event Date</th>
+                        <th>Event Name</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php 
+                        $query = "SELECT * FROM events WHERE event_date > now() OR date(event_date) = date(date_sub(now(), interval 0 day)) ORDER BY event_date ASC";
+
+                        $data = mysqli_query($con, $query) or die('error');
+                        if(mysqli_num_rows($data) > 0) {
+                            while($row = mysqli_fetch_assoc($data)) {
+                    ?>
+                    <tr>
+                        <td><?php echo $row['event_date'];?></td>
+                        <td><?php echo $row['event_name'];?></td>
+                        <td><?php echo $row['time_start'];?></td>
+                        <td><?php echo $row['time_end'];?></td>
+                        <td><?php echo $row['event_location'];?></td>
+                    </tr>
+                    <?php 
+                            }
+                        } else {
+                            ?>      
+                            <tr>
+                                <td colspan="5">No Events to show...</td>
+                            </tr>
+                        <?php
+                        }
+                    ?>
+                </tbody>
+            </table>
+
+            <table class="table table-hover">
+                <div>
+                    <p class="mb-0 fw-semibold fs-2 p-3">Events Passed</p>
+                </div>
+                <thead>
+                    <tr>
+                        <th>Event Date</th>
+                        <th>Event Name</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php 
+                    
+                        $query = "SELECT * FROM events WHERE event_date < now() AND date(event_date) != date(date_sub(now(), interval 0 day))";
+
+                        $data = mysqli_query($con, $query) or die('error');
+                        if(mysqli_num_rows($data) > 0) {
+                            while($row = mysqli_fetch_assoc($data)) {
+                    ?>
+                    <tr>
+                        <td><?php echo $row['event_date'];?></td>
+                        <td><?php echo $row['event_name'];?></td>
+                        <td><?php echo $row['time_start'];?></td>
+                        <td><?php echo $row['time_end'];?></td>
+                        <td><?php echo $row['event_location'];?></td>
+                    </tr>
+                    <?php 
+                            }
+                        } else {
+                            ?>      
+                            <tr>
+                                <td colspan="5">No Events to show...</td>
+                            </tr>
+                        <?php
+                        }
+                    ?>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 <script src="../js/jquery-3.3.1.slim.min.js"></script>

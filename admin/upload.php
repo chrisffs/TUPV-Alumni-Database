@@ -29,7 +29,7 @@ if(isset($_POST['submit'])) {
                     $result = mysqli_query($con, $sql);
                 };
 
-                header("location: index.php?uploadsuccess");
+                header("location: index.php");
 
             } else {
                 echo "Your file is too big";
@@ -41,7 +41,7 @@ if(isset($_POST['submit'])) {
         echo "You cannot upload files of this type!";
     }
         if($result) {
-            header('location:upload.php?uploaded=ins');
+            header('location:index.php?uploaded=ins');
         }
 
 

@@ -74,7 +74,7 @@ include "conn.php"
         </div>
 
         <section class="d-lg-flex justify-content-between ">
-            <div class="row">
+            <div class="row flex-fill">
                 <?php 
                     $sql = "SELECT * FROM gallery_uploads";
                     $data = mysqli_query($con, $sql) or die('error');

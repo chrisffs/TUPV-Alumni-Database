@@ -26,7 +26,7 @@ if(isset($_POST['submit']))
     if(mysqli_num_rows($data) > 0) {
         // $_SESSION['tupv_dup'] = "TUPV-ID has already been used!";
         echo "<script>alert('TUPV-ID has been already been used.')</script>";
-        header("location: alumni-list.php"); 
+        header("location: alumni-list.php?failed"); 
     } else {
     
     
@@ -38,7 +38,7 @@ if(isset($_POST['submit']))
     if($con->query($query) === TRUE) {
         // echo '<script> alert("Data Updated")</script>';
         // // $_SESSION['message'] = "Record Created Successfully";
-        header("location: alumni-list.php"); 
+        header("location: alumni-list.php?add=ins"); 
     } else {
         echo '<script> alert("Data Not Updated")</script>';
         // $_SESSION['message'] = "Record Not Created";
@@ -183,7 +183,7 @@ if(isset($_POST['submit']))
                             <input class="form-control" id="c-prof" name="c-prof" type="text" aria-label="default input example">
                         </div>
                         <div class="button-div ">
-                            <button type="submit" class="btn btn-success mt-3 w-100 rounded-3" name="submit">Submit Form</button>
+                            <button type="submit" class="btn btn-success mt-3 w-100 rounded-3" name="submit" onClick="window.location.reload()">Submit Form</button>
                         </div>
                                     
                     </form>

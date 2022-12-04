@@ -104,7 +104,7 @@ include "session.php";
                         </p>
                     </div>
                     <div id="searchresult">
-                        <table class="table table-hover alumni-table text-center rounded-3" style="font-size: 14px;" id="table">
+                        <table class="table table-hover alumni-table text-center rounded-3 bg-white" style="font-size: 12px;" id="table">
                         <thead>
                             <tr>
                                 <th class="m-tbl-th fw-light low-col" scope="col">TUPV-ID</th>
@@ -125,7 +125,7 @@ include "session.php";
                                 <th class="m-tbl-th fw-light action-td" scope="col">Actions</th>
                             </tr>
                         </thead>
-                        <tbody class="bg-white">
+                        <tbody>
                             <?php 
                             $query = "SELECT * FROM alumni_tbl ORDER BY tupv_id DESC";
                             $data = mysqli_query($con, $query) or die('error');
@@ -243,6 +243,19 @@ include "session.php";
     </script>
     <script>
         $(document).ready(function() {
+            $('.deletebtn').on('click', function(){
+                $tr = $(this).closest('tr');
+                var data = $tr.children("td").map(function() {
+                    return $(this).text();
+                }).get();
+                console.log($('#tupv-id-delete').val(data[0]));
+                
+
+            })
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
             $('.editbtn').on('click', function(){
                 $tr = $(this).closest('tr');
                 
@@ -298,18 +311,6 @@ include "session.php";
 
         });
     </script>
-    <script>
-        $(document).ready(function() {
-            $('.deletebtn').on('click', function(){
-                $tr = $(this).closest('tr');
-                var data = $tr.children("td").map(function() {
-                    return $(this).text();
-                }).get();
-                console.log($('#tupv-id-delete').val(data[0]));
-                
-
-            })
-        });
-    </script>
+    
 </body>
 </html>

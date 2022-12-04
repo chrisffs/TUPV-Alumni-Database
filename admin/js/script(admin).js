@@ -13,9 +13,10 @@ $(document).ready(function(){
     $("#event-date").change(function(){
         var eventDateIn = $(this).val();
         // var month = eventDate.toLocaleString('default', { month: 'long' });
+        console.log(eventDateIn);
         eventMonth = month_name(new Date(eventDateIn));
-        eventDay = eventDateIn.slice(3,5);
-        eventYear = eventDateIn.slice(6,10);
+        eventDay = eventDateIn.slice(8,10);
+        eventYear = eventDateIn.slice(0,4);
 
         $('#yearr').text(eventYear);
         $('#day').text(eventDay);
