@@ -38,7 +38,7 @@ if(isset($_POST['submit']))
     if($con->query($query) === TRUE) {
         // echo '<script> alert("Data Updated")</script>';
         // // $_SESSION['message'] = "Record Created Successfully";
-        header("location: alumni-list.php?add=ins"); 
+        header("location: alumni-list.php"); 
     } else {
         echo '<script> alert("Data Not Updated")</script>';
         // $_SESSION['message'] = "Record Not Created";
@@ -60,7 +60,7 @@ if(isset($_POST['submit']))
             </div>
             <div class="modal-body">
                 <div class="form mt-3">
-                    <form action="alumni-list.php" method="POST" class="form-main">
+                    <form action="add.php" method="POST" class="form-main">
                     <?php
             // if(isset($_SESSION['tupv_dup'])){
             //     $warn = $_SESSION['tupv_dup'];
@@ -183,7 +183,7 @@ if(isset($_POST['submit']))
                             <input class="form-control" id="c-prof" name="c-prof" type="text" aria-label="default input example">
                         </div>
                         <div class="button-div ">
-                            <button type="submit" class="btn btn-success mt-3 w-100 rounded-3" name="submit" onClick="window.location.reload()">Submit Form</button>
+                            <button type="submit" class="btn btn-success mt-3 w-100 rounded-3" name="submit">Submit Form</button>
                         </div>
                                     
                     </form>

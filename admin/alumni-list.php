@@ -89,9 +89,9 @@ include "session.php";
         <div class="mx-3">
             <div class="d-flex justify-content-between align-items-center">
             <div>
-            <button type="button" class="btn btn-danger rounded-3 box-shadow1 btn-lg bg-tup my-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <a type="button" class="btn-danger text-decoration-none rounded-3 box-shadow1 btn-lg bg-tup my-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <i class="fa-solid fa-plus"></i> Add
-            </button>
+            </a>
             </div>
             </div>
             
@@ -152,10 +152,10 @@ include "session.php";
                                         <td valign=middle class="action-td">
                                             <div class="row">
                                                 <div class="col-3">
-                                                    <button href="" class="btn btn-info rounded-5 border-0" data-bs-toggle="modal" data-bs-target="#exampleModalEdit"><i class="fa-solid fa-pen-to-square editbtn"></i></button>
+                                                    <a href="" class=" rounded-5 border-0" data-bs-toggle="modal" data-bs-target="#exampleModalEdit"><i class="fa-solid fa-pen-to-square editbtn"></i></a>
                                                 </div>
                                                 <div class="col-3">
-                                                    <button href="" class="btn btn-danger rounded-5 border-0" data-bs-toggle="modal" data-bs-target="#exampleModalDelete"><i class="fa-solid fa-trash-can deletebtn"></i></button>
+                                                    <a href="" class=" rounded-5 border-0" data-bs-toggle="modal" data-bs-target="#exampleModalDelete"><i class="fa-solid fa-trash-can deletebtn"></i></a>
                                                 </div>
                                                 <div class="col-6">
                                                     <a href="" data-bs-toggle="modal" data-bs-target="#viewModal"><i class="fa-solid fa-ellipsis viewbtn"></i></a>
@@ -218,25 +218,14 @@ include "session.php";
                 $('#c-prof-edit').val(data[12]);
                 $('#c-name-edit').val(data[13]);
                 $('#p-emp-status-edit').val(data[14]);
-            })
-        });
-</script>
-<script>
-        $(document).ready(function() {
+            });
             $('.deletebtn').on('click', function(){
                 $tr = $(this).closest('tr');
                 var data = $tr.children("td").map(function() {
                     return $(this).text();
                 }).get();
                 $('#tupv-id-delete').val(data[0]);
-                
-
-            })
-        });
-</script>
-
-    <script>
-        $(document).ready(function() {
+            });
             $('.viewbtn').on('click', function(){
                 $tr = $(this).closest('tr');
                 
@@ -259,14 +248,27 @@ include "session.php";
                 $('#cname-view').text(data[13]);
                 $('#pes-view').text(data[14]);
             });
+            $('#table').DataTable();
+
+        });
+</script>
+<!-- <script>
+        $(document).ready(function() {
+            
+        });
+</script>
+
+    <script>
+        $(document).ready(function() {
+            
 
         });
     </script>
 <script type="text/javascript">
     $(document).ready(function() {
-        $('#table').DataTable();
+        
     });
-</script>
+</script> -->
     <!-- <script src="../js/jquery-3.3.1.slim.min.js"></script>
     <script src="../js/jquery-3.6.1.js"></script> -->
     <script src="js/bootstrap.bundle.min.js"></script>
