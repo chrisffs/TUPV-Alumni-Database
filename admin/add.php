@@ -53,7 +53,7 @@ if(isset($_POST['submit']))
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content bg-light">
-            <div class="modal-header bg-tup align-items-center">
+            <div class="modal-header bg-success align-items-center">
                             <h1 class="modal-title fs-5 text-light" id="exampleModalLabel">Add</h1>
                             
                             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -183,7 +183,7 @@ if(isset($_POST['submit']))
                             <input class="form-control" id="c-prof" name="c-prof" type="text" aria-label="default input example">
                         </div>
                         <div class="button-div ">
-                            <button type="submit" class="btn btn-success mt-3 w-100 rounded-3" name="submit">Submit Form</button>
+                            <button type="submit" class="btn btn-success mt-3 w-100 rounded-3" name="submit">Add Data</button>
                         </div>
                                     
                     </form>

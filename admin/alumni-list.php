@@ -87,9 +87,14 @@ include "session.php";
             </div> 
         </nav>
         <div class="mx-3">
+                <div class="">
+                        <p class="fs-2 fw-bold mb-0">
+                            Alumni list
+                        </p>
+                    </div>
             <div class="d-flex justify-content-between align-items-center">
             <div>
-            <a type="button" class="btn-danger text-decoration-none rounded-3 box-shadow1 btn-lg bg-tup my-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <a type="button" class="btn btn-outline-success rounded-3 mb-3 mt-2 fw-semibold" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <i class="fa-solid fa-plus"></i> Add
             </a>
             </div>
@@ -98,13 +103,9 @@ include "session.php";
 
             <div class="rounded-3">
                 <div class="rounded-3 ">
-                    <div class="bg-tup text-center mb-3">
-                        <p class="fs-5 fw-semibold text-light mb-0">
-                            Alumni list
-                        </p>
-                    </div>
-                    <div id="searchresult">
-                        <table class="table table-hover alumni-table text-center rounded-3 bg-white" style="font-size: 12px;" id="table">
+                    
+                    <div class="bg-white p-3 rounded-4 box-shadow1" id="searchresult">
+                        <table class="table table-hover alumni-table text-center bg-white" style="font-size: 12px;" id="table">
                         <thead>
                             <tr>
                                 <th class="m-tbl-th fw-light low-col" scope="col">TUPV-ID</th>
@@ -152,13 +153,13 @@ include "session.php";
                                         <td valign=middle class="action-td">
                                             <div class="row">
                                                 <div class="col-3">
-                                                    <a href="" class=" rounded-5 border-0" data-bs-toggle="modal" data-bs-target="#exampleModalEdit"><i class="fa-solid fa-pen-to-square editbtn"></i></a>
+                                                    <a href="" class="text-info fs-5" data-bs-toggle="modal" data-bs-target="#exampleModalEdit"><i class="fa-regular fa-pen-to-square editbtn"></i></a>
                                                 </div>
                                                 <div class="col-3">
-                                                    <a href="" class=" rounded-5 border-0" data-bs-toggle="modal" data-bs-target="#exampleModalDelete"><i class="fa-solid fa-trash-can deletebtn"></i></a>
+                                                    <a href="" class="text-danger fs-5" data-bs-toggle="modal" data-bs-target="#exampleModalDelete"><i class="fa-regular fa-trash-can deletebtn"></i></a>
                                                 </div>
                                                 <div class="col-6">
-                                                    <a href="" data-bs-toggle="modal" data-bs-target="#viewModal"><i class="fa-solid fa-ellipsis viewbtn"></i></a>
+                                                    <a href="" class="text-primary fs-3" data-bs-toggle="modal" data-bs-target="#viewModal"><i class="fa-solid fa-ellipsis viewbtn"></i></a>
                                                 </div>
                                             </div>
                                             
@@ -252,29 +253,10 @@ include "session.php";
 
         });
 </script>
-<!-- <script>
-        $(document).ready(function() {
-            
-        });
-</script>
-
-    <script>
-        $(document).ready(function() {
-            
-
-        });
-    </script>
-<script type="text/javascript">
-    $(document).ready(function() {
-        
-    });
-</script> -->
-    <!-- <script src="../js/jquery-3.3.1.slim.min.js"></script>
-    <script src="../js/jquery-3.6.1.js"></script> -->
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="../js/bootstrap.bundle.min.js"></script>
-    <script src="js/jquery-3.6.1.js"></script>
-    <script src="../js/popper.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js" defer="defer"></script>
+    <script src="../js/bootstrap.bundle.min.js" defer="defer"></script>
+    <script src="js/jquery-3.6.1.js" ></script>
+    <script src="../js/popper.min.js" defer="defer"></script>
     <script src="../js/bootstrap-datepicker.min.js"></script>
     <script src="../js/solid.js"></script>
     <script src="../js/fontawesome.js"></script>

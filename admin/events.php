@@ -103,42 +103,37 @@ if(isset($_POST['submit_event'])) {
                                     <div class="">
                                         <div class="form-group">
                                             <div class="input-group date" id="">
-                                                <input type="date" class="py-4 form-control rounded-3 border-0 filter-input" name="date_of_event" placeholder="Input Date of Event" id="event-date">
-                                                <!-- <span class="input-group-append">
-                                                    <span class="input-group-text border-0 filter-input" style="cursor: pointer; border-radius: 0 0.5rem 0.5rem 0;" id="">
-                                                        <i class="fa-solid fa-calendar"></i>
-                                                    </span>
-                                                </span> -->
+                                                <input type="text" class="py-4 form-control rounded-3 border-0 filter-input" onfocus="(this.type='date')" name="date_of_event" placeholder="Input Date of Event" id="event-date" required>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-9 px-1">
                                     <div class="">
-                                        <input class="py-4 form-control fw-pp rounded-3 border-0 filter-input" type="text" placeholder="Event Name" aria-label="default input example" name="event_name" id="event-name" >
+                                        <input class="py-4 form-control fw-pp rounded-3 border-0 filter-input" type="text" placeholder="Event Name" aria-label="default input example" name="event_name" id="event-name" required>
                                     </div>
                                 </div>
                             </div>
                             <div class="row my-3">
                                 <div class="col-2 px-1">
                                     <div class="">
-                                        <input type="text" id="start_time" class="py-4 form-control fw-pp rounded-3 border-0" name="start_time" placeholder="Select start time" autocomplete="off" />
+                                        <input type="text" id="start_time" class="py-4 form-control fw-pp rounded-3 border-0 start_time" name="start_time" placeholder="Select start time" autocomplete="off" required/>
                                     </div>
                                 </div>
                                 <div class="col-2 px-1">
                                     <div class="">
-                                        <input type="text" id="end_time" class="py-4 form-control fw-pp rounded-3 border-0" name="end_time" placeholder="Select end time" autocomplete="off" />
+                                        <input type="text" id="end_time" class="py-4 form-control fw-pp rounded-3 border-0 end_time" name="end_time" placeholder="Select end time" autocomplete="off" required/>
                                     </div>
                                 </div>
                                 <div class="col-8 px-1">
                                     <div class="">
-                                        <input class="py-4 form-control fw-pp rounded-3 border-0 filter-input" id="event_venue"type="text" placeholder="Location" aria-label="default input example" name="venue_name" maxlength="30">
+                                        <input class="py-4 form-control fw-pp rounded-3 border-0 filter-input" id="event_venue"type="text" placeholder="Location" aria-label="default input example" name="venue_name" maxlength="30" required>
                                     </div>
                                 </div>
                             </div>
                             <div class="row my-3">
                                 <div class="col-12 d-flex justify-content-end">
-                                    <button class="btn btn-danger rounded-5 px-5" type="submit" name="submit_event">Submit</button>
+                                    <button class="btn btn-danger rounded-5 px-3" type="submit" name="submit_event"><i class="fa-regular fa-calendar-check"></i> Add Event</button>
                                 </div>
                             </div>
                         </div>
@@ -167,11 +162,13 @@ if(isset($_POST['submit_event'])) {
                 </div>
                 <thead>
                     <tr>
+                        <th class="d-none">ID</th>
                         <th>Event Date</th>
                         <th>Event Name</th>
                         <th>Start Time</th>
                         <th>End Time</th>
                         <th>Location</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -182,12 +179,25 @@ if(isset($_POST['submit_event'])) {
                         if(mysqli_num_rows($data) > 0) {
                             while($row = mysqli_fetch_assoc($data)) {
                     ?>
+                    <?php 
+                    include("editEvent.php");
+                    include("deleteEvent.php");
+                    ?>
                     <tr>
+                        <td class="d-none"><?php echo $row['id'];?></td>
                         <td><?php echo $row['event_date'];?></td>
                         <td><?php echo $row['event_name'];?></td>
                         <td><?php echo $row['time_start'];?></td>
                         <td><?php echo $row['time_end'];?></td>
                         <td><?php echo $row['event_location'];?></td>
+                        <td>
+                            <a type="button" class="text-info mx-1" data-bs-toggle="modal" data-bs-target="#editEventModal">
+                                <i class="fa-regular fa-pen-to-square fs-3 editEventbtn"></i>
+                            </a>
+                            <a type="button" class="text-danger mx-1" data-bs-toggle="modal" data-bs-target="#deleteEventModal">
+                                <i class="fa-regular fa-calendar-xmark fs-3 deleteEventbtn"></i>
+                            </a>
+                        </td>
                     </tr>
                     <?php 
                             }
@@ -201,7 +211,8 @@ if(isset($_POST['submit_event'])) {
                     ?>
                 </tbody>
             </table>
-
+            
+            
             <table class="table table-hover">
                 <div>
                     <p class="mb-0 fw-semibold fs-2 p-3">Events Passed</p>
@@ -253,7 +264,9 @@ if(isset($_POST['submit_event'])) {
 <script src="../js/fontawesome.js"></script>
 <script src="../js/solid.js"></script>
 <script src="../js/bootstrap-datepicker.min.js"></script>
+<script src="js/bootstrap.bundle.min.js" defer="defer"></script>
 <script src="../js/bootstrap.bundle.min.js" defer="defer"></script>
+
 <script src="js/all.min.js"></script>
 
 <script src="js/combodate.js"></script>
@@ -262,7 +275,32 @@ if(isset($_POST['submit_event'])) {
 
 
 <script src="js/timepicker-bs4.js" defer="defer"></script>
+<script>
+    $(document).ready(function() {
+        $('.editEventbtn').on('click', function(){
+        $tr = $(this).closest('tr');
+                
+        var data = $tr.children("td").map(function() {
+            return $(this).text();
+        }).get();
+        $('#id').val(data[0]);
+        $('#event-edit-date').val(data[1]);
+        $('#event-edit-name').val(data[2]);
+        $('#start-edit-time').val(data[3]);
+        $('#end-edit-time').val(data[4]);
+        $('#event-edit-venue').val(data[5]);
 
+    });
+    $('.deleteEventbtn').on('click', function(){
+        $tr = $(this).closest('tr');
+                
+        var data = $tr.children("td").map(function() {
+            return $(this).text();
+        }).get();
+        $('#id_delete').val(data[0]);
+    });
+});
+</script>
 
 
 <script type="text/javascript">
@@ -278,6 +316,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	});
     jQuery('#end_time').timepicker({
+
+});
+jQuery('#start-edit-time').timepicker({
+
+});
+jQuery('#end-edit-time').timepicker({
 
 });
 });

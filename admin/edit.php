@@ -41,7 +41,7 @@ if (isset($_POST['update'])) {
 <div class="modal fade" id="exampleModalEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content bg-light">
-            <div class="modal-header bg-tup align-items-center">
+            <div class="modal-header bg-info align-items-center">
                 <h1 class="modal-title fs-5 text-light" id="exampleModalLabel">Edit</h1>
                             
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -166,7 +166,7 @@ if (isset($_POST['update'])) {
                                         <input class="form-control" id="c-prof-edit" name="c-prof" type="text" aria-label="default input example">
                         </div>
                         <div class="button-div ">
-                                        <button type="submit" class="btn btn-success mt-3 w-100 rounded-3" name="update" value="Update">Update</button>
+                                        <button type="submit" class="btn btn-info mt-3 w-100 rounded-3" name="update" value="Update">Update</button>
                         </div>            
                     </form>
                 </div>

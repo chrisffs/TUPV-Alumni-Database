@@ -51,7 +51,7 @@ include "session.php";
 	.tdView:nth-of-type(8):before { content: "Address"; }
 	.tdView:nth-of-type(9):before { content: "Contact Number"; }
 	.tdView:nth-of-type(10):before { content: "Email"; }
-    .tdView:nth-of-type(11):before { content: "Year Graduated"; }
+  .tdView:nth-of-type(11):before { content: "Year Graduated"; }
 	.tdView:nth-of-type(12):before { content: "Program Graduated"; }
 	.tdView:nth-of-type(13):before { content: "Current Profession"; }
 	.tdView:nth-of-type(14):before { content: "Company Name"; }
@@ -61,8 +61,8 @@ include "session.php";
 <div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+      <div class="modal-header text-light bg-primary">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Details</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
