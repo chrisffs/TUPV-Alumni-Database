@@ -66,13 +66,15 @@ include "conn.php";
 
         <section class="bg-light py-5">
             <div class="container">
-                <div class="d-flex flex-lg-row flex-column-reverse justify-content-around align-items-center">
-                    <div class="text-lg-start" id="title-l">
-                        <p class="blck-txt fw-pp">Welcome to <span class=" hl-txt fw-pp">TUP Visayas Alumni</span></p>
+                <div class="d-flex row flex-lg-row flex-column-reverse justify-content-around align-items-center">
+                    <div class="text-lg-start col-lg-7 mt-lg-0 mt-5" id="title-l">
+                        <p class="blck-txt fw-pp">Welcome to <div class=" hl-txt fw-pp">TUP Visayas Alumni Association Website</div></p>
                         <!-- <p class="hl-txt fw-pp">Alumni</p> -->
                         <p class="desc fw-pp">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
                     </div>
-                    <img class="img-fluid img-r" src="img/Group 1.png" alt="" srcset="">
+                    <div class="col-lg-5">
+                        <img class="img-fluid " src="img/Group 1.png" alt="" srcset="">
+                    </div>
                 </div>
             </div>
         </section>
@@ -104,7 +106,7 @@ include "conn.php";
                 <br>
                 <div class="event-cards mt-5 px-sm-5 row">
                 <?php 
-                $query = "SELECT * FROM events WHERE event_date > now() ORDER BY event_date ASC";
+                $query = "SELECT * FROM events WHERE event_date > now() OR date(event_date) = date(date_sub(now(), interval 0 day)) ORDER BY event_date ASC";
 
                 $data = mysqli_query($con, $query) or die('error');
                 if(mysqli_num_rows($data) > 0) {
@@ -112,12 +114,13 @@ include "conn.php";
                     {
                     
                 ?>
-
+                    
                     <div class="col-md-6 col-lg-4 reveal">
+                        <p id="current-date" class="current-date d-none"><?php echo date("Y-j-m",strtotime($row['event_date'])) ?></p>
                         <div class="event-card bg-light px-4 py-3 my-4">
                             <p class="date mb-0 fw-in"><?php echo date("d", strtotime($row['event_date'])); ?></p>
                             <p class="month mb-5 fw-pp"><span id="month"><?php echo date("F", strtotime($row['event_date'])); ?></span> <span id="yearr"><?php echo date("Y", strtotime($row['event_date'])); ?></span></p>
-                            <p class="eventt mb-0 fw-pp"><?php echo $row['event_name']; ?></p>
+                            <p class="eventt fs-6 c-tup mb-0 fw-pp"><?php echo $row['event_name']; ?></p>
                             <p class="time mb-2 fw-pp"><span><?php echo $row['time_start']; ?></span> - <span><?php echo $row['time_end'];?></span></p>
                             <p class="venue mb-0 fw-pp"><?php echo $row['event_location']; ?></p>
                         </div>
@@ -196,6 +199,23 @@ include "conn.php";
         </section>
     </section>
     <script>
+        var d = new Date();
+        var strDate = d.getFullYear() + "-" + d.getDate() + "-" + ("0" + (d.getMonth() + 1)).slice(-2);
+        
+        var date = document.getElementsByClassName('current-date');
+        
+        for(let i = 0; i < date.length; i++ ) {
+            if(date[i].innerText == strDate) {
+                let text = document.createTextNode(" (Today)");
+                let card = date[i].nextElementSibling;
+                card.children[2].appendChild(text);
+                card.children[2].classList.remove('c-tup')
+                date[i].nextElementSibling.classList.remove("bg-light");
+                date[i].nextElementSibling.classList.add("bg-danger","text-light");
+            };
+        }
+    </script>
+    <script>
         window.addEventListener('scroll', reveal)
 
 function reveal(){
@@ -218,7 +238,7 @@ function reveal(){
 }
     </script>
     <script src="js/script.js"></script>
-    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.min.js" defer="defer"></script>
     <!-- <script src="js/jquery-3.6.1.js"></script> -->
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap-datepicker.min.js"></script>

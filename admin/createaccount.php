@@ -121,9 +121,8 @@ include "session.php";
                     </form>
                 </div>
                 <div class="col-6 text-center d-flex justify-content-center align-items-center">
-                    <div>
-                        <img src="../img/Group 1.png" alt="" srcset="">
-                        <p class="fs-4 fw-semibold">TUPV Alumni Management System</p>
+                    <div class="p-3">
+                        <img class="w-75" src="../img/Group 1.png" alt="" srcset="">
                     </div>
                 </div>
             </div>

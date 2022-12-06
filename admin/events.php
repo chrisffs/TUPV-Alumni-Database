@@ -191,7 +191,7 @@ if(isset($_POST['submit_event'])) {
                     ?>
                     <tr>
                         <td class="d-none"><?php echo $row['id'];?></td>
-                        <td><?php echo $row['event_date'];?></td>
+                        <td><?php echo date("Y-d-m",strtotime($row['event_date']));?></td>
                         <td><?php echo $row['event_name'];?></td>
                         <td><?php echo $row['time_start'];?></td>
                         <td><?php echo $row['time_end'];?></td>
@@ -242,7 +242,7 @@ if(isset($_POST['submit_event'])) {
                             while($row = mysqli_fetch_assoc($data)) {
                     ?>
                     <tr>
-                        <td><?php echo $row['event_date'];?></td>
+                        <td><?php echo date("Y-d-m",strtotime($row['event_date']));?></td>
                         <td><?php echo $row['event_name'];?></td>
                         <td><?php echo $row['time_start'];?></td>
                         <td><?php echo $row['time_end'];?></td>

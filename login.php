@@ -12,23 +12,20 @@ if(isset($_POST['login'])) {
 
     if($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
-        $_SESSION['id'] = $row['id'];
-        $_SESSION['unique_id'] = $row['unique_id'];
-        $_SESSION['pass'] = $row['pass'];
-        $_SESSION['username'] = $row['username'];
-    }
+            $_SESSION['id'] = $row['id'];
+            $_SESSION['unique_id'] = $row['unique_id'];
+            $_SESSION['pass'] = $row['pass'];
+            $_SESSION['username'] = $row['username'];
+        }
+
             header('location:admin/index.php');
+            exit(0);
         } else {
-            ?>
-            <script>
-                alert('Wrong Username or Password')
-            </script>
-            <?php 
+            $_SESSION['invalid'] = "Wrong Username or Password!";
+            header("Location: login.php");
+            exit(0);
         }
 } 
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -77,7 +74,19 @@ if(isset($_POST['login'])) {
         <p class="fs-2 fw-semibold text-center mt-5 c-tupv">    
             Login
         </p>
+        <?php
         
+            if(isset($_SESSION['invalid'])){
+                $invalid = $_SESSION['invalid'];
+                ?>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <?= $invalid?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <?php
+                unset($_SESSION['invalid']);
+            }
+        ?>
         <form class="form" action="login.php" method="post">
             <input class="my-3 bg-light py-2 px-1" type="text" placeholder="username" aria-label="default input example" name="unique_id">
             <input type="password" class="my-3 bg-light py-2 px-1" placeholder="password" id="inputPassword" name="pass">

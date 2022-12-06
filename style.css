@@ -265,8 +265,10 @@ form div {
     
 }
 .eventt {
-    color: #C3203B;
     font-weight: 700;
+}
+.c-tup {
+    color: #C3203B;
 }
 #register-container {
     border-radius: 20px;
