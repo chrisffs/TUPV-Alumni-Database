@@ -22,7 +22,7 @@ if(isset($_POST['deleteEvent'])) {
 
 
 <div class="modal fade" id="deleteEventModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content bg-light">
             <div class="modal-header bg-tup align-items-center">
                 <h1 class="modal-title fs-5 text-light" id="exampleModalLabel">Delete Event</h1>

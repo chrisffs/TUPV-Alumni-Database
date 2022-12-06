@@ -163,9 +163,9 @@ include "conn.php";
                         <p class="pe-lg-4 fw-pp">Can you spare your time to Click the register button and fill out the form. Be one of us!</p>
                     </div>
                     <div class="flex-fill">
-                        <button type="button" class="btn btn-danger px-5 w-100 rounded-3" onclick="location.href='form.php'" id="btn-register">
+                        <a type="button" href="form.php" class="btn btn-danger px-5 w-100 rounded-3" target="_blank" id="btn-register">
                             Register
-                        </button>
+                        </a>
                     </div>
                     
 

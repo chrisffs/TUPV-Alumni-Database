@@ -47,11 +47,15 @@
 .bg-tup {
     background-color: #C3203B !important;
 }
+.fs-10 {
+    font-size: 12px;
+}
 .bg-light-cs {
     background-color: #FAECEC;
 }
 .box-shadow1 {
-    box-shadow: 4px 4px 16px 4px rgba(0, 0, 0, 0.25);
+    /* box-shadow: 4px 4px 16px 4px rgba(0, 0, 0, 0.25); */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .br10 {
     border-radius: 10px;

@@ -8,7 +8,7 @@ include "../conn.php";
         if($query_run)
         {
             // echo '<script> alert("Data Deleted"); </script>';
-            header("Location:index.php");
+            header("Location:gallery.php");
         }
         else
         {

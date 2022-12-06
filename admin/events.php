@@ -44,7 +44,7 @@ if(isset($_POST['submit_event'])) {
     <!-- Sidebar -->
     <nav id="sidebar">
         <div class="sidebar-header pt-5 pb-2">
-            <h3 class="fw-bold text-center">Dashboard</h3>
+            <h3 class="fw-bold text-center">Events</h3>
         </div>
         <ul class="list-unstyled components text-start">
             <li class="my-5 mx-3 py-1 ">
@@ -62,6 +62,11 @@ if(isset($_POST['submit_event'])) {
                     <a class="nav-link fs-6" href="events.php"><i class="fa-solid fa-calendar-day pe-4"></i>Events</a>
                 </div>
             </li>
+            <li class="my-5 mx-3 py-1">
+                <div class="ps-5">
+                    <a class="nav-link fs-6" href="gallery.php"><i class="fa-solid fa-images pe-4"></i>Gallery</a>
+                </div>
+            </li>
         </ul>
     </nav>
     <!-- Page Content -->
@@ -75,7 +80,7 @@ if(isset($_POST['submit_event'])) {
             </a>
             <div class="dropdown">
                 <button class="btn dropdown-toggle pe-5 rounded-5" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <?php echo $_SESSION['fullname']?>
+                    <?php echo $_SESSION['username']?>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a type="button" href="logout.php" class="dropdown-item">Logout</a>  

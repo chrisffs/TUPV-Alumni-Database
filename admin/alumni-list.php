@@ -55,6 +55,11 @@ include "session.php";
                     <a class="nav-link fs-6" href="events.php"><i class="fa-solid fa-calendar-day pe-4"></i>Events</a>
                 </div>
             </li>
+            <li class="my-5 mx-3 py-1">
+                <div class="ps-5">
+                    <a class="nav-link fs-6" href="gallery.php"><i class="fa-solid fa-images pe-4"></i>Gallery</a>
+                </div>
+            </li>
         </ul>
         
     </nav>
@@ -70,7 +75,7 @@ include "session.php";
             </a>
             <div class="dropdown">
                 <button class="btn dropdown-toggle pe-5 rounded-5" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <?php echo $_SESSION['fullname']?>
+                    <?php echo $_SESSION['username']?>
                 </button>
                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
                     <a type="button" href="logout.php" class="dropdown-item">Logout</a>  
@@ -203,7 +208,7 @@ include "session.php";
                 var data = $tr.children("td").map(function() {
                     return $(this).text();
                 }).get();
-
+                
                 $('#tupv-id-edit').val(data[0]);
                 $('#first-name-edit').val(data[2]);
                 $('#last-name-edit').val(data[1]);

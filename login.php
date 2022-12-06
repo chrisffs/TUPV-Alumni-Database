@@ -15,7 +15,7 @@ if(isset($_POST['login'])) {
         $_SESSION['id'] = $row['id'];
         $_SESSION['unique_id'] = $row['unique_id'];
         $_SESSION['pass'] = $row['pass'];
-        $_SESSION['fullname'] = $row['fullname'];
+        $_SESSION['username'] = $row['username'];
     }
             header('location:admin/index.php');
         } else {

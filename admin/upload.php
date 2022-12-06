@@ -25,7 +25,8 @@ if(isset($_POST['submit'])) {
                 $fileDestination = 'uploads/'.$fileNameNew;
 
                 if(move_uploaded_file($fileTmpName, $fileDestination)) {
-                    $sql = "INSERT INTO gallery_uploads(image_name) VALUES ('$fileNameNew')";
+                    $filePath = realpath('uploads/'.$fileNameNew);
+                    $sql = "INSERT INTO gallery_uploads (image_name, file_location)VALUES ('$fileNameNew', '$filePath')";
                     $result = mysqli_query($con, $sql);
                 };
 
@@ -41,7 +42,7 @@ if(isset($_POST['submit'])) {
         echo "You cannot upload files of this type!";
     }
         if($result) {
-            header('location:index.php?uploaded=ins');
+            header('location:gallery.php?uploaded=ins');
         }
 
 

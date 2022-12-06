@@ -26,7 +26,7 @@ if(isset($_POST['submit']))
     if(mysqli_num_rows($data) > 0) {
         // $_SESSION['tupv_dup'] = "TUPV-ID has already been used!";
         echo "<script>alert('TUPV-ID has been already been used.')</script>";
-        header("location: alumni-list.php?failed"); 
+        header("location: alumni-list.php"); 
     } else {
     
     
