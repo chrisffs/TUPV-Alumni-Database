@@ -1,5 +1,6 @@
 <?php 
-require '../conn.php';
+session_start();
+include '../conn.php';
 
 if(isset($_POST['submit']))
 {
@@ -24,26 +25,22 @@ if(isset($_POST['submit']))
     $data = mysqli_query($con, $sql) or die('error');
 
     if(mysqli_num_rows($data) > 0) {
-        // $_SESSION['tupv_dup'] = "TUPV-ID has already been used!";
-        echo "<script>alert('TUPV-ID has been already been used.')</script>";
+        $_SESSION['tupv_dup'] = "TUPV-ID has already been used! Try another one.";
+        // echo "<script>alert('TUPV-ID has been already been used.')</script>";
         header("location: alumni-list.php"); 
     } else {
-    
-    
-
 
     $query = "INSERT INTO alumni_tbl (tupv_id,lastname,firstname,mi,birthdate,civil_status,sex,address,pnumber,email_address,year_graduated,program_graduated,current_profession,company_name,present_employment_status) VALUES ('$tupv_id','$lname','$fname','$mi','$bdate','$cv','$sex','$add','$pnum','$email','$ygrad','$pgrad','$cprof','$cname','$p_emp_status')";
 
     // echo $query_run = mysqli_query($con, $query);
     if($con->query($query) === TRUE) {
-        // echo '<script> alert("Data Updated")</script>';
-        // // $_SESSION['message'] = "Record Created Successfully";
-        header("location: alumni-list.php"); 
+        $_SESSION['message'] = "Record Created Successfully";
+        header("location: alumni-list.php");
+        exit(0);
     } else {
-        echo '<script> alert("Data Not Updated")</script>';
-        // $_SESSION['message'] = "Record Not Created";
-        // header("Location: alumni-list.php"); 
-        // exit(0); 
+        $_SESSION['message'] = "Record Not Created";
+        header("location: alumni-list.php");
+        exit(0); 
     }
 
 }

@@ -75,17 +75,18 @@ if(isset($_POST['submit_event'])) {
             <a href="#home" class="navbar-brand d-flex align-items-center " id="logo">
                 <img src="../img/Group 1.png" alt="" style="max-width: 24px;"> 
                 <p class="text-dark fs-6 mb-0 ms-2">
-                Alumni Management System
+                Alumni Monitoring System
                 </p>
             </a>
-            <div class="dropdown">
-                <button class="btn dropdown-toggle pe-5 rounded-5" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <?php echo $_SESSION['username']?>
+            <div class="btn-group">
+                <button type="button" class="btn dropdown-toggle pe-5 rounded-5" data-bs-toggle="dropdown" aria-expanded="false">
+                <?php echo $_SESSION['username']?>
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a type="button" href="logout.php" class="dropdown-item">Logout</a>  
-                </div>
-            </div>  
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a type="button" href="logout.php" class="dropdown-item">Logout</a></li>
+                    <li><a type="button" href="createaccount.php" class="dropdown-item">Create Account</a></li>
+                </ul>
+            </div>   
             
         </div>
         <nav class="px-0 navbar navbar-expand-lg navbar-light">

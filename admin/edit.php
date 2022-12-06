@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include "../conn.php";
 
 if (isset($_POST['update'])) {
@@ -23,15 +24,13 @@ if (isset($_POST['update'])) {
 
     $query_run = mysqli_query($con, $sql);
     if($query_run) {
-        echo '<script> alert("Data Updated")</script>';
-        // $_SESSION['message'] = "Record Created Successfully";
+        $_SESSION['message_update'] = "Record Updated Successfully";
         header("Location: alumni-list.php"); 
-        // exit(0);
+        exit(0);
     } else {
-        echo '<script> alert("Data Not Updated")</script>';
-        // $_SESSION['message'] = "Record Not Created";
-        // header("Location: alumni-list.php"); 
-        // exit(0); 
+        $_SESSION['message_update'] = "Update Record Failed";
+        header("Location: alumni-list.php"); 
+        exit(0); 
     }
 }
 

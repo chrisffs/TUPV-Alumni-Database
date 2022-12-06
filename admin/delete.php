@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include "../conn.php";
 
 if(isset($_POST['deletedata'])) {
@@ -8,12 +9,15 @@ if(isset($_POST['deletedata'])) {
 
     if($query_run)
     {
-        echo '<script> alert("Data Deleted"); </script>';
+        $_SESSION['message_delete'] = "Record Deleted Successfully";
         header("Location:alumni-list.php");
+        exit(0);
     }
     else
     {
-        echo '<script> alert("Data Not Deleted"); </script>';
+        $_SESSION['message_delete'] = "Delete Record Failed";
+        header("Location: alumni-list.php"); 
+        exit(0); 
     }
 }
 

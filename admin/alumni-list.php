@@ -70,17 +70,19 @@ include "session.php";
             <a href="#home" class="navbar-brand d-flex align-items-center " id="logo">
                 <img src="../img/Group 1.png" alt="" style="max-width: 24px;"> 
                 <p class="text-dark fs-6 mb-0 ms-2">
-                Alumni Management System
+                Alumni Monitoring System
                 </p>
             </a>
-            <div class="dropdown">
-                <button class="btn dropdown-toggle pe-5 rounded-5" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <?php echo $_SESSION['username']?>
+            <div class="btn-group">
+                <button type="button" class="btn dropdown-toggle pe-5 rounded-5" data-bs-toggle="dropdown" aria-expanded="false">
+                <?php echo $_SESSION['username']?>
                 </button>
-                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-                    <a type="button" href="logout.php" class="dropdown-item">Logout</a>  
-                </div>
-            </div>  
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a type="button" href="logout.php" class="dropdown-item">Logout</a></li>
+                    <li><a type="button" href="createaccount.php" class="dropdown-item">Create Account</a></li>
+                    
+                </ul>
+            </div> 
             
         </div>
         </section>
@@ -97,12 +99,29 @@ include "session.php";
                             Alumni list
                         </p>
                     </div>
-            <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
             <div>
             <a type="button" class="btn btn-outline-success rounded-3 mb-3 mt-2 fw-semibold" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <i class="fa-solid fa-plus"></i> Add
             </a>
             </div>
+                <div class="mx-5 flex-fill">
+                <?php 
+                if(isset($_SESSION['tupv_dup'])){
+                    $warn = $_SESSION['tupv_dup'];
+                    ?>
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <?= $warn?>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    <?php
+                    unset($_SESSION['tupv_dup']);
+                }
+                ?>
+                <?php include('deletesuccess.php'); ?>
+                <?php include('updatesuccess.php'); ?>
+                <?php include('../message.php'); ?>
+                </div>
             </div>
             
 
