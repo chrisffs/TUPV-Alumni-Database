@@ -9,6 +9,7 @@ if(isset($_POST['submit_event'])) {
     $eventStime = mysqli_real_escape_string($con, $_POST['start_time']);
     $eventEtime = mysqli_real_escape_string($con, $_POST['end_time']);
     $eventVenue = mysqli_real_escape_string($con, $_POST['venue_name']);
+    
     $sql = "INSERT INTO events (event_date, event_name, time_start, time_end, event_location) VALUES ('$eventDate', '$eventName', '$eventStime', '$eventEtime', '$eventVenue')";
 
     if($con->query($sql) === TRUE) {
@@ -109,7 +110,7 @@ if(isset($_POST['submit_event'])) {
                                     <div class="">
                                         <div class="form-group">
                                             <div class="input-group date" id="">
-                                                <input type="text" class="py-4 form-control rounded-3 border-0 filter-input" onfocus="(this.type='date')" name="date_of_event" placeholder="Input Date of Event" id="event-date" required>
+                                                <input type="date" class="py-4 form-control rounded-3 border-0 filter-input" name="date_of_event" placeholder="Input Date of Event" id="event-date" required>
                                             </div>
                                         </div>
                                     </div>
@@ -191,7 +192,7 @@ if(isset($_POST['submit_event'])) {
                     ?>
                     <tr>
                         <td class="d-none"><?php echo $row['id'];?></td>
-                        <td><?php echo date("Y-d-m",strtotime($row['event_date']));?></td>
+                        <td><?php echo date("Y-m-d",strtotime($row['event_date']));?></td>
                         <td><?php echo $row['event_name'];?></td>
                         <td><?php echo $row['time_start'];?></td>
                         <td><?php echo $row['time_end'];?></td>
@@ -241,12 +242,25 @@ if(isset($_POST['submit_event'])) {
                         if(mysqli_num_rows($data) > 0) {
                             while($row = mysqli_fetch_assoc($data)) {
                     ?>
+                    <?php 
+                    include("editEvent.php");
+                    include("deleteEvent.php");
+                    ?>
                     <tr>
-                        <td><?php echo date("Y-d-m",strtotime($row['event_date']));?></td>
+                        <td class="d-none"><?php echo $row['id'];?></td>
+                        <td><?php echo date("Y-m-d",strtotime($row['event_date']));?></td>
                         <td><?php echo $row['event_name'];?></td>
                         <td><?php echo $row['time_start'];?></td>
                         <td><?php echo $row['time_end'];?></td>
                         <td><?php echo $row['event_location'];?></td>
+                        <td>
+                            <a type="button" class="text-info mx-1" data-bs-toggle="modal" data-bs-target="#editEventModal">
+                                <i class="fa-regular fa-pen-to-square fs-3 editEventbtn"></i>
+                            </a>
+                            <a type="button" class="text-danger mx-1" data-bs-toggle="modal" data-bs-target="#deleteEventModal">
+                                <i class="fa-regular fa-calendar-xmark fs-3 deleteEventbtn"></i>
+                            </a>
+                        </td>
                     </tr>
                     <?php 
                             }
@@ -289,13 +303,14 @@ if(isset($_POST['submit_event'])) {
         var data = $tr.children("td").map(function() {
             return $(this).text();
         }).get();
+        console.log(data);
+        
         $('#id').val(data[0]);
         $('#event-edit-date').val(data[1]);
         $('#event-edit-name').val(data[2]);
         $('#start-edit-time').val(data[3]);
         $('#end-edit-time').val(data[4]);
         $('#event-edit-venue').val(data[5]);
-
     });
     $('.deleteEventbtn').on('click', function(){
         $tr = $(this).closest('tr');

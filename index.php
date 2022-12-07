@@ -203,7 +203,8 @@ include "conn.php";
         var strDate = d.getFullYear() + "-" + d.getDate() + "-" + ("0" + (d.getMonth() + 1)).slice(-2);
         
         var date = document.getElementsByClassName('current-date');
-        
+        console.log(strDate);
+        console.log(date);
         for(let i = 0; i < date.length; i++ ) {
             if(date[i].innerText == strDate) {
                 let text = document.createTextNode(" (Today)");

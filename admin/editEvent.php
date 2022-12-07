@@ -3,12 +3,12 @@ include "../conn.php";
 
 if(isset($_POST['update_event'])) {
     $id = mysqli_real_escape_string($con, $_POST['id']);
-    $event_date = mysqli_real_escape_string($con, $_POST['date_of_event']);
+    $event_date = mysqli_real_escape_string($con, $_POST['date_of_event_edit']);
     $event_name = mysqli_real_escape_string($con, $_POST['event_name']);
     $start_time = mysqli_real_escape_string($con, $_POST['start_time']);
     $end_time = mysqli_real_escape_string($con, $_POST['end_time']);
     $venue = mysqli_real_escape_string($con, $_POST['venue_name']);
-
+    // $event_date_goods = date("Y-d-m", strtotime($event_date));
     $sql = "UPDATE events SET event_date = '$event_date', event_name = '$event_name', time_start = '$start_time', time_end = '$end_time', event_location = '$venue' WHERE id = '$id'";
 
     $query_run = mysqli_query($con, $sql);
@@ -35,7 +35,7 @@ if(isset($_POST['update_event'])) {
             <input type="hidden" name="id" id="id">
             <div class="row mb-3">
                 <div class="col-12">
-                <input type="text" class="py-4 form-control rounded-3 border-0 filter-input" onfocus="(this.type='date')" name="date_of_event" placeholder="Input Date of Event" id="event-edit-date" required>
+                <input type="date" class="py-4 form-control rounded-3 border-0 filter-input" name="date_of_event_edit" placeholder="Input Date of Event" id="event-edit-date" required>
                 </div>
             </div>
             <div class="row mb-3">
