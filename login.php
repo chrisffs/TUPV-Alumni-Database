@@ -41,9 +41,6 @@ if(isset($_POST['login'])) {
     <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" href="css/bootstrap4.5.3.min.css">
     <style>
-        body{
-        
-        }
         .center {
             position: absolute;
             top: 50%;
