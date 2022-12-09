@@ -112,7 +112,7 @@ include "session.php";
 
                                     <div class="col-lg-4 col-md-6 col-12 pb-3 px-2">
                                         <form action="deleteImg.php" method="post">
-                                            <input class="form-control" name="img-id" type="hidden" aria-label="default input example" value="<?php echo $row['id'];?>">
+                                            <input class="form-control" name="img-id" type="hidden" aria-label="default input example" value="<?php echo $row['image_id'];?>">
                                         
                                             <div class="float-end mb-0">
                                                 <button type="submit" class="btn mt-1 p-0 border-0" name="deleteImg">

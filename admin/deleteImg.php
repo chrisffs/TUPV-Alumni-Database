@@ -2,7 +2,7 @@
 include "../conn.php";
     if(isset($_POST['deleteImg'])) {
         $img_id = mysqli_real_escape_string($con, $_POST['img-id']);
-        $query = "DELETE FROM gallery_uploads WHERE id = '$img_id'";
+        $query = "DELETE FROM gallery_uploads WHERE image_id = '$img_id'";
         $query_run = mysqli_query($con, $query);
 
         if($query_run)

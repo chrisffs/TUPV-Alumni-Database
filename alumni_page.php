@@ -71,7 +71,7 @@ include "conn.php";
                     TUP Visayas Alumni Lists
                     </p>
                     <p class="desc fw-pp">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    The registered TUPV graduates are listed in this section. Only you can view and search the name, year and the program graduated.
                     </p>
                 </div>
             </div>

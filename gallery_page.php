@@ -69,7 +69,7 @@ include "conn.php"
         </p>
         <div class="row">
             <div class="col-lg-7 col-md-10 col-12">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque atque vel enim officia maiores repellendus blanditiis libero magnam error voluptatem ipsum voluptatibus harum, quasi explicabo a velit amet. Sint, consequuntur?</p>
+                <p class="fs-6 fw-bold"><em>TUPV Alumni photos and images can be found here.</em></p>
             </div>
         </div>
 

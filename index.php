@@ -68,7 +68,7 @@ include "conn.php";
             <div class="container">
                 <div class="d-flex row flex-lg-row flex-column-reverse justify-content-around align-items-center">
                     <div class="text-lg-start col-lg-7 mt-lg-0 mt-5" id="title-l">
-                        <p class="blck-txt fw-pp">Welcome to <div class=" hl-txt fw-pp">TUP Visayas Alumni Association Website</div></p>
+                        <p class="text-dark hl-txt fw-pp">Welcome to <span class=" hl-txt fw-pp">TUP Visayas</span></p>
                         <!-- <p class="hl-txt fw-pp">Alumni</p> -->
                         <p class="desc fw-pp">A platform to monitor and manage former TUP Visayas students. To keep TUP Visayas alumni up to date on what's happening at their alma mater, this website includes announcements and events.</p>
                     </div>

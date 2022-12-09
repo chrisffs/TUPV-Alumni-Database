@@ -152,7 +152,7 @@ form div {
     max-width: 40px;
 }
 .logo-text {
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 500;
 }
 #nav-link-ul li a {
@@ -355,7 +355,7 @@ form div {
 }
 .alumni-table2 td{
     font-weight: 400;
-    font-size: 12px;
+    font-size: 16px;
     line-height: 18px;
     color: #000000;
 }
@@ -381,6 +381,9 @@ form div {
 @media (max-width: 512px) {
     #hero-form {
         width: 93%;
+    }
+    .alumni-table2 td{
+        font-size: 12px;
     }
 }
 

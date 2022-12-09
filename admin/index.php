@@ -3,9 +3,9 @@ session_start();
 include "../conn.php";
 include "session.php";
 
-$query = "SELECT * FROM events WHERE date(event_date) = date(date_sub(now(), interval 0 day))";
+    // $query = "SELECT * FROM events WHERE date(event_date) = date(date_sub(now(), interval 0 day))";
 
-
+ 
 ?>
 
 <!DOCTYPE html>
