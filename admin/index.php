@@ -144,7 +144,7 @@ $query = "SELECT * FROM events WHERE date(event_date) = date(date_sub(now(), int
                     </div>
                 </div>
                 <div class="col-7 box-shadow1 px-0 bg-white">
-                    <table class="table table-borderless bg-white mb-0 " style="height: 15rem; display: block; overflow-x: auto;">
+                    <table class="table table-borderless bg-white mb-0 " style="height: 18.5rem; display: block; overflow-x: auto;">
                         <div class="bg-tup px-3 py-3 text-light">
                             <p class="mb-0 fw-semibold fs-3">Upcoming events</p>
                         </div>

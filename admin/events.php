@@ -134,7 +134,7 @@ if(isset($_POST['submit_event'])) {
                                 </div>
                                 <div class="col-8 px-1">
                                     <div class="">
-                                        <input class="py-4 form-control fw-pp rounded-3 border-0 filter-input" id="event_venue"type="text" placeholder="Location" aria-label="default input example" name="venue_name" maxlength="30" required>
+                                        <input class="py-4 form-control fw-pp rounded-3 border-0 filter-input" id="event_venue"type="text" placeholder="Location" aria-label="default input example" name="venue_name" maxlength="70" required>
                                     </div>
                                 </div>
                             </div>

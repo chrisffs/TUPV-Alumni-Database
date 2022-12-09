@@ -63,10 +63,8 @@ if(isset($_POST['login'])) {
 </head>
 <body class="bg-light">
     <div class="center mb-5">
-        
         <div class=" d-flex flex-column align-items-center">
             <img class="w-100"src="img/Group 1.png" alt="" srcset="">
-            <p class="fs-6 fw-semibold">TUPV Alumni Monitoring System</p>
         </div>
         <p class="fs-2 fw-semibold text-center mt-5 c-tupv">    
             Login

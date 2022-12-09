@@ -70,7 +70,7 @@ include "conn.php";
                     <div class="text-lg-start col-lg-7 mt-lg-0 mt-5" id="title-l">
                         <p class="blck-txt fw-pp">Welcome to <div class=" hl-txt fw-pp">TUP Visayas Alumni Association Website</div></p>
                         <!-- <p class="hl-txt fw-pp">Alumni</p> -->
-                        <p class="desc fw-pp">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                        <p class="desc fw-pp">A platform to monitor and manage former TUP Visayas students. To keep TUP Visayas alumni up to date on what's happening at their alma mater, this website includes announcements and events.</p>
                     </div>
                     <div class="col-lg-5">
                         <img class="img-fluid " src="img/Group 1.png" alt="" srcset="">
